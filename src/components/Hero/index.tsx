@@ -16,6 +16,7 @@ export function Hero() {
     mobile: false,
     labelSize: 38,
     bottom: 900,
+    readoutTop: 780,
   });
   const geometryRef = useRef(geometry);
   const drawRef = useRef<() => void>(() => {});
@@ -45,19 +46,28 @@ export function Hero() {
         copyBottom + clearance,
       );
       const top = apex - (cy - RADIUS) * scale;
+      const readout = gauge.current?.querySelector(".arc-speed-readout");
+      const readoutTop =
+        ((readout?.getBoundingClientRect().top ??
+          section.getBoundingClientRect().bottom) -
+          section.getBoundingClientRect().top -
+          top) /
+        scale;
       const next = {
         cy,
         top,
         mobile,
         labelSize,
         bottom: (height - top) / scale,
+        readoutTop,
       };
       geometryRef.current = next;
       setGeometry((previous) =>
         Math.abs(previous.top - next.top) < 0.5 &&
         previous.mobile === mobile &&
         previous.labelSize === labelSize &&
-        Math.abs(previous.bottom - next.bottom) < 0.5
+        Math.abs(previous.bottom - next.bottom) < 0.5 &&
+        Math.abs(previous.readoutTop - next.readoutTop) < 0.5
           ? previous
           : next,
       );

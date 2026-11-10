@@ -22,20 +22,24 @@ export interface GaugeGeometry {
   mobile: boolean;
   labelSize: number;
   bottom: number;
+  readoutTop: number;
 }
 
 export const Speedometer = forwardRef<
   HTMLDivElement,
   { geometry: GaugeGeometry }
 >(function Speedometer({ geometry }, ref) {
-  const { cy, top, mobile, labelSize, bottom } = geometry;
+  const { cy, top, mobile, labelSize, bottom, readoutTop } = geometry;
   const labels = [0, 40, 80, 120, 160, 200, 240];
   const needleTip = cy - RADIUS + 44;
   const tailRadius = Math.max(
     RADIUS - 44 - (mobile ? 520 : 300),
     (cy - bottom + 32) / Math.cos(radians(22)),
+    mobile ? 0 : (cy - readoutTop + 18) / Math.cos(radians(22)),
   );
-  const needleTail = Math.max(needleTip + 60, cy - tailRadius);
+  const needleTail = Math.max(needleTip + 8, cy - tailRadius);
+  const needleShoulder =
+    needleTip + Math.min(45, (needleTail - needleTip) * 0.5);
   const needleWidth = mobile ? 10 : 4;
   return (
     <div
@@ -180,7 +184,7 @@ export const Speedometer = forwardRef<
             filter="url(#needle-glow)"
           />
           <path
-            d={`M ${CENTER_X} ${needleTip} L ${CENTER_X + needleWidth} ${needleTip + 45} L ${CENTER_X + needleWidth * 0.6} ${needleTail} L ${CENTER_X - needleWidth * 0.6} ${needleTail} L ${CENTER_X - needleWidth} ${needleTip + 45} Z`}
+            d={`M ${CENTER_X} ${needleTip} L ${CENTER_X + needleWidth} ${needleShoulder} L ${CENTER_X + needleWidth * 0.6} ${needleTail} L ${CENTER_X - needleWidth * 0.6} ${needleTail} L ${CENTER_X - needleWidth} ${needleShoulder} Z`}
             className="needle-core"
           />
           <line
@@ -188,7 +192,7 @@ export const Speedometer = forwardRef<
             x1={CENTER_X}
             y1={needleTip + 5}
             x2={CENTER_X}
-            y2={needleTip + 54}
+            y2={needleTip + Math.min(54, (needleTail - needleTip) * 0.8)}
           />
         </g>
       </svg>

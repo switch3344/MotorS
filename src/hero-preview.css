@@ -379,7 +379,7 @@ body {
 .arc-speed-readout {
   position: absolute;
   left: 4.5%;
-  bottom: 44px;
+  bottom: 16px;
   display: flex;
   align-items: baseline;
   gap: 16px;
@@ -391,7 +391,7 @@ body {
 }
 .arc-speed-value {
   min-width: 3ch;
-  font-size: clamp(72px, 6.6vw, 96px);
+  font-size: clamp(72px, 5.2vw, 96px);
   line-height: 1;
   letter-spacing: -0.075em;
   font-variant-numeric: tabular-nums;

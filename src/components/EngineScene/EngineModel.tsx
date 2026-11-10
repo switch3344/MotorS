@@ -23,7 +23,7 @@ export function EngineModel({
   const assembly = useRef<Group>(null);
   const transition = useRef({ amount: 0 });
   const { scene } = useGLTF(MODEL);
-  const { camera, invalidate } = useThree();
+  const { camera, invalidate, size } = useThree();
   const model = useMemo(() => {
     const copy = scene.clone(true);
     copy.traverse((object) => {
@@ -49,6 +49,22 @@ export function EngineModel({
     });
     return result;
   }, [model]);
+  const framing = useMemo(() => {
+    const result: { mesh: Mesh; corners: Vector3[] }[] = [];
+    model.traverse((object) => {
+      if (!(object instanceof Mesh)) return;
+      object.geometry.computeBoundingBox();
+      const bounds = object.geometry.boundingBox;
+      if (!bounds) return;
+      const corners: Vector3[] = [];
+      for (const x of [bounds.min.x, bounds.max.x])
+        for (const y of [bounds.min.y, bounds.max.y])
+          for (const z of [bounds.min.z, bounds.max.z])
+            corners.push(new Vector3(x, y, z));
+      result.push({ mesh: object, corners });
+    });
+    return result;
+  }, [model]);
   useLayoutEffect(() => {
     const state = transition.current;
     const target = expanded ? 1 : 0;
@@ -68,14 +84,36 @@ export function EngineModel({
           vector[2] * amount,
         );
       }
+      camera.lookAt(0, 0, 0);
+      camera.updateMatrixWorld(true);
+      assembly.current?.updateMatrixWorld(true);
       if (camera instanceof PerspectiveCamera) {
         const assembledFov = mobile ? 40 : 22.5;
         const expandedFov = mobile ? 52 : 34;
-        camera.fov = assembledFov + (expandedFov - assembledFov) * amount;
+        const nominalFov = assembledFov + (expandedFov - assembledFov) * amount;
+        // Fit the actual parts to both canvas dimensions, including during
+        // the transition. A tall/narrow column must not crop the engine.
+        const view = new Vector3();
+        const aspect = size.width / Math.max(1, size.height);
+        let tangent = 0;
+        for (const { mesh, corners } of framing) {
+          for (const corner of corners) {
+            view
+              .copy(corner)
+              .applyMatrix4(mesh.matrixWorld)
+              .applyMatrix4(camera.matrixWorldInverse);
+            const depth = Math.max(0.1, -view.z);
+            tangent = Math.max(
+              tangent,
+              Math.abs(view.y) / depth,
+              Math.abs(view.x) / depth / aspect,
+            );
+          }
+        }
+        const fitFov = (2 * Math.atan(tangent / 0.88) * 180) / Math.PI;
+        camera.fov = Math.max(nominalFov, fitFov);
         camera.updateProjectionMatrix();
       }
-      camera.lookAt(0, 0, 0);
-      assembly.current?.updateMatrixWorld(true);
       invalidate();
     };
     if (reduced) {
@@ -94,7 +132,17 @@ export function EngineModel({
     return () => {
       tween.kill();
     };
-  }, [expanded, reduced, mobile, parts, camera, invalidate]);
+  }, [
+    expanded,
+    reduced,
+    mobile,
+    parts,
+    framing,
+    camera,
+    invalidate,
+    size.width,
+    size.height,
+  ]);
   useLayoutEffect(() => {
     const animated: MeshStandardMaterial[] = [];
     for (const part of parts) {

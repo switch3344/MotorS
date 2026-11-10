@@ -17,7 +17,7 @@ body {
   max-height: 100svh;
   overflow: hidden;
   border-radius: 44px;
-  background: #131416;
+  background: #101113;
 }
 .header-notch {
   position: fixed;
@@ -187,8 +187,7 @@ body {
   top: 14px;
   border-radius: 99px;
   border: 1px solid #ffffff24;
-  background: #000e;
-  backdrop-filter: blur(16px);
+  background: #000;
 }
 .header-detached::before,
 .header-detached::after {

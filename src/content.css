@@ -57,7 +57,7 @@
   margin-top: 10px;
   padding: 64px 4.5%;
   border-radius: 44px;
-  background: #111315;
+  background: #101113;
 }
 .content-card h2 {
   font-size: clamp(36px, 3.5vw, 58px);
@@ -102,7 +102,7 @@
   place-items: center;
   aspect-ratio: 16 / 10;
   border-radius: 12px;
-  background: #0b0d0f;
+  background: #0a0a0a;
   color: #767f8c;
   font: 14px var(--font-mono);
 }

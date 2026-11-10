@@ -1,7 +1,7 @@
 .v12-section {
   margin-top: 10px;
   border-radius: 44px;
-  background: #111315;
+  background: #101113;
   padding: 76px 4.5% 52px;
   overflow: hidden;
 }
@@ -51,22 +51,6 @@
   isolation: isolate;
   width: 100%;
   height: clamp(560px, 73vh, 820px);
-}
-.v12-engine-viewport::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: auto 8% 9%;
-  height: 19%;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse,
-    #d5e0ef24,
-    #b2324810 45%,
-    transparent 72%
-  );
-  filter: blur(22px);
-  pointer-events: none;
 }
 .v12-engine-viewport canvas {
   touch-action: pan-y;
@@ -198,7 +182,6 @@
   width: 100%;
   height: calc(100% - 90px);
   object-fit: contain;
-  mix-blend-mode: lighten;
 }
 .v12-fallback > p {
   color: #a8afb8;
@@ -208,7 +191,7 @@
   margin-top: 10px;
   border-radius: 44px;
   padding: 64px 4.5%;
-  background: #111315;
+  background: #101113;
 }
 .work-process h2 {
   font-size: clamp(32px, 3vw, 48px);

@@ -55,25 +55,9 @@ export const Instrument = forwardRef<
         aria-hidden="true"
       >
         <defs>
-          <linearGradient
-            id="instrument-material"
-            x1="0"
-            y1={cy - RADIUS}
-            x2="0"
-            y2={cy - RADIUS + 120 / scale}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#1b1c1f" />
-            <stop offset="1" stopColor="#0a0a0b" />
-          </linearGradient>
           <linearGradient id="instrument-accent">
             <stop stopColor="#b71434" />
             <stop offset="1" stopColor="#ff2d4e" />
-          </linearGradient>
-          <linearGradient id="instrument-edge">
-            <stop stopColor="#fff" stopOpacity=".15" />
-            <stop offset=".33" stopColor="#fff" stopOpacity="0" />
-            <stop offset="1" stopColor="#fff" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="instrument-needle-material"
@@ -86,28 +70,13 @@ export const Instrument = forwardRef<
             <stop offset="1" stopColor="#5a0a18" />
           </linearGradient>
           <filter
-            id="instrument-shadow"
-            x="-10%"
-            y="-100%"
-            width="120%"
-            height="300%"
-          >
-            <feDropShadow
-              dx="0"
-              dy={6 / scale}
-              stdDeviation={8 / scale}
-              floodColor="#000"
-              floodOpacity=".4"
-            />
-          </filter>
-          <filter
             id="instrument-fill-glow"
             x="-10%"
             y="-100%"
             width="120%"
             height="300%"
           >
-            <feGaussianBlur stdDeviation={4 / scale} />
+            <feGaussianBlur stdDeviation="4" />
           </filter>
           <filter
             id="instrument-tip-glow"
@@ -117,19 +86,9 @@ export const Instrument = forwardRef<
             height={120 / scale}
             filterUnits="userSpaceOnUse"
           >
-            <feGaussianBlur stdDeviation={12 / scale} />
+            <feGaussianBlur stdDeviation="8" />
           </filter>
         </defs>
-        <path
-          d={arc(-24, 24, cy, RADIUS - 60 / scale)}
-          className="instrument-bezel"
-          strokeWidth={120 / scale}
-          filter="url(#instrument-shadow)"
-        />
-        <path
-          d={arc(-24, 24, cy, RADIUS - 1 / scale)}
-          className="instrument-inner-highlight"
-        />
         <path
           d={arc(-24, 24, cy, RADIUS + 14 / scale)}
           className="instrument-outer-ring"
@@ -149,10 +108,6 @@ export const Instrument = forwardRef<
           pathLength="1"
           strokeDasharray="1"
           strokeDashoffset="1"
-        />
-        <path
-          d={arc(-24, -8, cy, RADIUS - 2 / scale)}
-          className="instrument-edge"
         />
         {Array.from({ length: 81 }, (_, index) => {
           const rpm = index * 100,
@@ -220,10 +175,6 @@ export const Instrument = forwardRef<
           />
         </g>
       </svg>
-      <p className="instrument-readout" aria-hidden="true">
-        <span className="instrument-value">900</span>
-        <span className="instrument-unit">об/мин</span>
-      </p>
     </div>
   );
 });

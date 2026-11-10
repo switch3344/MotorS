@@ -16,7 +16,6 @@ export function useInstrumentMotion(
     const root = gauge.current,
       needle = root.querySelector(".instrument-needle")!,
       body = root.querySelector(".instrument-needle-body")!,
-      readout = root.querySelector(".instrument-value")!,
       progress = root.querySelectorAll(".instrument-progress");
     const state = { rpm: reduced ? 4800 : 900 };
     let visible = false,
@@ -34,7 +33,6 @@ export function useInstrumentMotion(
       );
       if (rpm === previous) return;
       previous = rpm;
-      readout.textContent = String(rpm).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
       root.setAttribute("aria-valuenow", String(rpm));
       root.setAttribute("aria-valuetext", `${rpm} оборотов в минуту`);
     };

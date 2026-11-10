@@ -1,13 +1,18 @@
 import { siteConfig } from "../config/site.config";
+import { TechHeadingRun } from "./TechText/TechHeadingRun";
 
 export function OriginalParts() {
+  const [years, distance] = siteConfig.warranty.split(" или ");
   return (
     <section
       className="content-card original-section"
       aria-labelledby="original-heading"
     >
       <h2 id="original-heading">
-        Оригинал <em>или ничего.</em>
+        <TechHeadingRun text="Оригинал " />
+        <em>
+          <TechHeadingRun text="или ничего." />
+        </em>
       </h2>
       <p className="original-lead">
         Проверяем запчасти до установки. Подделку можно отличить только опытом.
@@ -35,7 +40,10 @@ export function OriginalParts() {
       </div>
       <div className="warranty-band" id="warranty">
         <h2>
-          <em>{siteConfig.warranty}</em>
+          <em>
+            <TechHeadingRun text={years} /> или{" "}
+            <TechHeadingRun text={distance} />
+          </em>
         </h2>
         <p>
           На капитальный ремонт двигателя.

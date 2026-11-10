@@ -9,7 +9,12 @@ const point = (angle: number, radius: number, cy: number) => ({
   x: CENTER_X + radius * Math.sin(rad(angle)),
   y: cy - radius * Math.cos(rad(angle)),
 });
-const arc = (from: number, to: number, cy: number, radius = RADIUS) => {
+export const instrumentArc = (
+  from: number,
+  to: number,
+  cy: number,
+  radius = RADIUS,
+) => {
   const a = point(from, radius, cy),
     b = point(to, radius, cy);
   return `M ${a.x} ${a.y} A ${radius} ${radius} 0 0 1 ${b.x} ${b.y}`;
@@ -24,8 +29,8 @@ export interface GaugeGeometry {
 }
 
 export function needleShape(geometry: GaugeGeometry, angle: number) {
-  const { cy, bottom, scale, mobile } = geometry;
-  const tip = cy - RADIUS + (mobile ? 22 : 36) / scale;
+  const { cy, bottom, scale } = geometry;
+  const tip = cy - RADIUS + 3 / scale;
   const tail = cy - (cy - bottom - 24 / scale) / Math.cos(rad(angle));
   return `M ${CENTER_X - 1 / scale} ${tip} L ${CENTER_X + 1 / scale} ${tip} L ${CENTER_X + 7 / scale} ${tail} L ${CENTER_X - 7 / scale} ${tail} Z`;
 }
@@ -35,8 +40,7 @@ export const Instrument = forwardRef<
   { geometry: GaugeGeometry }
 >(function Instrument({ geometry }, ref) {
   const { cy, top, mobile, labelSize, scale } = geometry;
-  const major = (mobile ? 22 : 36) / scale;
-  const tip = cy - RADIUS + major;
+  const tip = cy - RADIUS + 3 / scale;
   return (
     <div
       className="instrument"
@@ -90,24 +94,18 @@ export const Instrument = forwardRef<
           </filter>
         </defs>
         <path
-          d={arc(-24, 24, cy, RADIUS + 14 / scale)}
+          d={instrumentArc(-24, 24, cy, RADIUS + 14 / scale)}
           className="instrument-outer-ring"
         />
-        <path d={arc(-24, 24, cy)} className="instrument-track" />
+        <path d={instrumentArc(-24, 24, cy)} className="instrument-track" />
         <path
-          d={arc(-22, 22, cy)}
+          d={instrumentArc(-22, angleForRpm(900), cy)}
           className="instrument-progress instrument-progress-glow"
-          pathLength="1"
-          strokeDasharray="1"
-          strokeDashoffset="1"
           filter="url(#instrument-fill-glow)"
         />
         <path
-          d={arc(-22, 22, cy)}
+          d={instrumentArc(-22, angleForRpm(900), cy)}
           className="instrument-progress"
-          pathLength="1"
-          strokeDasharray="1"
-          strokeDashoffset="1"
         />
         {Array.from({ length: 81 }, (_, index) => {
           const rpm = index * 100,

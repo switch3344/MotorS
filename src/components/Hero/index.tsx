@@ -5,6 +5,7 @@ import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { SplitButton } from "../SplitButton";
 import { RADIUS, Instrument } from "./Instrument";
 import type { GaugeGeometry } from "./Instrument";
+import { TechHeadingRun } from "../TechText/TechHeadingRun";
 
 export function Hero() {
   const hero = useRef<HTMLElement>(null);
@@ -93,9 +94,14 @@ export function Hero() {
       <Instrument ref={gauge} geometry={geometry} />
       <div className="circular-copy" ref={copy}>
         <h1 id="hero-title" tabIndex={-1}>
-          <span>Капремонт двигателя.</span>
           <span>
-            Без <em>подделок.</em>
+            <TechHeadingRun text="Капремонт двигателя." />
+          </span>
+          <span>
+            <TechHeadingRun text="Без " />
+            <em>
+              <TechHeadingRun text="подделок." />
+            </em>
           </span>
         </h1>
         <p className="circular-description">

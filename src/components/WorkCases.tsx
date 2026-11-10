@@ -3,6 +3,7 @@ import type { CSSProperties, PointerEvent } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Expand, X } from "lucide-react";
 import { workPhotos } from "../config/content.config";
 import { siteConfig } from "../config/site.config";
+import { TechHeadingRun } from "./TechText/TechHeadingRun";
 
 const count = workPhotos.length;
 const wrap = (index: number) => ((index % count) + count) % count;
@@ -62,7 +63,10 @@ export function WorkCases() {
       <div className="content-heading">
         <div>
           <h2 id="works-heading">
-            Внутри <em>мастерской.</em>
+            <TechHeadingRun text="Внутри " />
+            <em>
+              <TechHeadingRun text="мастерской." />
+            </em>
           </h2>
         </div>
         <a href={siteConfig.telegram} target="_blank" rel="noreferrer">

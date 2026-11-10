@@ -12,6 +12,7 @@ import {
 } from "three";
 import gsap from "gsap";
 import type { EngineViewProps } from "./CanvasScene";
+import { improveEngineAppearance } from "./engineAppearance";
 const MODEL = `${import.meta.env.BASE_URL}models/motorservice-v12.glb`;
 export function EngineModel({
   expanded,
@@ -24,23 +25,12 @@ export function EngineModel({
   const transition = useRef({ amount: 0 });
   const { scene } = useGLTF(MODEL);
   const { camera, invalidate, size } = useThree();
-  const model = useMemo(() => {
+  const { model, disposeModel } = useMemo(() => {
     const copy = scene.clone(true);
-    copy.traverse((object) => {
-      if (!(object instanceof Mesh)) return;
-      const clone = (material: MeshStandardMaterial) => {
-        const result = material.clone();
-        result.emissive.set("#b82038");
-        result.emissiveIntensity = 0;
-        return result;
-      };
-      object.material = Array.isArray(object.material)
-        ? object.material.map(clone)
-        : clone(object.material as MeshStandardMaterial);
-    });
+    const disposeModel = improveEngineAppearance(copy);
     const bounds = new Box3().setFromObject(copy);
     copy.position.sub(bounds.getCenter(new Vector3()));
-    return copy;
+    return { model: copy, disposeModel };
   }, [scene]);
   const parts = useMemo(() => {
     const result: Object3D[] = [];
@@ -169,17 +159,7 @@ export function EngineModel({
     invalidate();
     return () => animated.forEach((material) => gsap.killTweensOf(material));
   }, [expanded, zone, reduced, parts, invalidate]);
-  useEffect(
-    () => () =>
-      model.traverse((object) => {
-        if (object instanceof Mesh)
-          (Array.isArray(object.material)
-            ? object.material
-            : [object.material]
-          ).forEach((material) => material.dispose());
-      }),
-    [model],
-  );
+  useEffect(() => disposeModel, [disposeModel]);
   return (
     <group ref={assembly}>
       <primitive object={model} onPointerOver={onHover} />

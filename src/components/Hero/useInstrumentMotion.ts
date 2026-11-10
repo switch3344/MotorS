@@ -1,7 +1,12 @@
 import { useLayoutEffect } from "react";
 import type { RefObject } from "react";
 import { gsap } from "../../lib/scroll";
-import { angleForRpm, CENTER_X, MAX_RPM, needleShape } from "./Instrument";
+import {
+  angleForRpm,
+  CENTER_X,
+  instrumentArc,
+  needleShape,
+} from "./Instrument";
 import type { GaugeGeometry } from "./Instrument";
 
 export function useInstrumentMotion(
@@ -13,14 +18,37 @@ export function useInstrumentMotion(
 ) {
   useLayoutEffect(() => {
     if (!hero.current || !gauge.current) return;
-    const root = gauge.current,
-      needle = root.querySelector(".instrument-needle")!,
-      body = root.querySelector(".instrument-needle-body")!,
-      progress = root.querySelectorAll(".instrument-progress");
+    const findTargets = () => {
+      const root = gauge.current;
+      const needle = root?.querySelector<SVGGElement>(".instrument-needle");
+      const body = root?.querySelector<SVGPathElement>(
+        ".instrument-needle-body",
+      );
+      const progress = root?.querySelectorAll<SVGPathElement>(
+        ".instrument-progress",
+      );
+      return root && needle && body && progress?.length
+        ? { root, needle, body, progress }
+        : null;
+    };
+    let targets = findTargets();
     const state = { rpm: reduced ? 4800 : 900 };
     let visible = false,
       previous = -1;
     const render = () => {
+      // React can replace the SVG during refresh or a layout update.
+      // Never animate a detached needle or a stale copy of the filled arc.
+      if (
+        !targets ||
+        targets.root !== gauge.current ||
+        !targets.needle.isConnected ||
+        !targets.progress[0].isConnected
+      ) {
+        targets = findTargets();
+        previous = -1;
+      }
+      if (!targets) return;
+      const { root, needle, body, progress } = targets;
       const rpm = Math.round(state.rpm),
         angle = angleForRpm(state.rpm);
       needle.setAttribute(
@@ -29,7 +57,7 @@ export function useInstrumentMotion(
       );
       body.setAttribute("d", needleShape(geometry.current, angle));
       progress.forEach((path) =>
-        path.setAttribute("stroke-dashoffset", String(1 - state.rpm / MAX_RPM)),
+        path.setAttribute("d", instrumentArc(-22, angle, geometry.current.cy)),
       );
       if (rpm === previous) return;
       previous = rpm;

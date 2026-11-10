@@ -4,6 +4,7 @@ import { ArrowDownRight, Minus, Plus } from "lucide-react";
 import { services } from "../../config/services.config";
 import { siteConfig } from "../../config/site.config";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
+import { TechHeadingRun } from "../TechText/TechHeadingRun";
 const CanvasScene = lazy(() => import("./CanvasScene"));
 
 class SceneBoundary extends Component<
@@ -82,9 +83,12 @@ export function EngineScene() {
     >
       <div className="v12-heading">
         <div>
-          <h2 id="services-heading">
-            Диагностика
-            <br />и <em>капремонт.</em>
+          <h2 id="services-heading" aria-label="Диагностика и капремонт.">
+            <TechHeadingRun text="Диагностика" />
+            <br />и{" "}
+            <em>
+              <TechHeadingRun text="капремонт." />
+            </em>
           </h2>
         </div>
       </div>

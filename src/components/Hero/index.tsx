@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { useTachometerMotion } from "./useTachometerMotion";
+import { useSpeedometerMotion } from "./useSpeedometerMotion";
+import { HeroRoadMedia } from "./HeroRoadMedia";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { SplitButton } from "../SplitButton";
-import { RADIUS, Tachometer } from "./Tachometer";
-import type { GaugeGeometry } from "./Tachometer";
+import { RADIUS, Speedometer } from "./Speedometer";
+import type { GaugeGeometry } from "./Speedometer";
 
 export function Hero() {
   const hero = useRef<HTMLElement>(null);
@@ -14,6 +15,7 @@ export function Hero() {
     top: 0,
     mobile: false,
     labelSize: 38,
+    bottom: 900,
   });
   const geometryRef = useRef(geometry);
   const drawRef = useRef<() => void>(() => {});
@@ -35,19 +37,27 @@ export function Hero() {
       const copyBottom =
         content.getBoundingClientRect().bottom -
         section.getBoundingClientRect().top;
-      const labelSize = mobile ? 78 : Math.max(38, 24 / scale);
+      const labelSize = mobile ? 58 : Math.max(34, 24 / scale);
       const labelOffset = mobile ? 68 : 38;
       const clearance = labelOffset * scale + labelSize * scale * 0.7 + 24;
       const apex = Math.max(
         height * (mobile ? 0.65 : 0.64),
         copyBottom + clearance,
       );
-      const next = { cy, top: apex - (cy - RADIUS) * scale, mobile, labelSize };
+      const top = apex - (cy - RADIUS) * scale;
+      const next = {
+        cy,
+        top,
+        mobile,
+        labelSize,
+        bottom: (height - top) / scale,
+      };
       geometryRef.current = next;
       setGeometry((previous) =>
         Math.abs(previous.top - next.top) < 0.5 &&
         previous.mobile === mobile &&
-        previous.labelSize === labelSize
+        previous.labelSize === labelSize &&
+        Math.abs(previous.bottom - next.bottom) < 0.5
           ? previous
           : next,
       );
@@ -66,7 +76,7 @@ export function Hero() {
     drawRef.current();
   }, [geometry]);
 
-  useTachometerMotion(hero, gauge, geometryRef, drawRef, reduced);
+  useSpeedometerMotion(hero, gauge, geometryRef, drawRef, reduced);
 
   return (
     <section
@@ -75,7 +85,8 @@ export function Hero() {
       ref={hero}
       aria-labelledby="hero-title"
     >
-      <Tachometer ref={gauge} geometry={geometry} />
+      <HeroRoadMedia reduced={reduced} />
+      <Speedometer ref={gauge} geometry={geometry} />
       <div className="circular-copy" ref={copy}>
         <h1 id="hero-title" tabIndex={-1}>
           <span>Двигатель, как с завода.</span>

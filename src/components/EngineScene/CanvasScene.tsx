@@ -1,5 +1,6 @@
-import { Suspense } from "react";
+import { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
+import { PerspectiveCamera } from "three";
 import {
   ContactShadows,
   Environment,
@@ -18,10 +19,16 @@ export interface EngineViewProps {
 }
 export default function CanvasScene(props: EngineViewProps) {
   const loading = useProgress();
+  const camera = useMemo(() => {
+    const result = new PerspectiveCamera(22.5, 1, 0.1, 60);
+    result.position.set(7.6, 4.8, 8.6);
+    result.lookAt(0, 0, 0);
+    return result;
+  }, []);
   return (
     <>
       <Canvas
-        camera={{ position: [7.6, 4.8, 8.6], fov: 30, near: 0.1, far: 60 }}
+        camera={camera}
         dpr={[1, props.mobile ? 1.25 : 1.75]}
         frameloop={props.visible ? "demand" : "never"}
         gl={{
@@ -29,7 +36,7 @@ export default function CanvasScene(props: EngineViewProps) {
           alpha: true,
           powerPreference: "high-performance",
         }}
-        aria-label="Объёмная модель V12. Наведите или нажмите «Разобрать двигатель», чтобы открыть услуги."
+        aria-label="Объёмная модель двигателя. Наведите или нажмите «Разобрать двигатель», чтобы увидеть внутренние детали."
       >
         <ambientLight intensity={0.6} />
         <directionalLight
@@ -86,7 +93,7 @@ export default function CanvasScene(props: EngineViewProps) {
       </Canvas>
       {loading.active && (
         <div className="v12-loader" role="status">
-          Загружаем V12… {Math.round(loading.progress)}%
+          Загружаем модель… {Math.round(loading.progress)}%
         </div>
       )}
     </>

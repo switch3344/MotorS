@@ -165,16 +165,6 @@ def bolt(loc,parent,axis=(0,0,1),radius=.042):
     cylinder('Bolt socket',Vector(loc)+Vector(axis)*.019,radius*.38,.004,rubber,parent,axis,6,0)
 
 
-def label(text,loc,rotation,size,parent):
-    curve=bpy.data.curves.new('Engraved wordmark','FONT')
-    curve.body=text
-    curve.align_x='CENTER'; curve.align_y='CENTER'
-    curve.size=size; curve.extrude=.0015; curve.bevel_depth=.0005
-    obj=bpy.data.objects.new(text,curve)
-    assembly_collection.objects.link(obj)
-    obj.location=loc; obj.rotation_euler=rotation; obj.parent=parent
-    curve.materials.append(white); created.append(obj)
-
 # Lower crankcase, flanges, reinforcing ribs and sump mating face.
 box('Main deep-skirt crankcase',(0,0,.12),(1.45,4.65,.85),cast,block,bevel=.11)
 box('Crankcase top deck',(0,0,.54),(1.6,4.72,.13),alloy,block,bevel=.045)
@@ -226,7 +216,7 @@ for side,bank,piston_group,head,cover in [(-1,liners_l,pistons_l,head_l,cover_l)
         cylinder('Camshaft',at(1.71,0,offset),.042,4.38,edge,head,(0,1,0),24,.008)
         for y in positions:
             cylinder('Cam lobe',at(1.71,y,offset),.085,.14,alloy,head,(0,1,0),24,.01)
-    # Sculpted red cover with contrast gasket, parallel milling and real lettering.
+    # Sculpted red cover with contrast gasket and parallel milling.
     box('Cover perimeter seal',at(1.83),(1.15,4.58,.075),rubber,cover,(0,angle,0),.075)
     box('Red anodised cam cover',at(1.98),(1.08,4.55,.26),red,cover,(0,angle,0),.09)
     box('Machined centre spine',at(2.12),(0.20,4.22,.026),black,cover,(0,angle,0),.018)
@@ -234,8 +224,6 @@ for side,bank,piston_group,head,cover in [(-1,liners_l,pistons_l,head_l,cover_l)
         box('Satin cover rib',at(2.121,0,offset),(.022,4.13,.025),alloy,cover,(0,angle,0),.009)
     for y in [-2.0,-1.2,-.4,.4,1.2,2.0]:
         for offset in [-.44,.44]: bolt(at(2.12,y,offset),cover,direction)
-    label('MOTOR SERVICE',at(2.145), (0,angle,pi/2),.135,cover)
-    label('V12',at(2.145,-1.65), (0,angle,pi/2),.18,cover)
     cylinder('Oil fill neck',at(2.17,1.65),.12,.10,black,cover,direction,32,.02)
     for y in positions:
         cylinder('Spark plug ceramic',at(1.88,y,.09),.044,.20,white,cover,direction,20,.01)
@@ -262,7 +250,6 @@ for side in [-1,1]:
         torus('Intake runner collar',(side*.68,y,1.63),.108,.018,black,intake,(0,side*pi/6,0),32)
 box('Central intake plenum',(0,0,2.46),(.66,4.15,.33),cast,intake,bevel=.14)
 box('Plenum top plate',(0,0,2.65),(.48,3.65,.035),edge,intake,bevel=.06)
-label('V12  /  MOTOR SERVICE',(0,0,2.673),(0,0,pi/2),.115,intake)
 for y in [-1.65,-1.1,-.55,0,.55,1.1,1.65]:
     for x in [-.23,.23]: bolt((x,y,2.675),intake,radius=.027)
 cylinder('Throttle body',(0,-2.24,2.43),.26,.36,alloy,intake,(0,1,0),48,.035)
@@ -309,7 +296,7 @@ cylinder('Drain plug',(.68,1.6,-.87),.07,.06,brass,sump,(1,0,0),6,.006)
 cylinder('Oil filter',(-.91,-1.65,-.48),.20,.58,black,sump,(0,0,1),40,.025)
 annulus('Filter collar',(-.91,-1.65,-.19),.21,.15,.045,alloy,sump,(0,0,1),40)
 
-# Bake bevels, weighted normals and lettering, then join per assembly.
+# Bake bevels and weighted normals, then join per assembly.
 # Material slots are preserved while draw calls and scene traversal stay bounded.
 for obj in list(created):
     bpy.ops.object.select_all(action='DESELECT')

@@ -18,7 +18,7 @@ class SceneBoundary extends Component<
     return this.state.error ? (
       <div className="v12-fallback">
         <img
-          src={`${import.meta.env.BASE_URL}images/v12-poster.png`}
+          src={`${import.meta.env.BASE_URL}images/v12-poster.jpg`}
           alt="Детализированный V12 с красными крышками и металлическими коллекторами"
         />
         <p>Выберите услугу, чтобы узнать о ремонте.</p>
@@ -96,50 +96,39 @@ export function EngineScene() {
         </p>
       </div>
       <div className="v12-stage">
-        <div className="v12-engine-viewport">
-          <SceneBoundary>
-            <Suspense
-              fallback={<div className="v12-loader">Собираем V12…</div>}
-            >
-              {near && (
-                <CanvasScene
-                  expanded={opened}
-                  zone={
-                    opened && active !== null ? services[active].zone : null
-                  }
-                  reduced={reduced}
-                  mobile={mobile}
-                  visible={visible}
-                  onHover={reveal}
-                />
-              )}
-            </Suspense>
-          </SceneBoundary>
-          <div className="v12-stage-caption">
-            <span>V12</span>
-            <p>
-              {mobile
-                ? "12 цилиндров. Всё по делу."
-                : "Наведите на двигатель, чтобы заглянуть внутрь."}
-            </p>
+        <div className="v12-engine-column">
+          <div className="v12-engine-viewport" id="engine-model">
+            <SceneBoundary>
+              <Suspense
+                fallback={<div className="v12-loader">Загружаем модель…</div>}
+              >
+                {near && (
+                  <CanvasScene
+                    expanded={opened}
+                    zone={
+                      opened && active !== null ? services[active].zone : null
+                    }
+                    reduced={reduced}
+                    mobile={mobile}
+                    visible={visible}
+                    onHover={reveal}
+                  />
+                )}
+              </Suspense>
+            </SceneBoundary>
           </div>
           <button
             className="v12-toggle"
             type="button"
             aria-expanded={opened}
-            aria-controls="engine-services"
+            aria-controls="engine-model"
             onClick={() => setOpened(!opened)}
           >
             {opened ? "Собрать двигатель" : "Разобрать двигатель"}
             {opened ? <Minus size={18} /> : <Plus size={18} />}
           </button>
         </div>
-        <div
-          className="v12-services-reveal"
-          id="engine-services"
-          inert={!opened}
-          aria-hidden={!opened}
-        >
+        <div className="v12-services-reveal" id="engine-services">
           <div className="v12-services">
             <p className="v12-services-title">Что нужно вашему двигателю?</p>
             <div className="v12-service-list">

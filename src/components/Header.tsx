@@ -5,6 +5,8 @@ import { SplitButton } from "./SplitButton";
 import { siteConfig } from "../config/site.config";
 const links = [
   { label: "Услуги", href: "#services" },
+  { label: "Работы", href: "#works" },
+  { label: "Гарантия", href: "#warranty" },
   { label: "Контакты", href: "#contacts" },
 ];
 export function Header() {

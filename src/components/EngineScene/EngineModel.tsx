@@ -1,8 +1,9 @@
-import { useEffect, useLayoutEffect, useMemo } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import { useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import {
   Box3,
+  Group,
   Mesh,
   MeshStandardMaterial,
   Object3D,
@@ -19,6 +20,8 @@ export function EngineModel({
   mobile,
   onHover,
 }: EngineViewProps) {
+  const assembly = useRef<Group>(null);
+  const transition = useRef({ amount: 0 });
   const { scene } = useGLTF(MODEL);
   const { camera, invalidate } = useThree();
   const model = useMemo(() => {
@@ -47,40 +50,50 @@ export function EngineModel({
     return result;
   }, [model]);
   useLayoutEffect(() => {
-    const animated: object[] = [];
-    const duration = reduced ? 0 : 1.15;
-    for (const part of parts) {
-      const vector = part.userData.explode as number[];
-      const amount = expanded ? 1 : 0;
-      gsap.killTweensOf(part.position);
-      animated.push(part.position);
-      gsap.to(part.position, {
-        x: vector[0] * amount,
-        y: vector[1] * amount,
-        z: vector[2] * amount,
-        duration,
-        ease: "power3.inOut",
-        overwrite: true,
-        onUpdate: invalidate,
-      });
+    const state = transition.current;
+    const target = expanded ? 1 : 0;
+    // One clock updates every transform and the camera before requesting a
+    // frame, so interrupted hover/toggle animations remain continuous.
+    const render = () => {
+      const amount = state.amount;
+      if (assembly.current) {
+        assembly.current.scale.setScalar(1 - 0.12 * amount);
+        assembly.current.position.y = -0.45 * amount;
+      }
+      for (const part of parts) {
+        const vector = part.userData.explode as number[];
+        part.position.set(
+          vector[0] * amount,
+          vector[1] * amount,
+          vector[2] * amount,
+        );
+      }
+      if (camera instanceof PerspectiveCamera) {
+        const assembledFov = mobile ? 40 : 22.5;
+        const expandedFov = mobile ? 52 : 34;
+        camera.fov = assembledFov + (expandedFov - assembledFov) * amount;
+        camera.updateProjectionMatrix();
+      }
+      camera.lookAt(0, 0, 0);
+      assembly.current?.updateMatrixWorld(true);
+      invalidate();
+    };
+    if (reduced) {
+      state.amount = target;
+      render();
+      return;
     }
-    if (camera instanceof PerspectiveCamera) {
-      gsap.killTweensOf(camera);
-      animated.push(camera);
-      gsap.to(camera, {
-        fov: expanded ? (mobile ? 46 : 39) : mobile ? 40 : 30,
-        duration,
-        ease: "power3.inOut",
-        overwrite: true,
-        onUpdate: () => {
-          camera.updateProjectionMatrix();
-          invalidate();
-        },
-      });
-    }
-    camera.lookAt(0, 0, 0);
-    invalidate();
-    return () => animated.forEach((target) => gsap.killTweensOf(target));
+    render();
+    const tween = gsap.to(state, {
+      amount: target,
+      duration: 1.15,
+      ease: "power3.inOut",
+      onUpdate: render,
+      onComplete: render,
+    });
+    return () => {
+      tween.kill();
+    };
   }, [expanded, reduced, mobile, parts, camera, invalidate]);
   useLayoutEffect(() => {
     const animated: MeshStandardMaterial[] = [];
@@ -119,5 +132,9 @@ export function EngineModel({
       }),
     [model],
   );
-  return <primitive object={model} onPointerOver={onHover} />;
+  return (
+    <group ref={assembly}>
+      <primitive object={model} onPointerOver={onHover} />
+    </group>
+  );
 }

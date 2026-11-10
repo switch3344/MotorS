@@ -4,6 +4,8 @@ import { gsap } from "../../lib/scroll";
 import {
   angleForRpm,
   CENTER_X,
+  MAX_RPM,
+  RADIUS,
   instrumentArc,
   needleShape,
 } from "./Instrument";
@@ -81,9 +83,71 @@ export function useInstrumentMotion(
       .to(state, { rpm: 6500, duration: 2.8, ease: "power1.inOut" })
       .to(state, { rpm: 900, duration: 3, ease: "power2.inOut" })
       .to(state, { rpm: 900, duration: 1 });
+    let pointerActive = false;
+    let parkedRpm = state.rpm;
+    let returning: gsap.core.Tween | null = null;
+    const follow = gsap.quickTo(state, "rpm", {
+      duration: 0.32,
+      ease: "power3.out",
+      onUpdate: render,
+    });
     const sync = () => {
-      if (document.hidden || !visible) drive.pause();
-      else drive.resume();
+      if (document.hidden || !visible) {
+        drive.pause();
+        follow.tween.pause();
+        returning?.pause();
+      } else if (pointerActive) {
+        drive.pause();
+        follow.tween.resume();
+      } else if (returning) {
+        drive.pause();
+        returning.resume();
+      } else drive.resume();
+    };
+    const steer = (event: PointerEvent) => {
+      if (event.pointerType === "touch" || document.hidden || !visible) return;
+      const rect = hero.current!.getBoundingClientRect();
+      if (!rect.width) return;
+      const first = !pointerActive;
+      if (first && !returning) parkedRpm = state.rpm;
+      pointerActive = true;
+      returning?.kill();
+      returning = null;
+      drive.pause();
+      // Invert the same circular geometry used by the needle. Its tip follows
+      // the cursor's horizontal position, clamped to the scale's end marks.
+      const start = angleForRpm(0),
+        end = angleForRpm(MAX_RPM);
+      const radius = RADIUS * geometry.current.scale - 3;
+      const offset =
+        event.clientX - rect.left - CENTER_X * geometry.current.scale;
+      const sine = Math.min(
+        Math.sin((end * Math.PI) / 180),
+        Math.max(Math.sin((start * Math.PI) / 180), offset / radius),
+      );
+      const angle = (Math.asin(sine) * 180) / Math.PI;
+      const rpm = Math.min(
+        MAX_RPM,
+        Math.max(0, ((angle - start) / (end - start)) * MAX_RPM),
+      );
+      follow(rpm, first ? state.rpm : undefined);
+    };
+    const release = () => {
+      if (!pointerActive) return;
+      pointerActive = false;
+      follow.tween.pause();
+      returning?.kill();
+      returning = gsap.to(state, {
+        rpm: parkedRpm,
+        duration: 0.55,
+        ease: "power2.inOut",
+        onUpdate: render,
+        onComplete: () => {
+          returning = null;
+          sync();
+        },
+      });
+      sync();
     };
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -93,11 +157,20 @@ export function useInstrumentMotion(
       { threshold: [0, 0.1] },
     );
     observer.observe(hero.current);
+    const section = hero.current;
+    section.addEventListener("pointerenter", steer, { passive: true });
+    section.addEventListener("pointermove", steer, { passive: true });
+    section.addEventListener("pointerleave", release);
     document.addEventListener("visibilitychange", sync);
     return () => {
       observer.disconnect();
       document.removeEventListener("visibilitychange", sync);
+      section.removeEventListener("pointerenter", steer);
+      section.removeEventListener("pointermove", steer);
+      section.removeEventListener("pointerleave", release);
       drive.kill();
+      follow.tween.kill();
+      returning?.kill();
       draw.current = () => {};
     };
   }, [hero, gauge, geometry, draw, reduced]);

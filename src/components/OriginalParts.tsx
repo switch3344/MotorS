@@ -33,9 +33,7 @@ export function OriginalParts() {
         <article>
           <span>03</span>
           <h3>Детали и работа</h3>
-          <p>
-            Гарантия на детали и на работу: {"{{подтвердить формулировку}}"}.
-          </p>
+          <p>На капитальный ремонт — {siteConfig.warranty}.</p>
         </article>
       </div>
       <div className="warranty-band" id="warranty">
@@ -45,11 +43,7 @@ export function OriginalParts() {
             <TechHeadingRun text={distance} />
           </em>
         </h2>
-        <p>
-          На капитальный ремонт двигателя.
-          <br />
-          Условия гарантии: {"{{подтвердить}}"}.
-        </p>
+        <p>На капитальный ремонт двигателя.</p>
       </div>
     </section>
   );

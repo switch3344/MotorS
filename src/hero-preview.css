@@ -6,8 +6,9 @@ html {
   scroll-padding-top: 100px;
 }
 body {
+  --page-gutter: 10px;
   background: #000;
-  padding: 10px;
+  padding: var(--page-gutter);
 }
 .hero-card {
   position: relative;
@@ -16,7 +17,7 @@ body {
   min-height: 640px;
   max-height: 100svh;
   overflow: hidden;
-  border-radius: 44px;
+  border-radius: 44px 44px 0 0;
   background: #101113;
 }
 .header-notch {
@@ -108,24 +109,16 @@ body {
   align-items: center;
   gap: 18px;
 }
-.notch-telegram {
-  font-size: 16px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-}
-.notch-telegram:hover {
-  color: var(--accent-light);
-}
 .split-button {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  padding: 6px 6px 6px 25px;
+  padding: 0 0 0 25px;
+  overflow: hidden;
   min-height: 62px;
-  color: #101012;
-  background: #fafafa;
-  border: 1px solid #fff;
+  color: #f5f5f5;
+  background: #202328;
+  border: 1px solid #ffffff24;
   border-radius: 999px;
   font-size: 18px;
   font-weight: 500;
@@ -133,15 +126,17 @@ body {
   white-space: nowrap;
   transition:
     transform 0.25s,
-    box-shadow 0.25s;
+    box-shadow 0.25s,
+    background 0.2s,
+    border-color 0.2s;
 }
 .split-button-arrow {
   display: inline-grid;
   place-items: center;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px 0 0 15px;
   background: #d52c40;
 }
 .split-button-arrow svg {
@@ -151,6 +146,8 @@ body {
   transition: transform 0.25s;
 }
 .split-button:hover {
+  background: #2b2f35;
+  border-color: #ffffff40;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px #0003;
 }
@@ -159,14 +156,14 @@ body {
 }
 .split-button-small {
   min-height: 44px;
-  padding: 4px 4px 4px 15px;
+  padding: 0 0 0 15px;
   gap: 10px;
   font-size: 14px;
 }
 .split-button-small .split-button-arrow {
-  width: 34px;
-  height: 34px;
-  border-radius: 11px;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px 0 0 11px;
 }
 .split-button-small svg {
   width: 21px;
@@ -296,8 +293,8 @@ body {
     min-height: 54px;
   }
   .circular-copy > .split-button .split-button-arrow {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
   }
 }
 @media (max-width: 999px) {
@@ -305,8 +302,7 @@ body {
     width: calc(100% - 84px);
     max-width: 880px;
   }
-  .notch-links,
-  .notch-telegram {
+  .notch-links {
     display: none;
   }
   .notch-menu-toggle {
@@ -322,12 +318,12 @@ body {
 }
 @media (max-width: 699px) {
   body {
-    padding: 8px;
+    --page-gutter: 8px;
   }
   .hero-card {
     height: calc(100svh - 16px);
     min-height: 660px;
-    border-radius: 28px;
+    border-radius: 28px 28px 0 0;
   }
   .header-notch {
     top: 8px;
@@ -382,11 +378,11 @@ body {
     min-height: 40px;
     font-size: 13px;
     gap: 6px;
-    padding: 3px 3px 3px 12px;
+    padding: 0 0 0 12px;
   }
   .split-button-small .split-button-arrow {
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
   }
   .split-button-small svg {
     width: 19px;
@@ -422,8 +418,8 @@ body {
     gap: 14px;
   }
   .circular-copy > .split-button .split-button-arrow {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
   }
   .header-detached {
     top: 8px;

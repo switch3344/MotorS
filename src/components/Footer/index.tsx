@@ -64,9 +64,7 @@ export function Footer() {
             {siteConfig.address}
             <ArrowUpRight size={16} />
           </a>
-          <p className="footer-phone">
-            {siteConfig.phone} <span>{"{{подтвердить}}"}</span>
-          </p>
+          <p className="footer-phone">{siteConfig.phone}</p>
           <div className="footer-legal">
             <p>© 2026 MotorServiceKRD. Все права защищены.</p>
             <p>Краснодар · Ремонт двигателей</p>

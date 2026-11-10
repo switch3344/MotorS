@@ -1,5 +1,5 @@
-import { Suspense, useMemo } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect, useMemo, useRef } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera } from "three";
 import {
   ContactShadows,
@@ -15,7 +15,30 @@ export interface EngineViewProps {
   reduced: boolean;
   mobile: boolean;
   visible: boolean;
+  warming?: boolean;
+  onReady?: () => void;
   onHover: () => void;
+}
+function ReadySignal({ onReady }: { onReady?: () => void }) {
+  const { invalidate } = useThree();
+  const frames = useRef(0);
+  const sent = useRef(false);
+  const callback = useRef(onReady);
+  const raf = useRef(0);
+  callback.current = onReady;
+  useEffect(() => () => cancelAnimationFrame(raf.current), []);
+  useFrame(() => {
+    if (sent.current) return;
+    frames.current++;
+    if (frames.current < 2) invalidate();
+    else {
+      sent.current = true;
+      // The first complete scene frame (materials, environment and shadows)
+      // has rendered. Keep its canvas mounted for instant scrolling to services.
+      raf.current = requestAnimationFrame(() => callback.current?.());
+    }
+  });
+  return null;
 }
 export default function CanvasScene(props: EngineViewProps) {
   const loading = useProgress();
@@ -31,7 +54,7 @@ export default function CanvasScene(props: EngineViewProps) {
         camera={camera}
         dpr={[props.mobile ? 1 : 1.25, props.mobile ? 1.5 : 2]}
         shadows={!props.mobile}
-        frameloop={props.visible ? "demand" : "never"}
+        frameloop={props.visible || props.warming ? "demand" : "never"}
         gl={{
           antialias: true,
           alpha: true,
@@ -104,6 +127,7 @@ export default function CanvasScene(props: EngineViewProps) {
             frames={Infinity}
             color="#000000"
           />
+          <ReadySignal onReady={props.onReady} />
         </Suspense>
       </Canvas>
       {loading.active && (

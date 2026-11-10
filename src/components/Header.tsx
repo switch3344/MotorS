@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Brand } from "./Brand";
 import { SplitButton } from "./SplitButton";
-import { siteConfig } from "../config/site.config";
 const links = [
   { label: "Услуги", href: "#services" },
   { label: "Работы", href: "#works" },
@@ -44,14 +43,6 @@ export function Header() {
           ))}
         </nav>
         <div className="notch-actions">
-          <a
-            className="notch-telegram"
-            href={siteConfig.telegram}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Telegram
-          </a>
           <SplitButton compact>Записаться</SplitButton>
           <button
             className="notch-menu-toggle"
@@ -76,14 +67,6 @@ export function Header() {
               {label}
             </a>
           ))}
-          <a
-            href={siteConfig.telegram}
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => setOpen(false)}
-          >
-            Записаться в Telegram <ArrowUpRight size={20} />
-          </a>
         </nav>
       )}
     </header>

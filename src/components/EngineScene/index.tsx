@@ -8,7 +8,7 @@ import { TechHeadingRun } from "../TechText/TechHeadingRun";
 const CanvasScene = lazy(() => import("./CanvasScene"));
 
 class SceneBoundary extends Component<
-  { children: ReactNode },
+  { children: ReactNode; onReady?: () => void },
   { error: boolean }
 > {
   state = { error: false };
@@ -21,6 +21,8 @@ class SceneBoundary extends Component<
         <img
           src={`${import.meta.env.BASE_URL}images/v12-poster.jpg`}
           alt="Детализированный V12 с красными крышками и металлическими коллекторами"
+          onLoad={this.props.onReady}
+          onError={this.props.onReady}
         />
         <p>Выберите услугу, чтобы узнать о ремонте.</p>
       </div>
@@ -30,9 +32,15 @@ class SceneBoundary extends Component<
   }
 }
 
-export function EngineScene() {
+export function EngineScene({
+  preloading = false,
+  onReady,
+}: {
+  preloading?: boolean;
+  onReady?: () => void;
+}) {
   const section = useRef<HTMLElement>(null);
-  const [near, setNear] = useState(false);
+  const [near, setNear] = useState(preloading);
   const [visible, setVisible] = useState(false);
   const [opened, setOpened] = useState(false);
   const [active, setActive] = useState<number | null>(0);
@@ -95,7 +103,7 @@ export function EngineScene() {
       <div className="v12-stage">
         <div className="v12-engine-column">
           <div className="v12-engine-viewport" id="engine-model">
-            <SceneBoundary>
+            <SceneBoundary onReady={onReady}>
               <Suspense
                 fallback={<div className="v12-loader">Загружаем модель…</div>}
               >
@@ -108,6 +116,8 @@ export function EngineScene() {
                     reduced={reduced}
                     mobile={mobile}
                     visible={visible}
+                    warming={preloading}
+                    onReady={onReady}
                     onHover={reveal}
                   />
                 )}

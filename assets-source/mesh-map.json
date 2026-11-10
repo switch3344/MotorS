@@ -1,0 +1,3386 @@
+[
+  {
+    "sourceMesh": 0,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      37.594099044799805,
+      177.4108428955078,
+      139.05159759521484
+    ],
+    "vertices": 468
+  },
+  {
+    "sourceMesh": 1,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -19.84494972229004,
+      259.10799407958984,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 2,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      59.82914924621582,
+      221.98075103759766,
+      78.2491455078125
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 3,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -62.80959892272949,
+      288.8488006591797,
+      110.5407485961914
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 4,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      66.17814636230469,
+      255.10488891601562,
+      94.21624755859375
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 5,
+    "sourceName": "New_Game_Object_Clone_",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -61.78289794921875,
+      205.9906463623047,
+      122.45989608764648
+    ],
+    "vertices": 2454
+  },
+  {
+    "sourceMesh": 6,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -61.00824737548828,
+      284.43829345703125,
+      77.05719757080078
+    ],
+    "vertices": 300
+  },
+  {
+    "sourceMesh": 7,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      21.380148887634277,
+      187.4032974243164,
+      62.113447189331055
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 8,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      54.729448318481445,
+      259.262939453125,
+      9.30644965171814
+    ],
+    "vertices": 204
+  },
+  {
+    "sourceMesh": 9,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      59.93230056762695,
+      259.96874237060547,
+      157.220947265625
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 10,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -59.82914924621582,
+      221.98075103759766,
+      99.6720962524414
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 11,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      26.873648643493652,
+      199.21955108642578,
+      46.878849029541016
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 12,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      30.90114974975586,
+      192.87004852294922,
+      157.17679595947266
+    ],
+    "vertices": 384
+  },
+  {
+    "sourceMesh": 13,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      52.121999740600586,
+      224.93809509277344,
+      82.1370964050293
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 14,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      49.60154914855957,
+      219.68189239501953,
+      163.32079315185547
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 15,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -52.53624725341797,
+      214.25724029541016,
+      156.33189392089844
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 16,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      0,
+      210.0087432861328,
+      119.98944473266602
+    ],
+    "vertices": 7584
+  },
+  {
+    "sourceMesh": 17,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -28.12874984741211,
+      270.54840087890625,
+      93.81744766235352
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 18,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      34.76834964752197,
+      204.6889419555664,
+      132.2239990234375
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 19,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      24.05549907684326,
+      270.78309631347656,
+      138.30554962158203
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 20,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -59.82914924621582,
+      221.98075103759766,
+      145.81129455566406
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 21,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -9.13884973526001,
+      257.6373519897461,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 22,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -51.015947341918945,
+      267.0141906738281,
+      163.10594940185547
+    ],
+    "vertices": 540
+  },
+  {
+    "sourceMesh": 23,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      32.33009910583496,
+      224.19960021972656,
+      59.83474922180176
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 24,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      53.02364730834961,
+      262.96959686279297,
+      78.63169860839844
+    ],
+    "vertices": 432
+  },
+  {
+    "sourceMesh": 25,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -49.23544692993164,
+      285.2436981201172,
+      82.44079971313477
+    ],
+    "vertices": 768
+  },
+  {
+    "sourceMesh": 26,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -28.429299354553223,
+      209.4879913330078,
+      62.359548568725586
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 27,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      53.36634826660156,
+      272.5822448730469,
+      78.73904800415039
+    ],
+    "vertices": 444
+  },
+  {
+    "sourceMesh": 28,
+    "sourceName": "New_Game_Object",
+    "zone": "crankshaft",
+    "finish": "steel",
+    "center": [
+      -0.029249191284179688,
+      186.7408447265625,
+      176.10655212402344
+    ],
+    "vertices": 2868
+  },
+  {
+    "sourceMesh": 29,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -1.6065499112010002,
+      295.5262908935547,
+      68.7406005859375
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 30,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -19.35890007019043,
+      228.36629486083984,
+      67.73419952392578
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 31,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      22.04499912261963,
+      195.75784301757812,
+      56.85074806213379
+    ],
+    "vertices": 1566
+  },
+  {
+    "sourceMesh": 32,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      51.58224868774414,
+      224.46829223632812,
+      148.0032958984375
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 33,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -51.13874816894531,
+      263.36749267578125,
+      162.875
+    ],
+    "vertices": 768
+  },
+  {
+    "sourceMesh": 34,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      59.82914924621582,
+      221.98075103759766,
+      145.81129455566406
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 35,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      30.90114974975586,
+      192.87004852294922,
+      106.80870056152344
+    ],
+    "vertices": 384
+  },
+  {
+    "sourceMesh": 36,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -60.877798080444336,
+      259.6903839111328,
+      146.93639373779297
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 37,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      32.70599937438965,
+      205.83374786376953,
+      59.83474922180176
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 38,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      0.8151500225067139,
+      222.60999298095703,
+      44.64644813537598
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 39,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      1.880549430847168,
+      267.7368927001953,
+      121.47549819946289
+    ],
+    "vertices": 666
+  },
+  {
+    "sourceMesh": 40,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      0.0023500025272369385,
+      257.6373519897461,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 41,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      51.69635009765625,
+      222.3417510986328,
+      138.5925521850586
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 42,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -31.01069927215576,
+      246.01539611816406,
+      120.83914566040039
+    ],
+    "vertices": 66
+  },
+  {
+    "sourceMesh": 43,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      9.13884973526001,
+      257.6373519897461,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 44,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -75.45654678344727,
+      283.73065185546875,
+      53.057199478149414
+    ],
+    "vertices": 2196
+  },
+  {
+    "sourceMesh": 45,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      24.05549907684326,
+      270.55303955078125,
+      93.58224868774414
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 46,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -51.68815040588379,
+      222.2688980102539,
+      72.52249908447266
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 47,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      34.9471492767334,
+      255.14808654785156,
+      110.6973991394043
+    ],
+    "vertices": 3312
+  },
+  {
+    "sourceMesh": 48,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -34.876399993896484,
+      278.39768981933594,
+      97.80434799194336
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 49,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      59.82914924621582,
+      221.98075103759766,
+      122.34679794311523
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 50,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -11.594149589538574,
+      283.7179870605469,
+      45.36439895629883
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 51,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -63.06239700317383,
+      289.023193359375,
+      102.20574569702148
+    ],
+    "vertices": 138
+  },
+  {
+    "sourceMesh": 52,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -11.950699806213379,
+      259.3313903808594,
+      73.27644729614258
+    ],
+    "vertices": 420
+  },
+  {
+    "sourceMesh": 53,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -69.6440486907959,
+      241.5641860961914,
+      82.83804702758789
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 54,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -55.18229866027832,
+      227.03034210205078,
+      163.59634399414062
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 55,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -38.99724769592285,
+      199.40744018554688,
+      47.75319862365723
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 56,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      52.543949127197266,
+      214.32984161376953,
+      156.33189392089844
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 57,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -11.857699871063232,
+      283.4477996826172,
+      60.59939765930176
+    ],
+    "vertices": 360
+  },
+  {
+    "sourceMesh": 58,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      52.55864715576172,
+      225.21954345703125,
+      123.9166488647461
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 59,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      0.8315496444702148,
+      188.36034393310547,
+      52.57699775695801
+    ],
+    "vertices": 2304
+  },
+  {
+    "sourceMesh": 60,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      51.93924903869629,
+      214.93444061279297,
+      131.84634399414062
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 61,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      24.05549907684326,
+      271.04444885253906,
+      123.33224868774414
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 62,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      55.18229866027832,
+      227.03034210205078,
+      143.01719665527344
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 63,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "oil",
+    "center": [
+      37.51349925994873,
+      172.11964416503906,
+      159.9646453857422
+    ],
+    "vertices": 1254
+  },
+  {
+    "sourceMesh": 64,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.8323001861572266,
+      283.602294921875,
+      124.67184448242188
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 65,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -48.86154747009277,
+      240.99079132080078,
+      62.65780067443848
+    ],
+    "vertices": 5316
+  },
+  {
+    "sourceMesh": 66,
+    "sourceName": "New_Game_Object",
+    "zone": "crankshaft",
+    "finish": "steel",
+    "center": [
+      -0.21705055236816406,
+      186.06304168701172,
+      189.4273910522461
+    ],
+    "vertices": 4242
+  },
+  {
+    "sourceMesh": 67,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      69.6440486907959,
+      241.5641860961914,
+      82.83804702758789
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 68,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -12.230000495910645,
+      231.71714782714844,
+      46.99934959411621
+    ],
+    "vertices": 642
+  },
+  {
+    "sourceMesh": 69,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      46.41549873352051,
+      246.87899017333984,
+      119.07399368286133
+    ],
+    "vertices": 2880
+  },
+  {
+    "sourceMesh": 70,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -50.99539756774902,
+      272.26629638671875,
+      163.1104965209961
+    ],
+    "vertices": 720
+  },
+  {
+    "sourceMesh": 71,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      64.41544914245605,
+      255.35254669189453,
+      160.70834350585938
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 72,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      11.950699806213379,
+      259.3313903808594,
+      73.27644729614258
+    ],
+    "vertices": 420
+  },
+  {
+    "sourceMesh": 73,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -64.40774726867676,
+      255.27999877929688,
+      160.94454956054688
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 74,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "steel",
+    "center": [
+      -110.1673469543457,
+      230.30864715576172,
+      36.663299560546875
+    ],
+    "vertices": 540
+  },
+  {
+    "sourceMesh": 75,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -55.18229866027832,
+      227.03034210205078,
+      143.01719665527344
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 76,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "steel",
+    "center": [
+      -67.09774971008301,
+      189.70994567871094,
+      158.0667953491211
+    ],
+    "vertices": 13608
+  },
+  {
+    "sourceMesh": 77,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      0.8145999312400818,
+      231.67469024658203,
+      41.968048095703125
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 78,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      8.616649627685547,
+      253.0376434326172,
+      45.666648864746094
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 79,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -0.0036499500274658203,
+      243.35699462890625,
+      108.67964935302734
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 80,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -27.644399642944336,
+      270.78309631347656,
+      138.30554962158203
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 81,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -61.453697204589844,
+      259.70030212402344,
+      110.48544692993164
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 82,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -46.61239814758301,
+      285.0413055419922,
+      91.31559753417969
+    ],
+    "vertices": 2700
+  },
+  {
+    "sourceMesh": 83,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -11.53819990158081,
+      236.54259490966797,
+      67.73419952392578
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 84,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      0.831550121307373,
+      188.3605499267578,
+      49.72264862060547
+    ],
+    "vertices": 1056
+  },
+  {
+    "sourceMesh": 85,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -59.93230056762695,
+      259.96874237060547,
+      157.220947265625
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 86,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -62.75904846191406,
+      288.7829895019531,
+      112.72520065307617
+    ],
+    "vertices": 216
+  },
+  {
+    "sourceMesh": 87,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -69.6440486907959,
+      241.18848419189453,
+      150.63574981689453
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 88,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "vertices": 0
+  },
+  {
+    "sourceMesh": 89,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -48.03639793395996,
+      285.4610900878906,
+      79.40804672241211
+    ],
+    "vertices": 912
+  },
+  {
+    "sourceMesh": 90,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -52.12424850463867,
+      214.9554901123047,
+      106.50689697265625
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 91,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -51.73594856262207,
+      284.6090850830078,
+      91.58449935913086
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 92,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "vertices": 0
+  },
+  {
+    "sourceMesh": 93,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -101.96784591674805,
+      268.0516357421875,
+      24.706198692321777
+    ],
+    "vertices": 300
+  },
+  {
+    "sourceMesh": 94,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "rubber",
+    "center": [
+      0.8315496444702148,
+      188.3603973388672,
+      43.32419776916504
+    ],
+    "vertices": 1152
+  },
+  {
+    "sourceMesh": 95,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -19.262248992919922,
+      281.82798767089844,
+      143.91999435424805
+    ],
+    "vertices": 10677
+  },
+  {
+    "sourceMesh": 96,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      69.6440486907959,
+      241.36639404296875,
+      126.81709671020508
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 97,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -63.1404972076416,
+      285.3634948730469,
+      92.68769836425781
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 98,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      55.18229866027832,
+      227.03034210205078,
+      163.59634399414062
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 99,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      55.21449851989746,
+      227.337646484375,
+      119.62634658813477
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 100,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -54.84204864501953,
+      262.8974914550781,
+      160.94454956054688
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 101,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -2.506999969482422,
+      219.14104461669922,
+      4.402350187301636
+    ],
+    "vertices": 1560
+  },
+  {
+    "sourceMesh": 102,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -2.109050750732422,
+      267.6260986328125,
+      115.52864456176758
+    ],
+    "vertices": 504
+  },
+  {
+    "sourceMesh": 103,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -56.6047477722168,
+      262.64990234375,
+      93.89364624023438
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 104,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -51.68864822387695,
+      222.26919555664062,
+      115.27284622192383
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 105,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -42.656399726867676,
+      197.7096939086914,
+      60.69375038146973
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 106,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -51.68864822387695,
+      222.26919555664062,
+      162.4075469970703
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 107,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -8.663199663162231,
+      223.43299865722656,
+      41.96799850463867
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 108,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -0.009749412536621094,
+      209.1334457397461,
+      65.2969970703125
+    ],
+    "vertices": 678
+  },
+  {
+    "sourceMesh": 109,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -51.30864906311035,
+      268.9389877319336,
+      137.38844680786133
+    ],
+    "vertices": 996
+  },
+  {
+    "sourceMesh": 110,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -55.21449851989746,
+      227.337646484375,
+      119.62634658813477
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 111,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -2.5055999755859375,
+      220.02754974365234,
+      4.139099657535553
+    ],
+    "vertices": 4086
+  },
+  {
+    "sourceMesh": 112,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      25.191798210144043,
+      204.6889419555664,
+      132.2239990234375
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 113,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      61.453697204589844,
+      259.70030212402344,
+      110.48544692993164
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 114,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -69.6440486907959,
+      241.5387954711914,
+      104.23594665527344
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 115,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -60.23589897155762,
+      284.01609802246094,
+      83.5594482421875
+    ],
+    "vertices": 300
+  },
+  {
+    "sourceMesh": 116,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -52.54874801635742,
+      209.96094512939453,
+      60.69314765930176
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 117,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      25.191798210144043,
+      204.6889419555664,
+      87.36520004272461
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 118,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -51.931549072265625,
+      214.8618392944336,
+      131.84634399414062
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 119,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      34.76834964752197,
+      204.68899536132812,
+      155.66144561767578
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 120,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      42.53609848022461,
+      181.0731430053711,
+      147.84929656982422
+    ],
+    "vertices": 468
+  },
+  {
+    "sourceMesh": 121,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.7228994369506836,
+      283.39259338378906,
+      97.23474884033203
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 122,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      13.178449630737305,
+      195.92794036865234,
+      67.73419952392578
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 123,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -50.68924903869629,
+      276.43190002441406,
+      163.2386932373047
+    ],
+    "vertices": 540
+  },
+  {
+    "sourceMesh": 124,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -57.95209884643555,
+      278.3695831298828,
+      99.38584518432617
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 125,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      61.208099365234375,
+      259.50244140625,
+      80.86029815673828
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 126,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      51.69635009765625,
+      222.3417510986328,
+      115.27284622192383
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 127,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      55.296749114990234,
+      262.9521942138672,
+      137.9143524169922
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 128,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      59.82914924621582,
+      221.98075103759766,
+      99.6720962524414
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 129,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      56.612449645996094,
+      262.7223815917969,
+      115.09754943847656
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 130,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.6945505142211914,
+      283.5179443359375,
+      90.14744567871094
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 131,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -51.68864822387695,
+      222.26919555664062,
+      92.45854949951172
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 132,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -34.876298904418945,
+      291.6033935546875,
+      98.03170013427734
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 133,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      52.37834930419922,
+      225.43799591064453,
+      100.68109512329102
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 134,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -56.66689872741699,
+      264.78228759765625,
+      134.85619354248047
+    ],
+    "vertices": 588
+  },
+  {
+    "sourceMesh": 135,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      56.60989761352539,
+      264.74749755859375,
+      112.26289749145508
+    ],
+    "vertices": 588
+  },
+  {
+    "sourceMesh": 136,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -28.075349807739258,
+      270.7843933105469,
+      80.45684814453125
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 137,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      54.849748611450195,
+      262.9700469970703,
+      160.70834350585938
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 138,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      24.97684955596924,
+      230.7108917236328,
+      45.77554893493652
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 139,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.666550636291504,
+      283.6427001953125,
+      115.98839950561523
+    ],
+    "vertices": 3732
+  },
+  {
+    "sourceMesh": 140,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -61.20039939880371,
+      259.4299011230469,
+      80.86029815673828
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 141,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -66.17044830322266,
+      255.440185546875,
+      93.74884796142578
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 142,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.9653501510620117,
+      283.57530212402344,
+      158.20464324951172
+    ],
+    "vertices": 558
+  },
+  {
+    "sourceMesh": 143,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      25.191798210144043,
+      204.68899536132812,
+      155.66144561767578
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 144,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "vertices": 0
+  },
+  {
+    "sourceMesh": 145,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      18.13659954071045,
+      293.98529052734375,
+      68.07394790649414
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 146,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      0.831550121307373,
+      188.36024475097656,
+      46.698049545288086
+    ],
+    "vertices": 384
+  },
+  {
+    "sourceMesh": 147,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      66.17814636230469,
+      255.10488891601562,
+      115.09754943847656
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 148,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "oil",
+    "center": [
+      -23.826849937438965,
+      167.59144592285156,
+      153.14678955078125
+    ],
+    "vertices": 648
+  },
+  {
+    "sourceMesh": 149,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -59.82914924621582,
+      221.98075103759766,
+      78.2491455078125
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 150,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      28.6410493850708,
+      163.93419647216797,
+      168.6712417602539
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 151,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      26.911049842834473,
+      199.27539825439453,
+      49.55799865722656
+    ],
+    "vertices": 666
+  },
+  {
+    "sourceMesh": 152,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -46.47229766845703,
+      284.96080017089844,
+      102.14764785766602
+    ],
+    "vertices": 204
+  },
+  {
+    "sourceMesh": 153,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.628000259399414,
+      283.7286376953125,
+      73.3953971862793
+    ],
+    "vertices": 774
+  },
+  {
+    "sourceMesh": 154,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "rubber",
+    "center": [
+      -12.971949577331543,
+      231.71724700927734,
+      47.09174919128418
+    ],
+    "vertices": 5322
+  },
+  {
+    "sourceMesh": 155,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      16.366999626159668,
+      193.21199798583984,
+      67.12149810791016
+    ],
+    "vertices": 312
+  },
+  {
+    "sourceMesh": 156,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -34.507497787475586,
+      267.51219177246094,
+      121.49584579467773
+    ],
+    "vertices": 168
+  },
+  {
+    "sourceMesh": 157,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -16.902649879455566,
+      279.2120056152344,
+      57.36854934692383
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 158,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      55.54699897766113,
+      227.20299530029297,
+      96.96445083618164
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 159,
+    "sourceName": "New_Game_Object_Clone__Clone_",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      62.748199462890625,
+      203.84188842773438,
+      139.22444534301758
+    ],
+    "vertices": 2454
+  },
+  {
+    "sourceMesh": 160,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      14.478899478912354,
+      228.36629486083984,
+      67.73419952392578
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 161,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -60.44549751281738,
+      285.06419372558594,
+      105.25754928588867
+    ],
+    "vertices": 552
+  },
+  {
+    "sourceMesh": 162,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      51.69635009765625,
+      222.3417510986328,
+      162.4075469970703
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 163,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -69.6440486907959,
+      241.36639404296875,
+      126.81709671020508
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 164,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -1.61669921875,
+      283.7764892578125,
+      66.15144920349121
+    ],
+    "vertices": 1908
+  },
+  {
+    "sourceMesh": 165,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      61.208099365234375,
+      259.50244140625,
+      101.05079650878906
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 166,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      30.90114974975586,
+      192.87004852294922,
+      81.30449676513672
+    ],
+    "vertices": 384
+  },
+  {
+    "sourceMesh": 167,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      26.786898612976074,
+      248.23728942871094,
+      119.71599960327148
+    ],
+    "vertices": 768
+  },
+  {
+    "sourceMesh": 168,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      69.6440486907959,
+      241.18848419189453,
+      150.63574981689453
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 169,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      11.352649688720703,
+      192.16849517822266,
+      62.113447189331055
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 170,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -6.82069993019104,
+      287.7838439941406,
+      57.47064781188965
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 171,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "vertices": 0
+  },
+  {
+    "sourceMesh": 172,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -66.17044830322266,
+      255.03240203857422,
+      114.36605072021484
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 173,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      34.76834964752197,
+      204.6889419555664,
+      110.04654693603516
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 174,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      49.46424865722656,
+      203.04629516601562,
+      30.71794891357422
+    ],
+    "vertices": 1728
+  },
+  {
+    "sourceMesh": 175,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      9.880399942398071,
+      222.60889434814453,
+      41.96799850463867
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 176,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      27.17894983291626,
+      196.60719299316406,
+      121.1745491027832
+    ],
+    "vertices": 120
+  },
+  {
+    "sourceMesh": 177,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -56.60989761352539,
+      264.74749755859375,
+      112.26289749145508
+    ],
+    "vertices": 588
+  },
+  {
+    "sourceMesh": 178,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -12.230000495910645,
+      231.71714782714844,
+      46.99934959411621
+    ],
+    "vertices": 642
+  },
+  {
+    "sourceMesh": 179,
+    "sourceName": "New_Game_Object_Clone_",
+    "zone": "block",
+    "finish": "steel",
+    "center": [
+      67.09774971008301,
+      189.70994567871094,
+      158.0667953491211
+    ],
+    "vertices": 13608
+  },
+  {
+    "sourceMesh": 180,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -104.59474563598633,
+      247.3574981689453,
+      37.265499114990234
+    ],
+    "vertices": 720
+  },
+  {
+    "sourceMesh": 181,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      60.885498046875,
+      259.7629852294922,
+      123.25039672851562
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 182,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      13.313899993896484,
+      227.47314453125,
+      42.918800830841064
+    ],
+    "vertices": 2064
+  },
+  {
+    "sourceMesh": 183,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      52.54774856567383,
+      259.8940887451172,
+      78.80859756469727
+    ],
+    "vertices": 264
+  },
+  {
+    "sourceMesh": 184,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      53.56964874267578,
+      282.7913360595703,
+      78.88714981079102
+    ],
+    "vertices": 444
+  },
+  {
+    "sourceMesh": 185,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      56.66689872741699,
+      264.78228759765625,
+      134.85619354248047
+    ],
+    "vertices": 588
+  },
+  {
+    "sourceMesh": 186,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -56.5679988861084,
+      264.523193359375,
+      158.52140045166016
+    ],
+    "vertices": 588
+  },
+  {
+    "sourceMesh": 187,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -48.805198669433594,
+      240.78899383544922,
+      62.26759910583496
+    ],
+    "vertices": 720
+  },
+  {
+    "sourceMesh": 188,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.8948497772216797,
+      283.53614807128906,
+      140.34329986572266
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 189,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -0.0036499500274658203,
+      243.35709381103516,
+      136.41929626464844
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 190,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -55.54699897766113,
+      227.20299530029297,
+      96.96445083618164
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 191,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      60.885498046875,
+      259.7629852294922,
+      146.93639373779297
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 192,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      24.05549907684326,
+      271.444091796875,
+      152.65654754638672
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 193,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -46.40779972076416,
+      246.806396484375,
+      119.07399368286133
+    ],
+    "vertices": 2880
+  },
+  {
+    "sourceMesh": 194,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -30.877798080444336,
+      225.6179962158203,
+      62.35784721374512
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 195,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      51.69635009765625,
+      222.3417510986328,
+      92.45854949951172
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 196,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.8015003204345703,
+      283.57200622558594,
+      116.9620475769043
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 197,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "vertices": 0
+  },
+  {
+    "sourceMesh": 198,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      53.38159942626953,
+      277.6884460449219,
+      78.74539566040039
+    ],
+    "vertices": 720
+  },
+  {
+    "sourceMesh": 199,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -57.34189796447754,
+      291.5310974121094,
+      99.60979843139648
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 200,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -61.20039939880371,
+      259.4299011230469,
+      101.05079650878906
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 201,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      54.91739845275879,
+      259.26294708251953,
+      4.106299638748169
+    ],
+    "vertices": 762
+  },
+  {
+    "sourceMesh": 202,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      19.97439956665039,
+      198.8615951538086,
+      62.113447189331055
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 203,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -27.644399642944336,
+      271.444091796875,
+      152.65654754638672
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 204,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      45.20429801940918,
+      180.98794555664062,
+      154.4261474609375
+    ],
+    "vertices": 468
+  },
+  {
+    "sourceMesh": 205,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -63.80149841308594,
+      285.28004455566406,
+      91.03519821166992
+    ],
+    "vertices": 1401
+  },
+  {
+    "sourceMesh": 206,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      64.86244773864746,
+      255.33468627929688,
+      137.9143524169922
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 207,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      18.946849822998047,
+      228.36629486083984,
+      67.73419952392578
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 208,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      0.8145999312400818,
+      213.54309844970703,
+      41.96794891357422
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 209,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -60.381900787353516,
+      259.88929748535156,
+      133.3377456665039
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 210,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      52.131948471069336,
+      215.02804565429688,
+      106.50689697265625
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 211,
+    "sourceName": "New_Game_Object_Clone_",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -62.748199462890625,
+      203.84188842773438,
+      139.22444534301758
+    ],
+    "vertices": 2454
+  },
+  {
+    "sourceMesh": 212,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -55.28904914855957,
+      262.87969970703125,
+      137.07364654541016
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 213,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      49.60154914855957,
+      219.68189239501953,
+      163.32079315185547
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 214,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -11.850899696350098,
+      283.47410583496094,
+      53.62195014953613
+    ],
+    "vertices": 1122
+  },
+  {
+    "sourceMesh": 215,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.8639507293701172,
+      283.6396026611328,
+      132.60114288330078
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 216,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -0.004149913787841797,
+      243.75949096679688,
+      120.98619842529297
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 217,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      45.979047775268555,
+      163.93419647216797,
+      168.6712417602539
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 218,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      31.01069927215576,
+      246.01539611816406,
+      120.83914566040039
+    ],
+    "vertices": 66
+  },
+  {
+    "sourceMesh": 219,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -14.533849716186523,
+      258.1224899291992,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 220,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "oil",
+    "center": [
+      37.49959945678711,
+      175.63085174560547,
+      168.62069702148438
+    ],
+    "vertices": 228
+  },
+  {
+    "sourceMesh": 221,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -60.863447189331055,
+      188.3043975830078,
+      13.25814962387085
+    ],
+    "vertices": 420
+  },
+  {
+    "sourceMesh": 222,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      17.764750480651855,
+      239.10354614257812,
+      30.17869997024536
+    ],
+    "vertices": 2208
+  },
+  {
+    "sourceMesh": 223,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -103.59284591674805,
+      263.36219024658203,
+      37.40204906463623
+    ],
+    "vertices": 912
+  },
+  {
+    "sourceMesh": 224,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      52.236000061035156,
+      215.17964935302734,
+      81.17424774169922
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 225,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      47.48649978637695,
+      180.84274291992188,
+      147.84929656982422
+    ],
+    "vertices": 468
+  },
+  {
+    "sourceMesh": 226,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -2.109050750732422,
+      259.2943878173828,
+      115.99985122680664
+    ],
+    "vertices": 342
+  },
+  {
+    "sourceMesh": 227,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -39.53389930725098,
+      228.58804321289062,
+      119.47904586791992
+    ],
+    "vertices": 3480
+  },
+  {
+    "sourceMesh": 228,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -50.007747650146484,
+      285.6661071777344,
+      75.93840026855469
+    ],
+    "vertices": 768
+  },
+  {
+    "sourceMesh": 229,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      56.5679988861084,
+      264.523193359375,
+      158.52140045166016
+    ],
+    "vertices": 588
+  },
+  {
+    "sourceMesh": 230,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -61.453697204589844,
+      259.70030212402344,
+      89.66504669189453
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 231,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      0.001300811767578125,
+      209.6031494140625,
+      169.36214447021484
+    ],
+    "vertices": 384
+  },
+  {
+    "sourceMesh": 232,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -60.877798080444336,
+      259.6903839111328,
+      123.25039672851562
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 233,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -51.68864822387695,
+      222.26919555664062,
+      138.5925521850586
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 234,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      69.6440486907959,
+      241.5387954711914,
+      104.23594665527344
+    ],
+    "vertices": 750
+  },
+  {
+    "sourceMesh": 235,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -4.9479498863220215,
+      257.6373519897461,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 236,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -55.59419822692871,
+      227.6525421142578,
+      76.56324768066406
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 237,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      0.5929501056671143,
+      188.21604919433594,
+      49.35644721984863
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 238,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -64.85474967956543,
+      255.26219940185547,
+      137.07364654541016
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 239,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -0.004199981689453125,
+      243.37479400634766,
+      121.4234504699707
+    ],
+    "vertices": 210
+  },
+  {
+    "sourceMesh": 240,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "bolts",
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "vertices": 0
+  },
+  {
+    "sourceMesh": 241,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -46.463897705078125,
+      284.9979553222656,
+      100.04399490356445
+    ],
+    "vertices": 408
+  },
+  {
+    "sourceMesh": 242,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.9256000518798828,
+      283.6662902832031,
+      148.05484008789062
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 243,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -16.658599853515625,
+      287.7829895019531,
+      57.514949798583984
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 244,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -21.348149299621582,
+      293.9818420410156,
+      68.25194931030273
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 245,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -25.33679962158203,
+      247.37679290771484,
+      79.73444747924805
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 246,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      55.59419822692871,
+      227.6525421142578,
+      76.56324768066406
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 247,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      60.381900787353516,
+      259.88929748535156,
+      133.3377456665039
+    ],
+    "vertices": 1404
+  },
+  {
+    "sourceMesh": 248,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -45.37904930114746,
+      221.37109375,
+      61.63129806518555
+    ],
+    "vertices": 924
+  },
+  {
+    "sourceMesh": 249,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      19.84494972229004,
+      259.10799407958984,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 250,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -102.85749816894531,
+      267.7667999267578,
+      35.509849548339844
+    ],
+    "vertices": 768
+  },
+  {
+    "sourceMesh": 251,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -7.796750068664551,
+      278.3811492919922,
+      57.3130989074707
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 252,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -55.81229782104492,
+      258.3444366455078,
+      131.56184768676758
+    ],
+    "vertices": 1578
+  },
+  {
+    "sourceMesh": 253,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      56.612449645996094,
+      262.7223815917969,
+      94.21624755859375
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 254,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      -104.21909713745117,
+      263.06434631347656,
+      37.29584789276123
+    ],
+    "vertices": 540
+  },
+  {
+    "sourceMesh": 255,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "timing",
+    "center": [
+      34.67675018310547,
+      214.56744384765625,
+      47.16829872131348
+    ],
+    "vertices": 1308
+  },
+  {
+    "sourceMesh": 256,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -0.0036499500274658203,
+      243.35714721679688,
+      85.76494598388672
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 257,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      14.533849716186523,
+      258.1224899291992,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 258,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      38.75819969177246,
+      257.9210433959961,
+      124.7190933227539
+    ],
+    "vertices": 3342
+  },
+  {
+    "sourceMesh": 259,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -62.80959892272949,
+      288.8488006591797,
+      109.43594741821289
+    ],
+    "vertices": 72
+  },
+  {
+    "sourceMesh": 260,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      39.541598320007324,
+      228.66064453125,
+      119.47904586791992
+    ],
+    "vertices": 3480
+  },
+  {
+    "sourceMesh": 261,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      -59.82914924621582,
+      221.98075103759766,
+      122.34679794311523
+    ],
+    "vertices": 318
+  },
+  {
+    "sourceMesh": 262,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      51.69584846496582,
+      222.34149932861328,
+      72.52249908447266
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 263,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      24.108899116516113,
+      270.78904724121094,
+      80.22169494628906
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 264,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "bolts",
+    "center": [
+      -52.22829818725586,
+      215.10709381103516,
+      81.17424774169922
+    ],
+    "vertices": 144
+  },
+  {
+    "sourceMesh": 265,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      30.90114974975586,
+      192.87004852294922,
+      132.05369567871094
+    ],
+    "vertices": 384
+  },
+  {
+    "sourceMesh": 266,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -63.85439872741699,
+      281.68614196777344,
+      92.89419555664062
+    ],
+    "vertices": 138
+  },
+  {
+    "sourceMesh": 267,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "bolts",
+    "center": [
+      -27.644399642944336,
+      270.66233825683594,
+      123.32554626464844
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 268,
+    "sourceName": "New_Game_Object",
+    "zone": "oil",
+    "finish": "oil",
+    "center": [
+      0.1483001708984375,
+      163.8783950805664,
+      118.3283920288086
+    ],
+    "vertices": 2994
+  },
+  {
+    "sourceMesh": 269,
+    "sourceName": "New_Game_Object",
+    "zone": "intake",
+    "finish": "intake",
+    "center": [
+      -1.7702999114990234,
+      283.62164306640625,
+      109.15169906616211
+    ],
+    "vertices": 660
+  },
+  {
+    "sourceMesh": 270,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      11.004199504852295,
+      236.54259490966797,
+      67.73419952392578
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 271,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -26.786898612976074,
+      248.23728942871094,
+      119.71599960327148
+    ],
+    "vertices": 768
+  },
+  {
+    "sourceMesh": 272,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      55.81229782104492,
+      258.3444366455078,
+      131.56184768676758
+    ],
+    "vertices": 1578
+  },
+  {
+    "sourceMesh": 273,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -40.91189956665039,
+      259.82408905029297,
+      124.67514419555664
+    ],
+    "vertices": 3342
+  },
+  {
+    "sourceMesh": 274,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      4.9479498863220215,
+      257.6373519897461,
+      78.82379913330078
+    ],
+    "vertices": 48
+  },
+  {
+    "sourceMesh": 275,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -56.6047477722168,
+      262.64990234375,
+      114.36604690551758
+    ],
+    "vertices": 414
+  },
+  {
+    "sourceMesh": 276,
+    "sourceName": "New_Game_Object",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      25.191798210144043,
+      204.6889419555664,
+      110.04654693603516
+    ],
+    "vertices": 480
+  },
+  {
+    "sourceMesh": 277,
+    "sourceName": "New_Game_Object_Clone__Clone_",
+    "zone": "block",
+    "finish": "block",
+    "center": [
+      61.78289794921875,
+      205.9906463623047,
+      122.45989608764648
+    ],
+    "vertices": 2454
+  },
+  {
+    "sourceMesh": 278,
+    "sourceName": "New_Game_Object",
+    "zone": "timing",
+    "finish": "bolts",
+    "center": [
+      -48.86219787597656,
+      240.99029541015625,
+      47.201398849487305
+    ],
+    "vertices": 108
+  },
+  {
+    "sourceMesh": 279,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "bolts",
+    "center": [
+      -48.14449882507324,
+      294.20355224609375,
+      97.26934432983398
+    ],
+    "vertices": 1044
+  },
+  {
+    "sourceMesh": 280,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      -37.10084915161133,
+      256.3092956542969,
+      110.5893440246582
+    ],
+    "vertices": 3312
+  },
+  {
+    "sourceMesh": 281,
+    "sourceName": "New_Game_Object",
+    "zone": "heads",
+    "finish": "heads",
+    "center": [
+      61.453697204589844,
+      259.70030212402344,
+      89.66504669189453
+    ],
+    "vertices": 1404
+  }
+]

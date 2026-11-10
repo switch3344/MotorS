@@ -1,0 +1,12 @@
+{
+  "blender": "5.2.3 LTS",
+  "cylinders": 12,
+  "banks": 2,
+  "assemblies": 15,
+  "objects_before_join": 720,
+  "mesh_objects": 15,
+  "vertices": 147724,
+  "glb_bytes": 6621068,
+  "model": "/models/motorservice-v12.glb",
+  "note": "Original presentation model. 60 degree V12 layout; not a manufacturer-specific engineering drawing."
+}

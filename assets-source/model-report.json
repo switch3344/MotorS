@@ -1,0 +1,21 @@
+{
+  "originalBytes": 3845773,
+  "originalMeshes": 282,
+  "originalVertices": 231114,
+  "webMeshes": 14,
+  "glbBytes": 3981296,
+  "textures": 0,
+  "groups": [
+    "oil",
+    "block",
+    "heads",
+    "timing",
+    "intake",
+    "crankshaft"
+  ],
+  "license": "Not included in archive; needs confirmation",
+  "limitations": [
+    "No verified internal piston/crankshaft meshes",
+    "Groups assigned spatially; inspection required before production"
+  ]
+}

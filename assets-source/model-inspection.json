@@ -1,0 +1,5924 @@
+[
+  {
+    "name": "New_Game_Object",
+    "vertices": 468,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      37.59,
+      177.41,
+      139.05
+    ],
+    "size": [
+      2.09,
+      2.09,
+      9.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -19.84,
+      259.11,
+      78.82
+    ],
+    "size": [
+      0.87,
+      14.38,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      59.83,
+      221.98,
+      78.25
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -62.81,
+      288.85,
+      110.54
+    ],
+    "size": [
+      2.42,
+      2.51,
+      0.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      66.18,
+      255.1,
+      94.22
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object_Clone_",
+    "vertices": 2454,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -61.78,
+      205.99,
+      122.46
+    ],
+    "size": [
+      24.76,
+      55.83,
+      84.7
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 300,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -61.01,
+      284.44,
+      77.06
+    ],
+    "size": [
+      2.58,
+      8.43,
+      2.35
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      21.38,
+      187.4,
+      62.11
+    ],
+    "size": [
+      2.67,
+      2.77,
+      2.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 204,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      54.73,
+      259.26,
+      9.31
+    ],
+    "size": [
+      2.39,
+      2.35,
+      7.17
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      59.93,
+      259.97,
+      157.22
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -59.83,
+      221.98,
+      99.67
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      26.87,
+      199.22,
+      46.88
+    ],
+    "size": [
+      3.38,
+      2.99,
+      3.38
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 384,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      30.9,
+      192.87,
+      157.18
+    ],
+    "size": [
+      22.01,
+      27.89,
+      4.84
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.12,
+      224.94,
+      82.14
+    ],
+    "size": [
+      4.03,
+      3.62,
+      2.5
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      49.6,
+      219.68,
+      163.32
+    ],
+    "size": [
+      4.03,
+      4.69,
+      3.65
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -52.54,
+      214.26,
+      156.33
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 7584,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      210.01,
+      119.99
+    ],
+    "size": [
+      104.45,
+      68.31,
+      104.5
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -28.13,
+      270.55,
+      93.82
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      34.77,
+      204.69,
+      132.22
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      24.06,
+      270.78,
+      138.31
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -59.83,
+      221.98,
+      145.81
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -9.14,
+      257.64,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 540,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.02,
+      267.01,
+      163.11
+    ],
+    "size": [
+      14.39,
+      1.88,
+      14.32
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      32.33,
+      224.2,
+      59.83
+    ],
+    "size": [
+      2.99,
+      2.59,
+      2.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 432,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      53.02,
+      262.97,
+      78.63
+    ],
+    "size": [
+      10.48,
+      18.34,
+      9.85
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 768,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -49.24,
+      285.24,
+      82.44
+    ],
+    "size": [
+      25.09,
+      21.85,
+      5.22
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -28.43,
+      209.49,
+      62.36
+    ],
+    "size": [
+      2.99,
+      2.59,
+      2.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 444,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      53.37,
+      272.58,
+      78.74
+    ],
+    "size": [
+      14.38,
+      1.88,
+      14.36
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2868,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -0.03,
+      186.74,
+      176.11
+    ],
+    "size": [
+      78.91,
+      78.5,
+      4.52
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.61,
+      295.53,
+      68.74
+    ],
+    "size": [
+      2.94,
+      2.98,
+      2.72
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -19.36,
+      228.37,
+      67.73
+    ],
+    "size": [
+      2.14,
+      2.47,
+      2.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1566,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      22.04,
+      195.76,
+      56.85
+    ],
+    "size": [
+      18.32,
+      15.92,
+      13.07
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.58,
+      224.47,
+      148
+    ],
+    "size": [
+      4.03,
+      3.63,
+      2.5
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 768,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.14,
+      263.37,
+      162.88
+    ],
+    "size": [
+      7.96,
+      14.83,
+      8.02
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      59.83,
+      221.98,
+      145.81
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 384,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      30.9,
+      192.87,
+      106.81
+    ],
+    "size": [
+      22.01,
+      27.89,
+      4.84
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -60.88,
+      259.69,
+      146.94
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      32.71,
+      205.83,
+      59.83
+    ],
+    "size": [
+      2.99,
+      2.59,
+      2.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.82,
+      222.61,
+      44.65
+    ],
+    "size": [
+      5.29,
+      4.58,
+      5.29
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 666,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      1.88,
+      267.74,
+      121.48
+    ],
+    "size": [
+      65.26,
+      4.67,
+      91
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      257.64,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.7,
+      222.34,
+      138.59
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 66,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -31.01,
+      246.02,
+      120.84
+    ],
+    "size": [
+      21.01,
+      14.81,
+      93.34
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      9.14,
+      257.64,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2196,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -75.46,
+      283.73,
+      53.06
+    ],
+    "size": [
+      73.36,
+      31.25,
+      52.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      24.06,
+      270.55,
+      93.58
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.69,
+      222.27,
+      72.52
+    ],
+    "size": [
+      4.27,
+      4.12,
+      4.24
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3312,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      34.95,
+      255.15,
+      110.7
+    ],
+    "size": [
+      9.81,
+      22.5,
+      69.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -34.88,
+      278.4,
+      97.8
+    ],
+    "size": [
+      2.46,
+      2.49,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      59.83,
+      221.98,
+      122.35
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -11.59,
+      283.72,
+      45.36
+    ],
+    "size": [
+      4,
+      3.46,
+      4
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 138,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -63.06,
+      289.02,
+      102.21
+    ],
+    "size": [
+      1.39,
+      1.58,
+      19.58
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 420,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -11.95,
+      259.33,
+      73.28
+    ],
+    "size": [
+      3.27,
+      14.63,
+      3.22
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -69.64,
+      241.56,
+      82.84
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.18,
+      227.03,
+      163.6
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -39,
+      199.41,
+      47.75
+    ],
+    "size": [
+      5.03,
+      5.17,
+      6.02
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.54,
+      214.33,
+      156.33
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 360,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -11.86,
+      283.45,
+      60.6
+    ],
+    "size": [
+      17.21,
+      17.22,
+      1.4
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.56,
+      225.22,
+      123.92
+    ],
+    "size": [
+      4.03,
+      3.62,
+      2.48
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2304,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.83,
+      188.36,
+      52.58
+    ],
+    "size": [
+      35.56,
+      35.56,
+      4.96
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.94,
+      214.93,
+      131.85
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      24.06,
+      271.04,
+      123.33
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.18,
+      227.03,
+      143.02
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1254,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      37.51,
+      172.12,
+      159.96
+    ],
+    "size": [
+      17.74,
+      17.74,
+      43.68
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.83,
+      283.6,
+      124.67
+    ],
+    "size": [
+      47.47,
+      27.25,
+      2.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 5316,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -48.86,
+      240.99,
+      62.66
+    ],
+    "size": [
+      27.33,
+      27.18,
+      20.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 4242,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -0.22,
+      186.06,
+      189.43
+    ],
+    "size": [
+      70.85,
+      70.78,
+      28.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      69.64,
+      241.56,
+      82.84
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 642,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -12.23,
+      231.72,
+      47
+    ],
+    "size": [
+      87.74,
+      119.4,
+      7.46
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2880,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      46.42,
+      246.88,
+      119.07
+    ],
+    "size": [
+      43.3,
+      36.7,
+      104.15
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 720,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51,
+      272.27,
+      163.11
+    ],
+    "size": [
+      13.9,
+      9.66,
+      13.82
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      64.42,
+      255.35,
+      160.71
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 420,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      11.95,
+      259.33,
+      73.28
+    ],
+    "size": [
+      3.27,
+      14.63,
+      3.22
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -64.41,
+      255.28,
+      160.94
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 540,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -110.17,
+      230.31,
+      36.66
+    ],
+    "size": [
+      21.74,
+      6.87,
+      21.65
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.18,
+      227.03,
+      143.02
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 13608,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -67.1,
+      189.71,
+      158.07
+    ],
+    "size": [
+      39.04,
+      87.9,
+      65.08
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.81,
+      231.67,
+      41.97
+    ],
+    "size": [
+      3.98,
+      3.45,
+      3.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      8.62,
+      253.04,
+      45.67
+    ],
+    "size": [
+      4,
+      3.46,
+      3.72
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      243.36,
+      108.68
+    ],
+    "size": [
+      3.94,
+      4.54,
+      4.54
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -27.64,
+      270.78,
+      138.31
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -61.45,
+      259.7,
+      110.49
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2700,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -46.61,
+      285.04,
+      91.32
+    ],
+    "size": [
+      24.26,
+      19.9,
+      19.56
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -11.54,
+      236.54,
+      67.73
+    ],
+    "size": [
+      2.14,
+      2.47,
+      2.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1056,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.83,
+      188.36,
+      49.72
+    ],
+    "size": [
+      15.03,
+      15.04,
+      1.82
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -59.93,
+      259.97,
+      157.22
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 216,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -62.76,
+      288.78,
+      112.73
+    ],
+    "size": [
+      1.93,
+      1.99,
+      8.05
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -69.64,
+      241.19,
+      150.64
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 0,
+    "materials": [
+      {
+        "name": "mat0__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 912,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -48.04,
+      285.46,
+      79.41
+    ],
+    "size": [
+      22.52,
+      21.75,
+      15.18
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -52.12,
+      214.96,
+      106.51
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.74,
+      284.61,
+      91.58
+    ],
+    "size": [
+      25.35,
+      4.76,
+      5.15
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 0,
+    "materials": [
+      {
+        "name": "mat0__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 300,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -101.97,
+      268.05,
+      24.71
+    ],
+    "size": [
+      8.38,
+      3.31,
+      2.53
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1152,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.83,
+      188.36,
+      43.32
+    ],
+    "size": [
+      35.56,
+      35.56,
+      1.12
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 10677,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -19.26,
+      281.83,
+      143.92
+    ],
+    "size": [
+      82.22,
+      30.89,
+      83.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      69.64,
+      241.37,
+      126.82
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -63.14,
+      285.36,
+      92.69
+    ],
+    "size": [
+      2.65,
+      1.73,
+      1.63
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.18,
+      227.03,
+      163.6
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.21,
+      227.34,
+      119.63
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -54.84,
+      262.9,
+      160.94
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1560,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -2.51,
+      219.14,
+      4.4
+    ],
+    "size": [
+      131.9,
+      74.6,
+      16.89
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 504,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -2.11,
+      267.63,
+      115.53
+    ],
+    "size": [
+      60.56,
+      7.06,
+      88.22
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -56.6,
+      262.65,
+      93.89
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.69,
+      222.27,
+      115.27
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -42.66,
+      197.71,
+      60.69
+    ],
+    "size": [
+      32.06,
+      31.64,
+      16.33
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.69,
+      222.27,
+      162.41
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -8.66,
+      223.43,
+      41.97
+    ],
+    "size": [
+      3.99,
+      3.45,
+      3.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 678,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -0.01,
+      209.13,
+      65.3
+    ],
+    "size": [
+      44.16,
+      65.04,
+      6.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 996,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.31,
+      268.94,
+      137.39
+    ],
+    "size": [
+      24.44,
+      41.23,
+      59.87
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.21,
+      227.34,
+      119.63
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 4086,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -2.51,
+      220.03,
+      4.14
+    ],
+    "size": [
+      105.87,
+      71.22,
+      11.91
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      25.19,
+      204.69,
+      132.22
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      61.45,
+      259.7,
+      110.49
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -69.64,
+      241.54,
+      104.24
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 300,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -60.24,
+      284.02,
+      83.56
+    ],
+    "size": [
+      2.58,
+      8.43,
+      2.35
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -52.55,
+      209.96,
+      60.69
+    ],
+    "size": [
+      14.28,
+      14.57,
+      11.81
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      25.19,
+      204.69,
+      87.37
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.93,
+      214.86,
+      131.85
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      34.77,
+      204.69,
+      155.66
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 468,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      42.54,
+      181.07,
+      147.85
+    ],
+    "size": [
+      2.09,
+      2.09,
+      9.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.72,
+      283.39,
+      97.23
+    ],
+    "size": [
+      51.34,
+      27.4,
+      1.91
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      13.18,
+      195.93,
+      67.73
+    ],
+    "size": [
+      2.14,
+      2.47,
+      2.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 540,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -50.69,
+      276.43,
+      163.24
+    ],
+    "size": [
+      8.79,
+      1.48,
+      8.74
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -57.95,
+      278.37,
+      99.39
+    ],
+    "size": [
+      2.46,
+      2.49,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      61.21,
+      259.5,
+      80.86
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.7,
+      222.34,
+      115.27
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.3,
+      262.95,
+      137.91
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      59.83,
+      221.98,
+      99.67
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      56.61,
+      262.72,
+      115.1
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.69,
+      283.52,
+      90.15
+    ],
+    "size": [
+      51.34,
+      27.4,
+      1.91
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.69,
+      222.27,
+      92.46
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -34.88,
+      291.6,
+      98.03
+    ],
+    "size": [
+      2.46,
+      2.49,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.38,
+      225.44,
+      100.68
+    ],
+    "size": [
+      4.03,
+      3.62,
+      2.48
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 588,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -56.67,
+      264.78,
+      134.86
+    ],
+    "size": [
+      6.4,
+      2.74,
+      4.57
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 588,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      56.61,
+      264.75,
+      112.26
+    ],
+    "size": [
+      6.4,
+      2.74,
+      4.58
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -28.08,
+      270.78,
+      80.46
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      54.85,
+      262.97,
+      160.71
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      24.98,
+      230.71,
+      45.78
+    ],
+    "size": [
+      3.55,
+      3.08,
+      3.28
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3732,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.67,
+      283.64,
+      115.99
+    ],
+    "size": [
+      51.34,
+      29.09,
+      84.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -61.2,
+      259.43,
+      80.86
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -66.17,
+      255.44,
+      93.75
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 558,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.97,
+      283.58,
+      158.2
+    ],
+    "size": [
+      49.96,
+      28.96,
+      2.65
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      25.19,
+      204.69,
+      155.66
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 0,
+    "materials": [
+      {
+        "name": "mat0__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      18.14,
+      293.99,
+      68.07
+    ],
+    "size": [
+      2.94,
+      2.98,
+      2.72
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 384,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.83,
+      188.36,
+      46.7
+    ],
+    "size": [
+      23.69,
+      23.69,
+      7.87
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      66.18,
+      255.1,
+      115.1
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 648,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -23.83,
+      167.59,
+      153.15
+    ],
+    "size": [
+      16.79,
+      28.51,
+      16.54
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -59.83,
+      221.98,
+      78.25
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      28.64,
+      163.93,
+      168.67
+    ],
+    "size": [
+      4.59,
+      4.61,
+      4.13
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 666,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      26.91,
+      199.28,
+      49.56
+    ],
+    "size": [
+      10.08,
+      10.08,
+      12.32
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 204,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -46.47,
+      284.96,
+      102.15
+    ],
+    "size": [
+      27.78,
+      17.61,
+      4.72
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 774,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.63,
+      283.73,
+      73.4
+    ],
+    "size": [
+      49.96,
+      28.97,
+      2.01
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 5322,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -12.97,
+      231.72,
+      47.09
+    ],
+    "size": [
+      89.23,
+      119.4,
+      9.53
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 312,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      16.37,
+      193.21,
+      67.12
+    ],
+    "size": [
+      14.93,
+      16.34,
+      10.88
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 168,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -34.51,
+      267.51,
+      121.5
+    ],
+    "size": [
+      5.11,
+      4.6,
+      91.76
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -16.9,
+      279.21,
+      57.37
+    ],
+    "size": [
+      2.08,
+      2.11,
+      1.93
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.55,
+      227.2,
+      96.96
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object_Clone__Clone_",
+    "vertices": 2454,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      62.75,
+      203.84,
+      139.22
+    ],
+    "size": [
+      25.52,
+      60.21,
+      73.01
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      14.48,
+      228.37,
+      67.73
+    ],
+    "size": [
+      2.14,
+      2.47,
+      2.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 552,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -60.45,
+      285.06,
+      105.26
+    ],
+    "size": [
+      7.11,
+      15.74,
+      10.97
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.7,
+      222.34,
+      162.41
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -69.64,
+      241.37,
+      126.82
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1908,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.62,
+      283.78,
+      66.15
+    ],
+    "size": [
+      47.35,
+      27.5,
+      13.51
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      61.21,
+      259.5,
+      101.05
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 384,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      30.9,
+      192.87,
+      81.3
+    ],
+    "size": [
+      22.01,
+      27.89,
+      4.84
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 768,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      26.79,
+      248.24,
+      119.72
+    ],
+    "size": [
+      25.97,
+      27.4,
+      80.43
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      69.64,
+      241.19,
+      150.64
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      11.35,
+      192.17,
+      62.11
+    ],
+    "size": [
+      2.67,
+      2.77,
+      2.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -6.82,
+      287.78,
+      57.47
+    ],
+    "size": [
+      2.08,
+      2.11,
+      1.93
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 0,
+    "materials": [
+      {
+        "name": "mat0__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -66.17,
+      255.03,
+      114.37
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      34.77,
+      204.69,
+      110.05
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1728,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      49.46,
+      203.05,
+      30.72
+    ],
+    "size": [
+      19.58,
+      30.34,
+      40.87
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      9.88,
+      222.61,
+      41.97
+    ],
+    "size": [
+      3.99,
+      3.45,
+      3.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 120,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      27.18,
+      196.61,
+      121.17
+    ],
+    "size": [
+      36.55,
+      36.55,
+      98.41
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 588,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -56.61,
+      264.75,
+      112.26
+    ],
+    "size": [
+      6.4,
+      2.74,
+      4.58
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 642,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -12.23,
+      231.72,
+      47
+    ],
+    "size": [
+      87.74,
+      119.4,
+      7.46
+    ]
+  },
+  {
+    "name": "New_Game_Object_Clone_",
+    "vertices": 13608,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      67.1,
+      189.71,
+      158.07
+    ],
+    "size": [
+      39.04,
+      87.9,
+      65.08
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 720,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -104.59,
+      247.36,
+      37.27
+    ],
+    "size": [
+      34.52,
+      37.74,
+      34.24
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      60.89,
+      259.76,
+      123.25
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2064,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      13.31,
+      227.47,
+      42.92
+    ],
+    "size": [
+      93.98,
+      47.5,
+      64.49
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 264,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.55,
+      259.89,
+      78.81
+    ],
+    "size": [
+      11.17,
+      11.17,
+      10.09
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 444,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      53.57,
+      282.79,
+      78.89
+    ],
+    "size": [
+      8.69,
+      1.32,
+      8.69
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 588,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      56.67,
+      264.78,
+      134.86
+    ],
+    "size": [
+      6.4,
+      2.74,
+      4.57
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 588,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -56.57,
+      264.52,
+      158.52
+    ],
+    "size": [
+      6.4,
+      2.74,
+      4.57
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 720,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -48.81,
+      240.79,
+      62.27
+    ],
+    "size": [
+      28.39,
+      28.55,
+      9.59
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.89,
+      283.54,
+      140.34
+    ],
+    "size": [
+      47.47,
+      27.25,
+      2.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      243.36,
+      136.42
+    ],
+    "size": [
+      3.94,
+      4.54,
+      4.54
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.55,
+      227.2,
+      96.96
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      60.89,
+      259.76,
+      146.94
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      24.06,
+      271.44,
+      152.66
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2880,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -46.41,
+      246.81,
+      119.07
+    ],
+    "size": [
+      43.3,
+      36.7,
+      104.15
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -30.88,
+      225.62,
+      62.36
+    ],
+    "size": [
+      2.99,
+      2.59,
+      2.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.7,
+      222.34,
+      92.46
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.8,
+      283.57,
+      116.96
+    ],
+    "size": [
+      47.47,
+      27.25,
+      2.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 0,
+    "materials": [
+      {
+        "name": "mat0__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 720,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      53.38,
+      277.69,
+      78.75
+    ],
+    "size": [
+      13.87,
+      10.44,
+      13.86
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -57.34,
+      291.53,
+      99.61
+    ],
+    "size": [
+      2.46,
+      2.49,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -61.2,
+      259.43,
+      101.05
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 762,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      54.92,
+      259.26,
+      4.11
+    ],
+    "size": [
+      11.65,
+      14.39,
+      11.24
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      19.97,
+      198.86,
+      62.11
+    ],
+    "size": [
+      2.67,
+      2.77,
+      2.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -27.64,
+      271.44,
+      152.66
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 468,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      45.2,
+      180.99,
+      154.43
+    ],
+    "size": [
+      10.37,
+      10.37,
+      15.87
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1401,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -63.8,
+      285.28,
+      91.04
+    ],
+    "size": [
+      2.41,
+      9.92,
+      6.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      64.86,
+      255.33,
+      137.91
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      18.95,
+      228.37,
+      67.73
+    ],
+    "size": [
+      2.14,
+      2.47,
+      2.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.81,
+      213.54,
+      41.97
+    ],
+    "size": [
+      3.98,
+      3.45,
+      3.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -60.38,
+      259.89,
+      133.34
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.13,
+      215.03,
+      106.51
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object_Clone_",
+    "vertices": 2454,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -62.75,
+      203.84,
+      139.22
+    ],
+    "size": [
+      25.52,
+      60.21,
+      73.01
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.29,
+      262.88,
+      137.07
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      49.6,
+      219.68,
+      163.32
+    ],
+    "size": [
+      4.03,
+      4.69,
+      3.65
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1122,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -11.85,
+      283.47,
+      53.62
+    ],
+    "size": [
+      16.53,
+      16.55,
+      13.3
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.86,
+      283.64,
+      132.6
+    ],
+    "size": [
+      47.47,
+      27.25,
+      2.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      243.76,
+      120.99
+    ],
+    "size": [
+      30.73,
+      0.8,
+      78.63
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      45.98,
+      163.93,
+      168.67
+    ],
+    "size": [
+      4.59,
+      4.61,
+      4.13
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 66,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      31.01,
+      246.02,
+      120.84
+    ],
+    "size": [
+      21.01,
+      14.81,
+      93.34
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -14.53,
+      258.12,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 228,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      37.5,
+      175.63,
+      168.62
+    ],
+    "size": [
+      22.7,
+      24.33,
+      6.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 420,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -60.86,
+      188.3,
+      13.26
+    ],
+    "size": [
+      5.45,
+      5.37,
+      6.67
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2208,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      17.76,
+      239.1,
+      30.18
+    ],
+    "size": [
+      86.15,
+      22.99,
+      45.39
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 912,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -103.59,
+      263.36,
+      37.4
+    ],
+    "size": [
+      23.74,
+      23.74,
+      20.74
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      52.24,
+      215.18,
+      81.17
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 468,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      47.49,
+      180.84,
+      147.85
+    ],
+    "size": [
+      2.09,
+      2.09,
+      9.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 342,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -2.11,
+      259.29,
+      116
+    ],
+    "size": [
+      60.56,
+      17.49,
+      89.26
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -39.53,
+      228.59,
+      119.48
+    ],
+    "size": [
+      39.22,
+      45.9,
+      104.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 768,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -50.01,
+      285.67,
+      75.94
+    ],
+    "size": [
+      25.09,
+      21.85,
+      5.22
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 588,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      56.57,
+      264.52,
+      158.52
+    ],
+    "size": [
+      6.4,
+      2.74,
+      4.57
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -61.45,
+      259.7,
+      89.67
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 384,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      209.6,
+      169.36
+    ],
+    "size": [
+      94.72,
+      64.42,
+      8.59
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -60.88,
+      259.69,
+      123.25
+    ],
+    "size": [
+      3.58,
+      3.52,
+      2.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -51.69,
+      222.27,
+      138.59
+    ],
+    "size": [
+      4.49,
+      4.34,
+      3.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 750,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      69.64,
+      241.54,
+      104.24
+    ],
+    "size": [
+      15.26,
+      38.1,
+      12.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -4.95,
+      257.64,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.59,
+      227.65,
+      76.56
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.59,
+      188.22,
+      49.36
+    ],
+    "size": [
+      7.83,
+      6.78,
+      7.83
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -64.85,
+      255.26,
+      137.07
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.27
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 210,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      243.37,
+      121.42
+    ],
+    "size": [
+      38.77,
+      1.66,
+      98.88
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 0,
+    "materials": [
+      {
+        "name": "mat0__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "size": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 408,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -46.46,
+      285,
+      100.04
+    ],
+    "size": [
+      27.78,
+      17.61,
+      4.65
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.93,
+      283.67,
+      148.05
+    ],
+    "size": [
+      47.47,
+      27.25,
+      2.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -16.66,
+      287.78,
+      57.51
+    ],
+    "size": [
+      2.08,
+      2.11,
+      1.93
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -21.35,
+      293.98,
+      68.25
+    ],
+    "size": [
+      2.94,
+      2.98,
+      2.72
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -25.34,
+      247.38,
+      79.73
+    ],
+    "size": [
+      5.62,
+      5.8,
+      4.54
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.59,
+      227.65,
+      76.56
+    ],
+    "size": [
+      3.34,
+      4.9,
+      4.2
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      60.38,
+      259.89,
+      133.34
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 924,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -45.38,
+      221.37,
+      61.63
+    ],
+    "size": [
+      32.33,
+      32.56,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      19.84,
+      259.11,
+      78.82
+    ],
+    "size": [
+      0.87,
+      14.38,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 768,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -102.86,
+      267.77,
+      35.51
+    ],
+    "size": [
+      21.52,
+      6.95,
+      24.64
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -7.8,
+      278.38,
+      57.31
+    ],
+    "size": [
+      2.08,
+      2.11,
+      1.93
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1578,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -55.81,
+      258.34,
+      131.56
+    ],
+    "size": [
+      8,
+      15.29,
+      85.07
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      56.61,
+      262.72,
+      94.22
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 540,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -104.22,
+      263.06,
+      37.3
+    ],
+    "size": [
+      35.47,
+      10,
+      35.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1308,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      34.68,
+      214.57,
+      47.17
+    ],
+    "size": [
+      16.76,
+      10.5,
+      9.6
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0,
+      243.36,
+      85.76
+    ],
+    "size": [
+      3.94,
+      4.54,
+      4.54
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      14.53,
+      258.12,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3342,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      38.76,
+      257.92,
+      124.72
+    ],
+    "size": [
+      13.26,
+      12.79,
+      93.96
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 72,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -62.81,
+      288.85,
+      109.44
+    ],
+    "size": [
+      2.55,
+      2.22,
+      0.73
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      39.54,
+      228.66,
+      119.48
+    ],
+    "size": [
+      39.22,
+      45.9,
+      104.99
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 318,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -59.83,
+      221.98,
+      122.35
+    ],
+    "size": [
+      15.47,
+      9.07,
+      7.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      51.7,
+      222.34,
+      72.52
+    ],
+    "size": [
+      4.27,
+      4.12,
+      4.24
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      24.11,
+      270.79,
+      80.22
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 144,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -52.23,
+      215.11,
+      81.17
+    ],
+    "size": [
+      4.29,
+      4.08,
+      3.45
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 384,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      30.9,
+      192.87,
+      132.05
+    ],
+    "size": [
+      22.01,
+      27.89,
+      4.84
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 138,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -63.85,
+      281.69,
+      92.89
+    ],
+    "size": [
+      2.13,
+      1.39,
+      1.42
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -27.64,
+      270.66,
+      123.33
+    ],
+    "size": [
+      3.31,
+      2.73,
+      3.78
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 2994,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      0.15,
+      163.88,
+      118.33
+    ],
+    "size": [
+      51.45,
+      31.38,
+      108.56
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 660,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -1.77,
+      283.62,
+      109.15
+    ],
+    "size": [
+      47.47,
+      27.25,
+      2.14
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      11,
+      236.54,
+      67.73
+    ],
+    "size": [
+      2.14,
+      2.47,
+      2.47
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 768,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -26.79,
+      248.24,
+      119.72
+    ],
+    "size": [
+      25.97,
+      27.4,
+      80.43
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1578,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      55.81,
+      258.34,
+      131.56
+    ],
+    "size": [
+      8,
+      15.29,
+      85.07
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3342,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -40.91,
+      259.82,
+      124.68
+    ],
+    "size": [
+      13.26,
+      12.18,
+      94.13
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 48,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      4.95,
+      257.64,
+      78.82
+    ],
+    "size": [
+      0.87,
+      15.98,
+      13.66
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 414,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -56.6,
+      262.65,
+      114.37
+    ],
+    "size": [
+      2.88,
+      2.83,
+      2.21
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 480,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      25.19,
+      204.69,
+      110.05
+    ],
+    "size": [
+      13.79,
+      13.79,
+      9.75
+    ]
+  },
+  {
+    "name": "New_Game_Object_Clone__Clone_",
+    "vertices": 2454,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      61.78,
+      205.99,
+      122.46
+    ],
+    "size": [
+      24.76,
+      55.83,
+      84.7
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 108,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -48.86,
+      240.99,
+      47.2
+    ],
+    "size": [
+      4.37,
+      3.79,
+      4.37
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1044,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -48.14,
+      294.2,
+      97.27
+    ],
+    "size": [
+      3.93,
+      5.14,
+      5.48
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 3312,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      -37.1,
+      256.31,
+      110.59
+    ],
+    "size": [
+      9.81,
+      23.69,
+      69.18
+    ]
+  },
+  {
+    "name": "New_Game_Object",
+    "vertices": 1404,
+    "materials": [
+      {
+        "name": "MaterialStandart__Instance_",
+        "color": "ffffff",
+        "map": false
+      }
+    ],
+    "center": [
+      61.45,
+      259.7,
+      89.67
+    ],
+    "size": [
+      14.3,
+      12.62,
+      11.23
+    ]
+  }
+]

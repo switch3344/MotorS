@@ -18,10 +18,6 @@ export function Metrics() {
           </div>
         ))}
       </dl>
-      <p className="engine-range">
-        Hyundai / Kia — D4HE, D4HB, D4EB: Santa Fe, Sportage, Carnival. Toyota —
-        1VD-FTV: Land Cruiser 200. Nissan — YD25: Pathfinder.
-      </p>
     </section>
   );
 }

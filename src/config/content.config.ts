@@ -1,5 +1,5 @@
 // Content facts are limited to the user's v4.1 brief, attributed to @MSERVICEKRD.
-// Unknown case fields remain visible placeholders until confirmed.
+// Unknown case fields remain placeholders until confirmed.
 export const metrics = [
   { value: "1396", label: "двигателей в базе", detail: "за последние 5 лет" },
   {
@@ -47,5 +47,57 @@ export const cases = [
     decision: null,
     done: "Расточка блока. Оригинальные коленвал и масляные насосы. Новая поршневая Teikin и новая ГРМ. Ремонт обеих турбин.",
     warranty: "{{ГАРАНТИЯ_ПО_КЕЙСУ}}",
+  },
+];
+
+// These workshop albums are separate from the mileage-specific cases above.
+export const workPhotos = [
+  {
+    file: "engine",
+    title: "Двигатель",
+    alt: "Двигатель D4EB на стойке в мастерской",
+    source: "https://t.me/MSERVICEKRD/75",
+  },
+  {
+    file: "crank-and-head",
+    title: "Головка блока",
+    alt: "Головка блока D4EB и коленвал на рабочем столе",
+    source: "https://t.me/MSERVICEKRD/75",
+  },
+  {
+    file: "pistons",
+    title: "Поршневая группа",
+    alt: "Четыре поршня D4EB на рабочем столе",
+    source: "https://t.me/MSERVICEKRD/85",
+  },
+  {
+    file: "valves",
+    title: "Клапаны",
+    alt: "Клапаны в головке блока D4EB",
+    source: "https://t.me/MSERVICEKRD/85",
+  },
+  {
+    file: "piston-detail",
+    title: "Детали крупным планом",
+    alt: "Поршень в цилиндре D4EB крупным планом",
+    source: "https://t.me/MSERVICEKRD/85",
+  },
+  {
+    file: "block",
+    title: "Блок цилиндров",
+    alt: "Блок D4EB с установленными поршнями",
+    source: "https://t.me/MSERVICEKRD/85",
+  },
+  {
+    file: "timing",
+    title: "ГРМ",
+    alt: "Привод ГРМ двигателя D4EB",
+    source: "https://t.me/MSERVICEKRD/85",
+  },
+  {
+    file: "installed",
+    title: "Под капотом",
+    alt: "Двигатель D4EB в моторном отсеке Hyundai Santa Fe",
+    source: "https://t.me/MSERVICEKRD/85",
   },
 ];

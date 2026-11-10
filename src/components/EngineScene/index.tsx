@@ -82,17 +82,11 @@ export function EngineScene() {
     >
       <div className="v12-heading">
         <div>
-          <p className="v12-eyebrow">Наши услуги</p>
           <h2 id="services-heading">
             Диагностика
             <br />и <em>капремонт.</em>
           </h2>
         </div>
-        <p className="v12-intro">
-          D4HE · D4HB · D4EB
-          <br />
-          1VD-FTV · YD25
-        </p>
       </div>
       <div className="v12-stage">
         <div className="v12-engine-column">

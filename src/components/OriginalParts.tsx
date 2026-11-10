@@ -6,7 +6,6 @@ export function OriginalParts() {
       className="content-card original-section"
       aria-labelledby="original-heading"
     >
-      <p className="v12-eyebrow">Почему мы</p>
       <h2 id="original-heading">
         Оригинал <em>или ничего.</em>
       </h2>

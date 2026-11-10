@@ -113,26 +113,61 @@
   font-size: 20px;
   letter-spacing: -0.035em;
   font-weight: 400;
+  transition: color 0.2s ease;
 }
-.v12-service-number {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  letter-spacing: 0;
-  color: #878c94;
-}
-.v12-service h3 > button > svg {
+.v12-service-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
   margin-left: auto;
   flex-shrink: 0;
   color: #9da3aa;
 }
+.v12-service-icon::before,
+.v12-service-icon::after {
+  content: "";
+  position: absolute;
+  inset: 8px 3px auto;
+  height: 1.5px;
+  background: currentColor;
+}
+.v12-service-icon::after {
+  transform: rotate(90deg);
+  transition: transform 0.32s ease;
+}
 .v12-service-active h3 > button {
   color: #fff;
 }
-.v12-service-active .v12-service-number {
-  color: #f05d72;
+.v12-service-active .v12-service-icon::after {
+  transform: rotate(0deg);
+}
+.v12-service-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.24s ease,
+    visibility 0s 0.36s;
+}
+.v12-service-active .v12-service-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.v12-service-clip {
+  min-height: 0;
+  overflow: hidden;
 }
 .v12-service-detail {
-  padding: 0 0 22px 36px;
+  padding: 0 0 22px;
+  transform: translateY(-6px);
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.v12-service-active .v12-service-detail {
+  transform: translateY(0);
 }
 .v12-service-detail > p {
   font-size: 18px;
@@ -260,9 +295,6 @@
     font-size: 18px;
     gap: 10px;
   }
-  .v12-service-detail {
-    padding-left: 31px;
-  }
 }
 @media (max-width: 799px) {
   .v12-section {
@@ -314,9 +346,6 @@
     gap: 13px;
     min-height: 64px;
   }
-  .v12-service-detail {
-    padding-left: 0;
-  }
   .v12-service-detail > p {
     font-size: 17px;
   }
@@ -339,7 +368,14 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .v12-toggle {
+  .v12-toggle,
+  .v12-service h3 > button,
+  .v12-service-panel,
+  .v12-service-detail,
+  .v12-service-icon::after {
     transition: none;
+  }
+  .v12-service-detail {
+    transform: none;
   }
 }

@@ -144,35 +144,35 @@ export function EngineScene() {
                       aria-controls={`v12-detail-${service.id}`}
                       onClick={() => setActive(active === index ? null : index)}
                     >
-                      <span className="v12-service-number">
-                        {service.number}
-                      </span>
                       <span>{service.name}</span>
-                      {active === index ? (
-                        <Minus size={18} />
-                      ) : (
-                        <Plus size={18} />
-                      )}
+                      <span className="v12-service-icon" aria-hidden="true" />
                     </button>
                   </h3>
                   <div
-                    className="v12-service-detail"
+                    className="v12-service-panel"
                     id={`v12-detail-${service.id}`}
-                    hidden={active !== index}
+                    role="region"
+                    aria-labelledby={`v12-service-${service.id}`}
+                    aria-hidden={active !== index}
+                    inert={active !== index}
                   >
-                    <p>{service.description}</p>
-                    <ul>
-                      {service.steps.map((step) => (
-                        <li key={step}>{step}</li>
-                      ))}
-                    </ul>
-                    <a
-                      href={`${siteConfig.telegram}?text=${encodeURIComponent(`Здравствуйте! Интересует ${service.name.toLowerCase()}.`)}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Обсудить ремонт <ArrowDownRight size={18} />
-                    </a>
+                    <div className="v12-service-clip">
+                      <div className="v12-service-detail">
+                        <p>{service.description}</p>
+                        <ul>
+                          {service.steps.map((step) => (
+                            <li key={step}>{step}</li>
+                          ))}
+                        </ul>
+                        <a
+                          href={`${siteConfig.telegram}?text=${encodeURIComponent(`Здравствуйте! Интересует ${service.name.toLowerCase()}.`)}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Обсудить ремонт <ArrowDownRight size={18} />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

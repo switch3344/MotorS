@@ -710,24 +710,16 @@ svg {
 /* Footer: the reference silhouette and the user's original logo. */
 .footer {
   position: relative;
-  padding-top: 48px;
+  margin-top: 10px;
   overflow: hidden;
-  background: #0e0e11;
-}
-.footer-backdrop {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 240px;
-  background:
-    linear-gradient(90deg, #0e0e11bb, #21131bbb, #0e0e11cc),
-    url("/video/hero-poster.svg") center 52% / cover no-repeat;
+  background: transparent;
 }
 .clip-definition {
   position: absolute;
 }
 .footer-surface {
   position: relative;
-  background: radial-gradient(ellipse at 50% 0%, #1e1119, #09090b 70%);
+  background: #0a0a0a;
   clip-path: url(#footer-cutout);
   padding: 80px 0 30px;
 }
@@ -799,7 +791,6 @@ svg {
   gap: 35px;
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid #ffffff14;
   color: #a69aa9;
   font-size: 14px;
   line-height: 1.7;
@@ -1194,7 +1185,7 @@ svg {
     padding-top: 6px;
   }
   .footer {
-    padding-top: 32px;
+    margin-top: 8px;
   }
   .footer-surface {
     padding-top: 62px;

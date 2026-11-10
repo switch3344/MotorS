@@ -3,7 +3,6 @@ import { siteConfig } from "../../config/site.config";
 export function Footer() {
   return (
     <footer className="footer" id="contacts">
-      <div className="footer-backdrop" aria-hidden="true" />
       <svg width="0" height="0" className="clip-definition" aria-hidden="true">
         <defs>
           <clipPath id="footer-cutout" clipPathUnits="objectBoundingBox">
@@ -65,6 +64,9 @@ export function Footer() {
             {siteConfig.address}
             <ArrowUpRight size={16} />
           </a>
+          <p className="footer-phone">
+            {siteConfig.phone} <span>{"{{подтвердить}}"}</span>
+          </p>
           <div className="footer-legal">
             <p>© 2026 MotorServiceKRD. Все права защищены.</p>
             <p>Краснодар · Ремонт двигателей</p>

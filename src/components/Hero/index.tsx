@@ -1,10 +1,10 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { useSpeedometerMotion } from "./useSpeedometerMotion";
-import { HeroRoadMedia } from "./HeroRoadMedia";
+import { useInstrumentMotion } from "./useInstrumentMotion";
+import { HeroMedia } from "./HeroMedia";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { SplitButton } from "../SplitButton";
-import { RADIUS, Speedometer } from "./Speedometer";
-import type { GaugeGeometry } from "./Speedometer";
+import { RADIUS, Instrument } from "./Instrument";
+import type { GaugeGeometry } from "./Instrument";
 
 export function Hero() {
   const hero = useRef<HTMLElement>(null);
@@ -16,7 +16,7 @@ export function Hero() {
     mobile: false,
     labelSize: 38,
     bottom: 900,
-    readoutTop: 780,
+    scale: 1,
   });
   const geometryRef = useRef(geometry);
   const drawRef = useRef<() => void>(() => {});
@@ -38,28 +38,22 @@ export function Hero() {
       const copyBottom =
         content.getBoundingClientRect().bottom -
         section.getBoundingClientRect().top;
-      const labelSize = mobile ? 58 : Math.max(34, 24 / scale);
-      const labelOffset = mobile ? 68 : 38;
+      const labelSize =
+        (mobile ? 20 : Math.min(56, Math.max(44, width * 0.036))) / scale;
+      const labelOffset = (mobile ? 24 : 38) / scale;
       const clearance = labelOffset * scale + labelSize * scale * 0.7 + 24;
       const apex = Math.max(
         height * (mobile ? 0.65 : 0.64),
         copyBottom + clearance,
       );
       const top = apex - (cy - RADIUS) * scale;
-      const readout = gauge.current?.querySelector(".arc-speed-readout");
-      const readoutTop =
-        ((readout?.getBoundingClientRect().top ??
-          section.getBoundingClientRect().bottom) -
-          section.getBoundingClientRect().top -
-          top) /
-        scale;
       const next = {
         cy,
         top,
         mobile,
         labelSize,
         bottom: (height - top) / scale,
-        readoutTop,
+        scale,
       };
       geometryRef.current = next;
       setGeometry((previous) =>
@@ -67,7 +61,7 @@ export function Hero() {
         previous.mobile === mobile &&
         previous.labelSize === labelSize &&
         Math.abs(previous.bottom - next.bottom) < 0.5 &&
-        Math.abs(previous.readoutTop - next.readoutTop) < 0.5
+        previous.scale === scale
           ? previous
           : next,
       );
@@ -86,7 +80,7 @@ export function Hero() {
     drawRef.current();
   }, [geometry]);
 
-  useSpeedometerMotion(hero, gauge, geometryRef, drawRef, reduced);
+  useInstrumentMotion(hero, gauge, geometryRef, drawRef, reduced);
 
   return (
     <section
@@ -95,17 +89,17 @@ export function Hero() {
       ref={hero}
       aria-labelledby="hero-title"
     >
-      <HeroRoadMedia reduced={reduced} />
-      <Speedometer ref={gauge} geometry={geometry} />
+      <HeroMedia reduced={reduced} geometry={geometry} />
+      <Instrument ref={gauge} geometry={geometry} />
       <div className="circular-copy" ref={copy}>
         <h1 id="hero-title" tabIndex={-1}>
-          <span>Двигатель, как с завода.</span>
+          <span>Капремонт двигателя.</span>
           <span>
-            На 5 лет <em>вперёд</em>
+            Без <em>подделок.</em>
           </span>
         </h1>
         <p className="circular-description">
-          Капитальный ремонт двигателей в Краснодаре. С гарантией 5 лет.
+          Краснодар. Гарантия — 5 лет или 250 000 км на капитальный ремонт.
         </p>
         <SplitButton>Записаться на диагностику</SplitButton>
       </div>

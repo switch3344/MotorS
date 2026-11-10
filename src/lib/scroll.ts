@@ -1,3 +1,3 @@
 import gsap from "gsap";
-// Native page scrolling. The speedometer uses a clock, never scroll progress.
+// Native page scrolling. The instrument uses a clock, never scroll progress.
 export { gsap };

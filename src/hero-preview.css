@@ -267,163 +267,6 @@ body {
 .circular-copy > .split-button {
   margin-top: 28px;
 }
-.arc-meter {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-.arc-geometry {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1600 / 900;
-  overflow: visible;
-}
-.arc-baseline,
-.arc-redline,
-.arc-progress {
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-.arc-baseline {
-  stroke: #b7bdc666;
-}
-.arc-channel {
-  fill: none;
-  stroke: #08090b;
-  stroke-width: 56;
-  opacity: 0.4;
-}
-.arc-bezel,
-.arc-inner-edge {
-  fill: none;
-  stroke: url(#arc-metal);
-  stroke-width: 1.5;
-}
-.arc-inner-edge {
-  opacity: 0.35;
-}
-.arc-redline-band {
-  fill: none;
-  stroke: #e64058;
-  stroke-width: 14;
-  stroke-dasharray: 3 7;
-  opacity: 0.28;
-}
-.arc-redline {
-  stroke: #e34053;
-}
-.arc-progress {
-  stroke: url(#arc-accent);
-  stroke-width: 3;
-}
-.arc-progress-glow {
-  stroke-width: 8;
-  opacity: 0.45;
-}
-.arc-tick {
-  stroke: #858d99;
-  stroke-width: 1.2;
-  opacity: 0.55;
-}
-.arc-tick-medium {
-  stroke-width: 1.8;
-  opacity: 0.8;
-}
-.arc-tick-major {
-  stroke: #e1e4e9;
-  stroke-width: 2.8;
-  opacity: 1;
-}
-.arc-tick.arc-mark-lit {
-  stroke: #f3e9eb;
-  opacity: 1;
-}
-.arc-tick-red {
-  stroke: #e34053;
-}
-.arc-tick-red.arc-mark-lit {
-  stroke: #ff6b80;
-}
-.arc-label {
-  font-family: var(--font-mono);
-  fill: #a4abb6;
-  font-weight: 500;
-  letter-spacing: -0.045em;
-}
-.arc-label-red {
-  fill: #f05a6d;
-}
-.arc-label.arc-mark-lit {
-  fill: #f8f5f5;
-}
-.arc-label-red.arc-mark-lit {
-  fill: #ff788b;
-}
-.needle-core {
-  fill: url(#needle-accent);
-}
-.needle-light {
-  stroke: #e83c51;
-  stroke-width: 7;
-  opacity: 0.45;
-}
-.needle-highlight {
-  stroke: #ffe1e5;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-}
-.arc-speed-readout {
-  position: absolute;
-  left: 4.5%;
-  bottom: 16px;
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  z-index: 2;
-  width: max-content;
-  white-space: nowrap;
-  font-family: var(--font-mono);
-  color: #f3f3f5;
-}
-.arc-speed-value {
-  min-width: 3ch;
-  font-size: clamp(72px, 5.2vw, 96px);
-  line-height: 1;
-  letter-spacing: -0.075em;
-  font-variant-numeric: tabular-nums;
-}
-.arc-speed-unit {
-  font-size: 17px;
-  color: #aeb0b6;
-}
-.hero-road-media {
-  position: absolute;
-  inset: 58% 0 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.hero-road-media img,
-.hero-road-media video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.65;
-}
-.hero-road-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(#131416 0%, #13141699 38%, #080a0d66 100%);
-}
-.hero-road-media video[hidden] {
-  display: none;
-}
 @media (max-height: 950px) and (min-width: 1000px) {
   .circular-copy {
     padding-top: max(170px, 22svh);
@@ -456,9 +299,6 @@ body {
   .circular-copy > .split-button .split-button-arrow {
     width: 40px;
     height: 40px;
-  }
-  .arc-speed-readout {
-    bottom: 30px;
   }
 }
 @media (max-width: 999px) {
@@ -585,33 +425,6 @@ body {
   .circular-copy > .split-button .split-button-arrow {
     width: 40px;
     height: 40px;
-  }
-  .arc-speed-readout {
-    left: 24px;
-    bottom: 30px;
-    gap: 12px;
-  }
-  .arc-tick {
-    stroke-width: 3;
-  }
-  .arc-baseline,
-  .arc-redline {
-    stroke-width: 4;
-  }
-  .arc-progress {
-    stroke-width: 5;
-  }
-  .arc-tick-major {
-    stroke-width: 6;
-  }
-  .arc-tick-medium {
-    stroke-width: 4;
-  }
-  .needle-highlight {
-    stroke-width: 4;
-  }
-  .needle-light {
-    stroke-width: 14;
   }
   .header-detached {
     top: 8px;

@@ -2,7 +2,9 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { EngineScene } from "./components/EngineScene";
 import { Footer } from "./components/Footer";
-import { WorkProcess } from "./components/WorkProcess";
+import { Metrics } from "./components/Metrics";
+import { WorkCases } from "./components/WorkCases";
+import { OriginalParts } from "./components/OriginalParts";
 export default function App() {
   return (
     <>
@@ -12,8 +14,10 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <Metrics />
         <EngineScene />
-        <WorkProcess />
+        <WorkCases />
+        <OriginalParts />
       </main>
       <Footer />
     </>

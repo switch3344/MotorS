@@ -19,19 +19,16 @@ export function OriginalParts() {
       </p>
       <div className="original-grid">
         <article>
-          <span>01</span>
           <h3>Оригинальные узлы</h3>
           <p>
             Подделки не ставим. Ибо сказано: подделка не выдерживает компрессии.
           </p>
         </article>
         <article>
-          <span>02</span>
           <h3>Проверка поставщиков</h3>
           <p>Проверяем поставщиков и детали до установки в двигатель.</p>
         </article>
         <article>
-          <span>03</span>
           <h3>Детали и работа</h3>
           <p>На капитальный ремонт — {siteConfig.warranty}.</p>
         </article>

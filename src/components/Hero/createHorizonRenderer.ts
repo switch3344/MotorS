@@ -50,13 +50,13 @@ const horizonShader = `
       * exp(-above / (0.10 * reach)) * center * topFade;
     float line = exp(-pow(y * uSize.y / 1.35, 2.0));
     float halo = exp(-pow(y * uSize.y / 6.0, 2.0));
-    vec3 color = vec3(10.0, 10.0, 11.0) / 255.0;
-    color += vec3(58.0, 8.0, 20.0) / 255.0 * spread * envelope * 0.85;
-    color += vec3(229.0, 23.0, 63.0) / 255.0 * spread * envelope * (0.30 + center * 0.32) * gain;
-    color += vec3(1.0, 0.5412, 0.0) * ember * (0.15 + center * 0.45) * gain;
-    color += vec3(1.0, 0.36, 0.10) * rays * 0.40 * gain;
-    color += vec3(1.0, 0.60, 0.31) * halo * (0.12 + center * 0.28) * gain;
-    color = mix(color, vec3(1.0, 0.9569, 0.9098), line * (0.62 + center * 0.36));
+    vec3 color = vec3(16.0, 18.0, 20.0) / 255.0;
+    color += vec3(52.0, 32.0, 36.0) / 255.0 * spread * envelope * 0.30;
+    color += vec3(0.55, 0.16, 0.19) * spread * envelope * (0.08 + center * 0.12) * gain;
+    color += vec3(0.78, 0.37, 0.20) * ember * (0.08 + center * 0.16) * gain;
+    color += vec3(0.62, 0.32, 0.25) * rays * 0.18 * gain;
+    color += vec3(0.88, 0.41, 0.32) * halo * (0.035 + center * 0.095) * gain;
+    color = mix(color, vec3(0.94, 0.89, 0.85), line * (0.30 + center * 0.33));
     // Soft highlight compression preserves the warm tint at the bright center.
     color /= max(1.0, max(color.r, max(color.g, color.b)));
     gl_FragColor = vec4(color, 1.0);

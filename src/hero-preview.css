@@ -3,7 +3,8 @@ html {
   background: #000;
   overflow-y: scroll;
   scrollbar-gutter: stable;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
+  scroll-behavior: smooth;
 }
 body {
   --page-gutter: 8px;
@@ -18,7 +19,7 @@ body {
   max-height: 100svh;
   overflow: hidden;
   border-radius: 44px 44px 0 0;
-  background: #0a0a0b;
+  background: #101214;
 }
 .header-notch {
   position: fixed;
@@ -74,8 +75,8 @@ body {
   width: 38px;
   height: 38px;
   object-fit: contain;
-  border-radius: 6px;
-  background: #fff;
+  border-radius: 0;
+  background: transparent;
 }
 .header-notch .brand > span {
   font-size: 22px;
@@ -354,7 +355,7 @@ body {
   .header-notch .brand > img {
     width: 32px;
     height: 32px;
-    border-radius: 5px;
+    border-radius: 0;
   }
   .header-notch .brand > span {
     font-size: 14px;
@@ -420,4 +421,30 @@ body {
   .split-button:hover {
     transform: none;
   }
+}
+
+.notch-links > a { position: relative; }
+.notch-links > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  height: 2px;
+  background: #cf4559;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+.notch-links > a[aria-current="location"] { color: #fff; }
+.notch-links > a[aria-current="location"]::after { transform: scaleX(1); }
+.notch-mobile-nav > a[aria-current="location"] { color: #f18d9b; }
+.notch-links > a:focus-visible, .notch-mobile-nav > a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .notch-links > a::after { transition: none; }
 }

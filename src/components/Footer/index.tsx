@@ -18,10 +18,10 @@ export function Footer() {
             aria-label="motorservicekrd — наверх"
           >
             <img
-              src={`${import.meta.env.BASE_URL}brand/logo.png`}
+              src={`${import.meta.env.BASE_URL}brand/logo-transparent.png`}
               alt=""
-              width="866"
-              height="866"
+              width="1254"
+              height="1254"
               loading="lazy"
             />
             <span>

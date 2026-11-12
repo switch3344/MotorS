@@ -3,7 +3,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: #0a0a0b;
+  background: #101214;
 }
 .horizon-glow canvas,
 .horizon-fallback {
@@ -20,9 +20,9 @@
 }
 .horizon-fallback {
   background:
-    radial-gradient(ellipse 65% 0.2% at 50% var(--horizon), #fff4e8 10%, #ffe9d6aa 70%, transparent 100%),
-    radial-gradient(ellipse 80% 3% at 50% var(--horizon), #ff8a00aa, #e5173f66 40%, transparent 100%),
-    radial-gradient(ellipse 70% 22% at 50% var(--horizon), #3a0814, transparent 100%);
+    radial-gradient(ellipse 65% 0.15% at 50% var(--horizon), #ded0c588 10%, #b88d7955 70%, transparent 100%),
+    radial-gradient(ellipse 80% 2% at 50% var(--horizon), #98554c55, #682c3a22 40%, transparent 100%),
+    radial-gradient(ellipse 70% 16% at 50% var(--horizon), #34202444, transparent 100%);
 }
 /* The float canvas covers the static fallback; no blend/blur layer on top. */
 .horizon-glow[data-renderer="webgl-float"] .horizon-fallback {

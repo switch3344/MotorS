@@ -211,8 +211,8 @@ svg {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  border-radius: 9px;
-  background: #fff;
+  border-radius: 0;
+  background: transparent;
 }
 .brand > span {
   display: flex;
@@ -706,8 +706,8 @@ svg {
   width: 128px;
   height: 128px;
   object-fit: contain;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 0;
+  background: transparent;
 }
 .footer-wordmark > span {
   display: flex;
@@ -1168,7 +1168,7 @@ svg {
   .footer-wordmark > img {
     width: 64px;
     height: 64px;
-    border-radius: 9px;
+    border-radius: 0;
   }
   .footer-wordmark > span {
     font-size: 9.4vw;

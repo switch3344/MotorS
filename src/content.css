@@ -311,14 +311,10 @@
   padding-top: 22px;
   min-width: 0;
 }
-.original-grid article > span {
-  font: 14px var(--font-mono);
-  color: #ed667b;
-}
 .original-grid h3 {
   font-size: 22px;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 0;
   letter-spacing: -0.025em;
 }
 .original-grid p {

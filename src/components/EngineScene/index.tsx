@@ -143,7 +143,7 @@ export function EngineScene({
         </div>
         <div className="v12-services-reveal" id="engine-services">
           <div className="v12-services">
-            <p className="v12-services-title">Что нужно вашему двигателю?</p>
+            <p className="v12-services-title">Услуги</p>
             <div className="v12-service-list">
               {services.map((service, index) => (
                 <div

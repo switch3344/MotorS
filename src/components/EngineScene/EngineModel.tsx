@@ -12,53 +12,60 @@ import {
 } from "three";
 import type { EngineViewProps } from "./CanvasScene";
 import { surfaceTexture } from "./engineAppearance";
+import { timingChain } from "./timingChain";
 
-const MODEL = `${import.meta.env.BASE_URL}models/inline4-working.glb`;
+const MODEL = `${import.meta.env.BASE_URL}models/inline4-working-v2.glb`;
 const DECODER = `${import.meta.env.BASE_URL}draco/`;
 
 export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
   const { scene, animations } = useGLTF(MODEL, DECODER, false);
   const { camera, invalidate, size, gl } = useThree();
-  const { model, mixer, bounds, castTexture, castMaterials } = useMemo(() => {
-    const model = scene.clone(true);
-    const castTexture = surfaceTexture(false);
-    const castMaterials = new Map<MeshStandardMaterial, MeshStandardMaterial>();
-    model.traverse((object) => {
-      if (object instanceof Mesh) {
-        object.castShadow = !mobile;
-        object.receiveShadow = !mobile;
-        const detail = (material: MeshStandardMaterial) => {
-          if (
-            !material.name.toLowerCase().includes("casting") ||
-            !object.geometry.getAttribute("uv")
-          )
-            return material;
-          if (!castMaterials.has(material)) {
-            const copy = material.clone();
-            copy.bumpMap = castTexture;
-            copy.bumpScale = 0.0015;
-            castMaterials.set(material, copy);
-          }
-          return castMaterials.get(material)!;
-        };
-        object.material = Array.isArray(object.material)
-          ? object.material.map((material) =>
-              detail(material as MeshStandardMaterial),
+  const { model, mixer, bounds, castTexture, castMaterials, chain } =
+    useMemo(() => {
+      const model = scene.clone(true);
+      const castTexture = surfaceTexture(false);
+      const castMaterials = new Map<
+        MeshStandardMaterial,
+        MeshStandardMaterial
+      >();
+      model.traverse((object) => {
+        if (object instanceof Mesh) {
+          object.castShadow = !mobile;
+          object.receiveShadow = !mobile;
+          const detail = (material: MeshStandardMaterial) => {
+            if (
+              !material.name.toLowerCase().includes("casting") ||
+              !object.geometry.getAttribute("uv")
             )
-          : detail(object.material as MeshStandardMaterial);
-      }
-    });
-    const initial = new Box3().setFromObject(model);
-    model.position.sub(initial.getCenter(new Vector3()));
-    model.updateMatrixWorld(true);
-    return {
-      model,
-      mixer: new AnimationMixer(model),
-      bounds: new Box3().setFromObject(model).expandByScalar(0.1),
-      castTexture,
-      castMaterials,
-    };
-  }, [scene]);
+              return material;
+            if (!castMaterials.has(material)) {
+              const copy = material.clone();
+              copy.bumpMap = castTexture;
+              copy.bumpScale = 0.0015;
+              castMaterials.set(material, copy);
+            }
+            return castMaterials.get(material)!;
+          };
+          object.material = Array.isArray(object.material)
+            ? object.material.map((material) =>
+                detail(material as MeshStandardMaterial),
+              )
+            : detail(object.material as MeshStandardMaterial);
+        }
+      });
+      const chain = timingChain(model);
+      const initial = new Box3().setFromObject(model);
+      model.position.sub(initial.getCenter(new Vector3()));
+      model.updateMatrixWorld(true);
+      return {
+        model,
+        mixer: new AnimationMixer(model),
+        bounds: new Box3().setFromObject(model).expandByScalar(0.1),
+        castTexture,
+        castMaterials,
+        chain,
+      };
+    }, [scene]);
 
   useEffect(() => {
     castTexture.needsUpdate = true;
@@ -67,9 +74,10 @@ export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
     });
     return () => {
       castTexture.dispose();
+      chain.dispose();
       castMaterials.forEach((material) => material.dispose());
     };
-  }, [castTexture, castMaterials]);
+  }, [castTexture, castMaterials, chain]);
 
   useEffect(() => {
     const actions = animations.map((clip) => mixer.clipAction(clip).play());
@@ -135,6 +143,8 @@ export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
   useFrame((_, delta) => {
     if (!playing || !visible || document.hidden) return;
     mixer.update(Math.min(delta, 0.05));
+    chain.update(mixer.time);
+    gl.domElement.dataset.chainPhase = (mixer.time * 3).toFixed(3);
     gl.domElement.dataset.motionTime = mixer.time.toFixed(2);
     invalidate();
   });

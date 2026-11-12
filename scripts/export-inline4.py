@@ -46,9 +46,22 @@ for original in sorted(animated,key=lambda o:o.name):
     pivot.matrix_local = poses[1][original.name]
     pivots[original.name] = pivot
 
+# Keep the original detailed link geometry, instanced at runtime along its source path.
+rollers=sorted([o for o in source.objects if o.name.startswith('Chain roller ')],key=lambda o:o.name)
+root['chain_path_json']=json.dumps([[o.matrix_world.translation.x,o.matrix_world.translation.z,-o.matrix_world.translation.y] for o in rollers])
+root['chain_links']=len(rollers)
+root['chain_teeth']=12
+for name,kind in [('Chain roller 000','roller'),('Chain link plate 000','plate')]:
+    original=source.objects[name]
+    mesh=bpy.data.meshes.new_from_object(original.evaluated_get(depsgraph),preserve_all_data_layers=True,depsgraph=depsgraph)
+    prototype=bpy.data.objects.new('Chain prototype '+kind,mesh)
+    export.collection.objects.link(prototype);prototype.parent=root
+    prototype['chain_prototype']=kind
 batches = defaultdict(list)
 count = 0
 for obj in list(source.objects):
+    if obj.name.startswith(('Chain roller ','Chain link plate ')):
+        continue
     if obj.type not in {'MESH','CURVE'} or obj.hide_render or obj.hide_viewport:
         continue
     if any(c.name in {'Presentation','Cutters'} for c in obj.users_collection):
@@ -110,7 +123,7 @@ for pivot in pivots.values():
                             for point in curve.keyframe_points:
                                 point.interpolation='LINEAR'
 
-output=ROOT/'public/models/inline4-working.glb'
+output=ROOT/'public/models/inline4-working-v2.glb'
 bpy.ops.export_scene.gltf(filepath=str(output),export_format='GLB',use_active_scene=True,
     export_animations=True,export_animation_mode='SCENE',export_anim_scene_split_object=False,
     export_force_sampling=True,export_frame_range=True,export_frame_step=1,

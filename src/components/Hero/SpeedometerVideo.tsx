@@ -1,24 +1,24 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import {
-  ArrowUpRight,
-  Maximize,
-  Minimize,
-  Play,
-  Volume2,
-  VolumeX,
-  X,
-} from "lucide-react";
+import { Maximize, Minimize, Play, Volume2, VolumeX, X } from "lucide-react";
 import { gsap } from "gsap";
 import "./speedometer-video.css";
 
 const asset = (file: string) => `${import.meta.env.BASE_URL}video/${file}`;
 const PREVIEW = asset("gtr-preview-v5.mp4");
-const FULL_VIDEO = asset("gtr_final_ready_v5.mp4");
+const FULL_VIDEO = asset("gtr_final_ready_v6.mp4");
 const POSTER = asset("gtr-poster-v2.jpg");
 const SOURCE = "https://www.youtube.com/watch?v=3LI1MHnLwB0";
 
-export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
+export function SpeedometerVideo({
+  reduced,
+  completed,
+  onComplete,
+}: {
+  reduced: boolean;
+  completed: boolean;
+  onComplete: () => void;
+}) {
   const root = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
@@ -30,6 +30,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   const [fullscreen, setFullscreen] = useState(false);
   const [status, setStatus] = useState("loading");
   const [controls, setControls] = useState(true);
+  const finished = useRef(completed);
   const mode = useRef(false);
   const desired = useRef(wanted);
   const visible = useRef(false);
@@ -57,7 +58,10 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   };
   useLayoutEffect(() => {
     if (previousWatching.current && !watching)
-      watchButton.current?.focus({ preventScroll: true });
+      (finished.current
+        ? document.getElementById("hero-title")
+        : watchButton.current
+      )?.focus({ preventScroll: true });
     previousWatching.current = watching;
     if (!watching) return;
     const overflow = document.body.style.overflow;
@@ -75,7 +79,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   useEffect(() => {
     const surface = root.current;
     const button = watchButton.current;
-    if (!surface || !button || watching || reduced) return;
+    if (!surface || !button || watching || reduced || completed) return;
     const query = matchMedia(
       "(min-width: 700px) and (hover: hover) and (pointer: fine)",
     );
@@ -109,7 +113,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
       surface.removeEventListener("pointerleave", reset);
       gsap.killTweensOf(button);
     };
-  }, [watching, reduced]);
+  }, [watching, reduced, completed]);
   useEffect(() => {
     if (reduced && !mode.current) setWanted(false);
   }, [reduced]);
@@ -123,10 +127,15 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
     return () => document.removeEventListener("fullscreenchange", update);
   }, []);
   const warm = () => {
-    if (warmed.current) return;
+    if (warmed.current || finished.current) return;
     warmed.current = true;
     const prepare = () => {
-      if (mode.current || !visible.current || document.hidden) {
+      if (
+        finished.current ||
+        mode.current ||
+        !visible.current ||
+        document.hidden
+      ) {
         warmed.current = false;
         return;
       }
@@ -142,7 +151,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
     const full = video.current!,
       clip = preview.current!;
     const reconcile = () => {
-      if (!visible.current || document.hidden) {
+      if (finished.current || !visible.current || document.hidden) {
         full.pause();
         clip.pause();
         if (mode.current) {
@@ -195,6 +204,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   }, []);
 
   const watch = () => {
+    if (finished.current || completed) return;
     const full = video.current!;
     mode.current = true;
     desired.current = true;
@@ -216,18 +226,24 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
     video.current!.muted = true;
     setWatching(false);
     setMuted(true);
-    setWanted(!reduced);
-    desired.current = !reduced;
-    setStatus(reduced ? "paused" : "playing");
+    setWanted(!reduced && !finished.current);
+    desired.current = !reduced && !finished.current;
+    setStatus(finished.current ? "completed" : reduced ? "paused" : "playing");
     window.clearTimeout(idleTimer.current);
     if (document.fullscreenElement === dialog.current)
       void document.exitFullscreen().catch(() => {});
     dialog.current?.close();
-    if (!reduced && visible.current && !document.hidden)
+    if (!finished.current && !reduced && visible.current && !document.hidden)
       requestPlay(preview.current!);
   };
+  const finish = () => {
+    finished.current = true;
+    preview.current!.pause();
+    onComplete();
+    exit();
+  };
   const toggle = () => {
-    if (status === "ended") video.current!.currentTime = 0;
+    if (finished.current || completed) return;
     desired.current = !playing;
     setWanted(!playing);
     if (playing) video.current!.pause();
@@ -253,6 +269,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
         className="hero-speedometer-video"
         ref={root}
         data-state={status}
+        data-completed={completed}
         data-mode={watching ? "watching" : "preview"}
         data-muted={muted}
       >
@@ -260,7 +277,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
           className="hero-video-frame"
           onClick={(event) => {
             if ((event.target as HTMLElement).closest("button, a")) return;
-            if (!watching && status !== "loading") watch();
+            if (!completed && !watching && status !== "loading") watch();
           }}
         >
           <video
@@ -271,25 +288,29 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
             playsInline
             preload="auto"
             muted
-            loop
+            loop={!completed}
             onCanPlay={() => {
-              if (!mode.current) {
+              if (!mode.current && !finished.current) {
                 setStatus(preview.current!.paused ? "paused" : "playing");
                 sync.current();
               }
             }}
             onPlaying={() => {
+              if (finished.current) {
+                preview.current!.pause();
+                return;
+              }
               if (!mode.current) setStatus("playing");
               warm();
             }}
             onPause={() => {
-              if (!mode.current) setStatus("paused");
+              if (!mode.current && !finished.current) setStatus("paused");
             }}
             onError={() => {
-              if (!mode.current) setStatus("unavailable");
+              if (!mode.current && !finished.current) setStatus("unavailable");
             }}
           />
-          {!watching && status !== "unavailable" && (
+          {!completed && !watching && status !== "unavailable" && (
             <button
               className="hero-video-watch"
               ref={watchButton}
@@ -320,11 +341,6 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
               <span>Открыть исходное видео</span>
             </a>
           )}
-        </div>
-        <div className="hero-video-footer">
-          <a href={SOURCE} target="_blank" rel="noreferrer">
-            Авторевю · Nissan GT-R <ArrowUpRight size={14} />
-          </a>
         </div>
       </div>
       {createPortal(
@@ -403,12 +419,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
                     event.currentTarget.muted || !event.currentTarget.volume,
                   );
               }}
-              onEnded={() => {
-                setStatus("ended");
-                setWanted(false);
-                desired.current = false;
-                setControls(true);
-              }}
+              onEnded={finish}
             />
             {!playing && status !== "unavailable" && status !== "ended" && (
               <Play

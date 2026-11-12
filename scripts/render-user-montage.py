@@ -3,7 +3,7 @@ import argparse,shutil,subprocess,sys
 parser=argparse.ArgumentParser(description='Chronological GT-R acceleration with deliberate black title interruptions')
 parser.add_argument('--ffmpeg',default=shutil.which('ffmpeg'))
 parser.add_argument('--input',default='.qa/source-gtr.mp4')
-parser.add_argument('--output',default='public/video/gtr_final_ready_v7.mp4')
+parser.add_argument('--output',default='public/video/gtr_final_ready_v8.mp4')
 parser.add_argument('--font',default='C:/Windows/Fonts/impact.ttf')
 args=parser.parse_args()
 if not args.ffmpeg: parser.error('Pass --ffmpeg /path/to/ffmpeg')
@@ -13,15 +13,16 @@ def sound(source,start,duration,out,fade_out=True):
  fade=f',afade=t=out:st={duration-.003}:d=0.003' if fade_out else ''
  return f'[{source}]atrim=start={start}:duration={duration},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.003{fade}[{out}]'
 
+# The source display updates in steps: cuts follow approximately 50, 100, 150 km/h.
 parts=[
  '[0:v]fps=30,crop=trunc(iw*0.92/2)*2:trunc(ih*0.92/2)*2,scale=1920:1080:flags=lanczos,format=yuv420p,cas=strength=0.28:planes=1,setsar=1,split=4[v0s][v1s][v2s][v3s]',
  '[0:a]aresample=48000,aformat=channel_layouts=stereo,asplit=5[a0s][a1s][a2s][a3s][tails]',
- '[v0s]trim=start_frame=102:end_frame=107,setpts=PTS-STARTPTS[v0]',
- '[v1s]trim=start_frame=107:end_frame=143,setpts=PTS-STARTPTS[v1]',
- '[v2s]trim=start_frame=143:end_frame=292,setpts=PTS-STARTPTS[v2]',
+ '[v0s]trim=start_frame=102:end_frame=145,setpts=PTS-STARTPTS[v0]',
+ '[v1s]trim=start_frame=145:end_frame=209,setpts=PTS-STARTPTS[v1]',
+ '[v2s]trim=start_frame=209:end_frame=292,setpts=PTS-STARTPTS[v2]',
  '[v3s]trim=start_frame=292:end_frame=579,setpts=PTS-STARTPTS[v3]',
- sound('a0s',3.4,5/30,'a0'), sound('a1s',107/30,36/30,'a1'),
- sound('a2s',143/30,149/30,'a2'), sound('a3s',292/30,287/30,'a3',False),
+ sound('a0s',3.4,43/30,'a0'), sound('a1s',145/30,64/30,'a1'),
+ sound('a2s',209/30,83/30,'a2'), sound('a3s',292/30,287/30,'a3',False),
  '[2:v]setsar=1,format=yuv420p[ca]','[3:v]setsar=1,format=yuv420p[cw]','[4:v]setsar=1,format=yuv420p[cd]',
  'anullsrc=r=48000:cl=stereo,atrim=duration=0.3,asetpts=PTS-STARTPTS[sa]',
  'anullsrc=r=48000:cl=stereo,atrim=duration=0.4,asetpts=PTS-STARTPTS[sw]',
@@ -32,7 +33,7 @@ parts=[
  '[tails]atrim=start=18.1:duration=5.2,asetpts=PTS-STARTPTS,volume=0.28,afade=t=out:st=2.7:d=2.5[tail]',
  '[main_a][tail]acrossfade=d=1.2:c1=tri:c2=tri[outa]'
 ]
-graph=';'.join(parts);(work/'filter-v7.txt').write_text(graph,encoding='utf-8')
+graph=';'.join(parts);(work/'filter-v8.txt').write_text(graph,encoding='utf-8')
 subprocess.run([args.ffmpeg,'-y','-hide_banner','-loglevel','warning','-i',args.input,'-framerate','30','-i','.qa/outro-v7/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-a/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-want/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-drive/frame-%03d.png','-filter_complex',graph,
  '-map','[outv]','-map','[outa]','-t','21.1','-c:v','libx264','-preset','fast','-tune','fastdecode','-crf','18',
  '-g','30','-keyint_min','30','-sc_threshold','0','-bf','0','-refs','1','-maxrate','5000k','-bufsize','10000k',

@@ -24,7 +24,7 @@ console.log(
   "Hero media: " +
     (sources.length
       ? sources.map((s) => s.src).join(", ")
-      : "horizon shader fallback") +
+      : "native GT-R preview and original video") +
     "; " +
     poster,
 );

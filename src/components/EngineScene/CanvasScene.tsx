@@ -6,17 +6,13 @@ import {
   Lightformer,
   useProgress,
 } from "@react-three/drei";
-import type { EngineZone } from "../../config/services.config";
 import { EngineModel } from "./EngineModel";
 export interface EngineViewProps {
-  expanded: boolean;
-  zone: EngineZone | null;
-  reduced: boolean;
+  playing: boolean;
   mobile: boolean;
   visible: boolean;
   warming?: boolean;
   onReady?: () => void;
-  onHover: () => void;
 }
 function ReadySignal({ onReady }: { onReady?: () => void }) {
   const { invalidate } = useThree();
@@ -51,7 +47,7 @@ export default function CanvasScene(props: EngineViewProps) {
     <>
       <Canvas
         camera={camera}
-        dpr={[props.mobile ? 1 : 1.25, props.mobile ? 1.5 : 2]}
+        dpr={[1, props.mobile ? 1.5 : 2]}
         shadows={!props.mobile}
         frameloop={props.visible || props.warming ? "demand" : "never"}
         gl={{
@@ -62,28 +58,28 @@ export default function CanvasScene(props: EngineViewProps) {
         onCreated={({ gl }) => {
           gl.toneMappingExposure = 0.95;
         }}
-        aria-label="Объёмная модель двигателя. Наведите или нажмите «Разобрать двигатель», чтобы увидеть внутренние детали."
+        aria-label="Работа рядного четырёхцилиндрового двигателя в разрезе: поршни, коленвал, клапаны и привод ГРМ."
       >
         <ambientLight intensity={0.4} />
         <directionalLight
           position={[4, 7, 6]}
-          intensity={3.5}
+          intensity={2.4}
           color="#f0f4ff"
           castShadow={!props.mobile}
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-          shadow-camera-left={-7}
-          shadow-camera-right={7}
-          shadow-camera-top={7}
-          shadow-camera-bottom={-7}
+          shadow-mapSize-width={4096}
+          shadow-mapSize-height={4096}
+          shadow-camera-left={-4}
+          shadow-camera-right={4}
+          shadow-camera-top={4}
+          shadow-camera-bottom={-4}
           shadow-camera-near={0.1}
           shadow-camera-far={28}
           shadow-bias={-0.0002}
-          shadow-normalBias={0.015}
+          shadow-normalBias={0.008}
         />
         <directionalLight
           position={[-5, 3, 2]}
-          intensity={1.3}
+          intensity={0.75}
           color="#e0e8f5"
         />
         <directionalLight
@@ -93,7 +89,7 @@ export default function CanvasScene(props: EngineViewProps) {
         />
         <Suspense fallback={null}>
           <EngineModel {...props} />
-          <Environment resolution={256} frames={1}>
+          <Environment resolution={512} frames={1}>
             <Lightformer
               form="rect"
               intensity={5}

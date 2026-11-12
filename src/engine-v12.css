@@ -39,7 +39,7 @@
   position: relative;
   isolation: isolate;
   width: 100%;
-  height: clamp(560px, 73vh, 820px);
+  height: clamp(620px, 82vh, 1080px);
 }
 .v12-engine-viewport canvas {
   touch-action: pan-y;
@@ -358,3 +358,6 @@
     transform: none;
   }
 }
+
+.v12-engine-viewport[role="button"] { cursor: pointer; }
+.v12-engine-viewport[role="button"]:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }

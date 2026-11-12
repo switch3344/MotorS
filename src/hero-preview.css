@@ -24,11 +24,12 @@ body {
 .header-notch {
   position: fixed;
   z-index: 30;
-  top: 8px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(880px, 40vw, 1100px);
-  height: 80px;
+  width: min(1600px, calc(100% - 96px));
+  height: clamp(96px, 4vw, 112px);
+  padding-top: 8px;
   background: #000;
   border-radius: 0 0 28px 28px;
   transition:
@@ -63,7 +64,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 0 22px;
+  padding: 0 30px;
 }
 .header-notch .brand {
   display: inline-flex;
@@ -72,14 +73,14 @@ body {
   flex-shrink: 0;
 }
 .header-notch .brand > img {
-  width: 38px;
-  height: 38px;
+  width: clamp(46px, 2.2vw, 58px);
+  height: clamp(46px, 2.2vw, 58px);
   object-fit: contain;
   border-radius: 0;
   background: transparent;
 }
 .header-notch .brand > span {
-  font-size: 22px;
+  font-size: clamp(26px, 1.5vw, 34px);
   font-weight: 500;
   letter-spacing: -0.065em;
   line-height: 1;
@@ -90,10 +91,10 @@ body {
 .notch-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: clamp(28px, 2vw, 44px);
 }
 .notch-links > a {
-  font-size: 16px;
+  font-size: clamp(18px, 1.05vw, 22px);
   font-weight: 400;
   white-space: nowrap;
   color: #e2e2e3;
@@ -182,7 +183,8 @@ body {
   justify-content: center;
 }
 .header-detached {
-  height: 64px;
+  padding-top: 0;
+  height: clamp(80px, 3.2vw, 96px);
   top: 14px;
   border-radius: 99px;
   border: 1px solid #ffffff24;
@@ -294,7 +296,7 @@ body {
 }
 @media (max-width: 999px) {
   .header-notch {
-    width: calc(100% - 84px);
+    width: calc(100% - 48px);
     max-width: 880px;
   }
   .notch-links {
@@ -321,9 +323,9 @@ body {
     border-radius: 28px 28px 0 0;
   }
   .header-notch {
-    top: 8px;
-    height: 68px;
-    width: calc(100% - 52px);
+    top: 0;
+    height: 84px;
+    width: calc(100% - 32px);
     border-radius: 0 0 22px 22px;
   }
   .header-notch::before,
@@ -353,8 +355,8 @@ body {
     gap: 7px;
   }
   .header-notch .brand > img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 0;
   }
   .header-notch .brand > span {
@@ -362,6 +364,11 @@ body {
   }
   .notch-actions {
     gap: 5px;
+  }
+  .header-notch .split-button-small {
+    font-size: 14px;
+    padding-left: 14px;
+    gap: 8px;
   }
   .notch-menu-toggle {
     width: 28px;
@@ -397,7 +404,7 @@ body {
   }
   .header-detached {
     top: 8px;
-    height: 60px;
+    height: 72px;
     border-radius: 99px;
   }
 }

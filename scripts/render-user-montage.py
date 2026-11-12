@@ -1,43 +1,50 @@
 from pathlib import Path
-import subprocess,shutil
-import argparse
-parser=argparse.ArgumentParser(description='Build the requested seven-part GT-R edit')
-parser.add_argument('--ffmpeg', default=shutil.which('ffmpeg'))
-parser.add_argument('--input', default='.qa/source-gtr.mp4')
-parser.add_argument('--output', default='public/video/gtr_final_ready_v2.mp4')
-parser.add_argument('--font', default='C:/Windows/Fonts/impact.ttf')
+import argparse,shutil,subprocess
+parser=argparse.ArgumentParser(description='Chronological GT-R acceleration with deliberate black title interruptions')
+parser.add_argument('--ffmpeg',default=shutil.which('ffmpeg'))
+parser.add_argument('--input',default='.qa/source-gtr.mp4')
+parser.add_argument('--output',default='public/video/gtr_final_ready_v4.mp4')
+parser.add_argument('--font',default='C:/Windows/Fonts/impact.ttf')
 args=parser.parse_args()
 if not args.ffmpeg: parser.error('Pass --ffmpeg /path/to/ffmpeg')
-ff=args.ffmpeg
-temp=Path('.qa/user-montage');temp.mkdir(parents=True, exist_ok=True)
-shutil.copyfile(args.font,temp/'impact.ttf')
-for name,text in {'t1':'А','t2':'ВЫ ХОТИТЕ','t3':'ТАК ЕЗДИТЬ?','offer':'ДИАГНОСТИКА ДВИГАТЕЛЯ','brand':'MotorServiceKRD  •  Краснодар','credit':'Видео: Авторевю / Nissan GT-R'}.items():
- (temp/(name+'.txt')).write_text(text,encoding='utf-8')
-font='.qa/user-montage/impact.ttf'
-def text(file,size,y='(h-text_h)/2',color='white'):
- return f'drawtext=fontfile={font}:textfile=.qa/user-montage/{file}.txt:fontcolor={color}:fontsize={size}:x=(w-text_w)/2:y={y}'
+work=Path('.qa/user-montage');work.mkdir(parents=True,exist_ok=True)
+shutil.copyfile(args.font,work/'impact.ttf')
+shutil.copyfile('C:/Windows/Fonts/arial.ttf',work/'brand.ttf')
+for name,value in {'a':'А','want':'ВЫ ХОТИТЕ','drive':'ТАК ЕЗДИТЬ?','offer':'ДИАГНОСТИКА ДВИГАТЕЛЯ','brand':'MotorServiceKRD  •  Краснодар','credit':'Видео: Авторевю / Nissan GT-R'}.items():
+ (work/f'{name}.txt').write_text(value,encoding='utf-8')
+def card(name,size,duration):
+ return (f"color=c=black:s=1280x720:r=30:d={duration},drawtext=fontfile=.qa/user-montage/impact.ttf:"
+  f"textfile=.qa/user-montage/{name}.txt:fontsize={size}:fontcolor=white:x=(w-text_w)/2:"
+  "y='(h-text_h)/2+8*pow(1-min(1,t/0.12),3)':alpha='min(1,t/0.04)'")
+def sound(source,start,duration,out,fade_out=True):
+ fade=f',afade=t=out:st={duration-.003}:d=0.003' if fade_out else ''
+ return f'[{source}]atrim=start={start}:duration={duration},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.003{fade}[{out}]'
+def ending(name,size,y,start,font='impact',color='white'):
+ return (f"drawtext=fontfile=.qa/user-montage/{font}.ttf:textfile=.qa/user-montage/{name}.txt:"
+  f"fontsize={size}:fontcolor={color}:x=(w-text_w)/2:y={y}:alpha='min(1,max(0,(t-{start})/0.3))'")
 parts=[
- '[0:v]crop=trunc(iw*0.92/2)*2:trunc(ih*0.92/2)*2,scale=1280:720,fps=30,setsar=1,format=yuv420p,split=7[v0][v1][v2][v3][v4][v5][v6]',
- '[0:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,asplit=4[a0][a2][a4][a6]',
- '[v0]trim=start=0:end=14.03,setpts=PTS-STARTPTS[v_main]',
- '[a0]atrim=start=0:end=14.03,asetpts=PTS-STARTPTS[a_main]',
- '[v1]trim=duration=0.65,setpts=PTS-STARTPTS,drawbox=t=fill:c=black,'+text('t1','h*0.14')+'[v_t1]',
- 'anullsrc=r=48000:cl=stereo,atrim=duration=0.65,asetpts=PTS-STARTPTS[a_t1]',
- '[v2]trim=start=9.8:end=10.45,setpts=PTS-STARTPTS[v_flash1]',
- '[a2]atrim=start=9.8:end=10.45,asetpts=PTS-STARTPTS,volume=1.3,alimiter=limit=0.95:level=false[a_flash1]',
- '[v3]trim=duration=0.75,setpts=PTS-STARTPTS,drawbox=t=fill:c=black,'+text('t2','h*0.08')+'[v_t2]',
- 'anullsrc=r=48000:cl=stereo,atrim=duration=0.75,asetpts=PTS-STARTPTS[a_t2]',
- '[v4]trim=start=13.2:end=13.85,setpts=PTS-STARTPTS[v_flash2]',
- '[a4]atrim=start=13.2:end=13.85,asetpts=PTS-STARTPTS,volume=1.4,alimiter=limit=0.95:level=false[a_flash2]',
- '[v5]trim=duration=0.85,setpts=PTS-STARTPTS,drawbox=t=fill:c=black,'+text('t3','h*0.08')+'[v_t3]',
- 'anullsrc=r=48000:cl=stereo,atrim=duration=0.85,asetpts=PTS-STARTPTS[a_t3]',
- '[v6]trim=start=10.5:end=14,setpts=PTS-STARTPTS,boxblur=20:5,drawbox=t=fill:c=black@0.55,'+text('offer','h*0.055','(h/2)-h*0.06')+','+text('brand','h*0.038','(h/2)+h*0.03','0xFFD700')+','+text('credit','14','(h/2)+h*0.14','white@0.4')+'[v_end]',
- '[a6]atrim=start=10.5:end=14,asetpts=PTS-STARTPTS,afade=t=out:st=0.5:d=3[a_end]',
- '[v_t1][a_t1][v_flash1][a_flash1][v_t2][a_t2][v_flash2][a_flash2][v_t3][a_t3][v_main][a_main][v_end][a_end]concat=n=7:v=1:a=1[outv][outa]'
+ '[0:v]fps=30,crop=trunc(iw*0.92/2)*2:trunc(ih*0.92/2)*2,scale=1280:720,setsar=1,format=yuv420p,split=5[v0s][v1s][v2s][v3s][ends]',
+ '[0:a]aresample=48000,aformat=channel_layouts=stereo,asplit=5[a0s][a1s][a2s][a3s][tails]',
+ '[v0s]trim=start_frame=102:end_frame=107,setpts=PTS-STARTPTS[v0]',
+ '[v1s]trim=start_frame=107:end_frame=143,setpts=PTS-STARTPTS[v1]',
+ '[v2s]trim=start_frame=143:end_frame=292,setpts=PTS-STARTPTS[v2]',
+ '[v3s]trim=start_frame=292:end_frame=544,setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=0.9[v3]',
+ sound('a0s',3.4,5/30,'a0'), sound('a1s',107/30,36/30,'a1'),
+ sound('a2s',143/30,149/30,'a2'), sound('a3s',292/30,279/30,'a3',False),
+ card('a',140,.5)+'[ca]',card('want',88,20/30)+'[cw]',card('drive',88,.8)+'[cd]',
+ 'anullsrc=r=48000:cl=stereo,atrim=duration=0.5,asetpts=PTS-STARTPTS[sa]',
+ 'anullsrc=r=48000:cl=stereo,atrim=duration=0.666666667,asetpts=PTS-STARTPTS[sw]',
+ 'anullsrc=r=48000:cl=stereo,atrim=duration=0.8,asetpts=PTS-STARTPTS[sd]',
+ '[v0][a0][ca][sa][v1][a1][cw][sw][v2][a2][cd][sd][v3][a3]concat=n=7:v=1:a=1[main_v][main_a]',
+ '[ends]trim=start_frame=543:end_frame=544,setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=3.5,trim=end_frame=104,gblur=sigma=14,drawbox=t=fill:c=black@0.6,'+
+ ','.join([ending('offer',60,'h/2-62',.35),ending('brand',28,'h/2+26',.55,'brand','0xD3D6DA'),ending('credit',14,'h/2+88',.75,'brand','white@0.4')])+'[end]',
+ '[main_v]fps=30,settb=1/30[main_sync];[main_sync][end]xfade=transition=fade:duration=0.466667:offset=17.133333,format=yuv420p[outv]',
+ '[tails]atrim=start=19.033333:duration=3,asetpts=PTS-STARTPTS,afade=t=out:st=0:d=3[tail]',
+ '[main_a][tail]concat=n=2:v=0:a=1[outa]'
 ]
-graph=';'.join(parts)
-(temp/'filter.txt').write_text(graph,encoding='utf-8')
-cmd=[ff,'-y','-hide_banner','-loglevel','warning','-i',args.input,'-filter_complex',graph,'-map','[outv]','-map','[outa]','-c:v','libx264','-preset','fast','-tune','fastdecode','-crf','18','-g','30','-keyint_min','30','-sc_threshold','0','-bf','0','-refs','1','-maxrate','2500k','-bufsize','5000k','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-movflags','+faststart',args.output]
-subprocess.run(cmd,check=True)
-subprocess.run([ff,'-y','-hide_banner','-loglevel','error','-ss','19.5','-i',args.output,'-frames:v','1',str(temp/'final-frame.png')],check=True)
-print('User montage rendered')
+graph=';'.join(parts);(work/'filter-v4.txt').write_text(graph,encoding='utf-8')
+subprocess.run([args.ffmpeg,'-y','-hide_banner','-loglevel','warning','-i',args.input,'-filter_complex',graph,
+ '-map','[outv]','-map','[outa]','-t','20.6','-c:v','libx264','-preset','fast','-tune','fastdecode','-crf','18',
+ '-g','30','-keyint_min','30','-sc_threshold','0','-bf','0','-refs','1','-maxrate','2500k','-bufsize','5000k',
+ '-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-movflags','+faststart',args.output],check=True)
+print('Interrupted chronological montage rendered:',args.output)

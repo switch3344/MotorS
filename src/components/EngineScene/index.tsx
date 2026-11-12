@@ -1,6 +1,6 @@
 import { Component, Suspense, lazy, useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { ArrowDownRight, Minus, Plus } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { services } from "../../config/services.config";
 import { siteConfig } from "../../config/site.config";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
@@ -19,8 +19,8 @@ class SceneBoundary extends Component<
     return this.state.error ? (
       <div className="v12-fallback">
         <img
-          src={`${import.meta.env.BASE_URL}images/v12-poster.jpg`}
-          alt="Детализированный V12 с красными крышками и металлическими коллекторами"
+          src={`${import.meta.env.BASE_URL}images/inline4-poster.png`}
+          alt="Рядный четырёхцилиндровый двигатель в разрезе"
           onLoad={this.props.onReady}
           onError={this.props.onReady}
         />
@@ -42,10 +42,13 @@ export function EngineScene({
   const section = useRef<HTMLElement>(null);
   const [near, setNear] = useState(preloading);
   const [visible, setVisible] = useState(false);
-  const [opened, setOpened] = useState(false);
   const [active, setActive] = useState<number | null>(0);
   const [mobile, setMobile] = useState(() => window.innerWidth < 800);
   const reduced = useReducedMotion();
+  const [playing, setPlaying] = useState(!reduced);
+  useEffect(() => {
+    if (reduced) setPlaying(false);
+  }, [reduced]);
   useEffect(() => {
     const preload = new IntersectionObserver(
       ([entry]) => {
@@ -72,22 +75,13 @@ export function EngineScene({
       query.removeEventListener("change", update);
     };
   }, []);
-  const reveal = () => {
-    if (!mobile) setOpened(true);
-  };
   return (
     <section
-      className={`v12-section${opened ? " v12-open" : ""}`}
+      className="v12-section"
+      data-model="inline4-working"
       id="services"
       ref={section}
       aria-labelledby="services-heading"
-      onPointerLeave={(event) => {
-        if (
-          event.pointerType === "mouse" &&
-          !section.current?.contains(document.activeElement)
-        )
-          setOpened(false);
-      }}
     >
       <div className="v12-heading">
         <div>
@@ -102,38 +96,39 @@ export function EngineScene({
       </div>
       <div className="v12-stage">
         <div className="v12-engine-column">
-          <div className="v12-engine-viewport" id="engine-model">
+          <div
+            className="v12-engine-viewport"
+            id="engine-model"
+            role="button"
+            tabIndex={0}
+            aria-pressed={playing}
+            aria-label={
+              playing ? "Приостановить работу двигателя" : "Запустить двигатель"
+            }
+            onClick={() => setPlaying((value) => !value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setPlaying((value) => !value);
+              }
+            }}
+          >
             <SceneBoundary onReady={onReady}>
               <Suspense
                 fallback={<div className="v12-loader">Загружаем модель…</div>}
               >
                 {near && (
                   <CanvasScene
-                    expanded={opened}
-                    zone={
-                      opened && active !== null ? services[active].zone : null
-                    }
-                    reduced={reduced}
+                    playing={playing}
                     mobile={mobile}
                     visible={visible}
                     warming={preloading}
                     onReady={onReady}
-                    onHover={reveal}
                   />
                 )}
               </Suspense>
             </SceneBoundary>
           </div>
-          <button
-            className="v12-toggle"
-            type="button"
-            aria-expanded={opened}
-            aria-controls="engine-model"
-            onClick={() => setOpened(!opened)}
-          >
-            {opened ? "Собрать двигатель" : "Разобрать двигатель"}
-            {opened ? <Minus size={18} /> : <Plus size={18} />}
-          </button>
         </div>
         <div className="v12-services-reveal" id="engine-services">
           <div className="v12-services">

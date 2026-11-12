@@ -1,168 +1,143 @@
-import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
-import { useThree } from "@react-three/fiber";
+import { useEffect, useLayoutEffect, useMemo } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import {
+  AnimationMixer,
   Box3,
-  Group,
+  Matrix4,
   Mesh,
   MeshStandardMaterial,
-  Object3D,
   PerspectiveCamera,
   Vector3,
 } from "three";
-import gsap from "gsap";
 import type { EngineViewProps } from "./CanvasScene";
-import { improveEngineAppearance } from "./engineAppearance";
-const MODEL = `${import.meta.env.BASE_URL}models/motorservice-v12.glb`;
-export function EngineModel({
-  expanded,
-  zone,
-  reduced,
-  mobile,
-  onHover,
-}: EngineViewProps) {
-  const assembly = useRef<Group>(null);
-  const transition = useRef({ amount: 0 });
-  const { scene } = useGLTF(MODEL);
-  const { camera, invalidate, size } = useThree();
-  const { model, disposeModel } = useMemo(() => {
-    const copy = scene.clone(true);
-    const disposeModel = improveEngineAppearance(copy);
-    const bounds = new Box3().setFromObject(copy);
-    copy.position.sub(bounds.getCenter(new Vector3()));
-    return { model: copy, disposeModel };
-  }, [scene]);
-  const parts = useMemo(() => {
-    const result: Object3D[] = [];
+import { surfaceTexture } from "./engineAppearance";
+
+const MODEL = `${import.meta.env.BASE_URL}models/inline4-working.glb`;
+const DECODER = `${import.meta.env.BASE_URL}draco/`;
+
+export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
+  const { scene, animations } = useGLTF(MODEL, DECODER, false);
+  const { camera, invalidate, size, gl } = useThree();
+  const { model, mixer, bounds, castTexture, castMaterials } = useMemo(() => {
+    const model = scene.clone(true);
+    const castTexture = surfaceTexture(false);
+    const castMaterials = new Map<MeshStandardMaterial, MeshStandardMaterial>();
     model.traverse((object) => {
-      if (object.userData.assembly) result.push(object);
-    });
-    return result;
-  }, [model]);
-  const framing = useMemo(() => {
-    const result: { mesh: Mesh; corners: Vector3[] }[] = [];
-    model.traverse((object) => {
-      if (!(object instanceof Mesh)) return;
-      object.geometry.computeBoundingBox();
-      const bounds = object.geometry.boundingBox;
-      if (!bounds) return;
-      const corners: Vector3[] = [];
-      for (const x of [bounds.min.x, bounds.max.x])
-        for (const y of [bounds.min.y, bounds.max.y])
-          for (const z of [bounds.min.z, bounds.max.z])
-            corners.push(new Vector3(x, y, z));
-      result.push({ mesh: object, corners });
-    });
-    return result;
-  }, [model]);
-  useLayoutEffect(() => {
-    const state = transition.current;
-    const target = expanded ? 1 : 0;
-    // One clock updates every transform and the camera before requesting a
-    // frame, so interrupted hover/toggle animations remain continuous.
-    const render = () => {
-      const amount = state.amount;
-      if (assembly.current) {
-        assembly.current.scale.setScalar(1 - 0.12 * amount);
-        assembly.current.position.y = -0.45 * amount;
-      }
-      for (const part of parts) {
-        const vector = part.userData.explode as number[];
-        part.position.set(
-          vector[0] * amount,
-          vector[1] * amount,
-          vector[2] * amount,
-        );
-      }
-      camera.lookAt(0, 0, 0);
-      camera.updateMatrixWorld(true);
-      assembly.current?.updateMatrixWorld(true);
-      if (camera instanceof PerspectiveCamera) {
-        const assembledFov = mobile ? 40 : 22.5;
-        const expandedFov = mobile ? 52 : 34;
-        const nominalFov = assembledFov + (expandedFov - assembledFov) * amount;
-        // Fit the actual parts to both canvas dimensions, including during
-        // the transition. A tall/narrow column must not crop the engine.
-        const view = new Vector3();
-        const aspect = size.width / Math.max(1, size.height);
-        let tangent = 0;
-        for (const { mesh, corners } of framing) {
-          for (const corner of corners) {
-            view
-              .copy(corner)
-              .applyMatrix4(mesh.matrixWorld)
-              .applyMatrix4(camera.matrixWorldInverse);
-            const depth = Math.max(0.1, -view.z);
-            tangent = Math.max(
-              tangent,
-              Math.abs(view.y) / depth,
-              Math.abs(view.x) / depth / aspect,
-            );
+      if (object instanceof Mesh) {
+        object.castShadow = !mobile;
+        object.receiveShadow = !mobile;
+        const detail = (material: MeshStandardMaterial) => {
+          if (
+            !material.name.toLowerCase().includes("casting") ||
+            !object.geometry.getAttribute("uv")
+          )
+            return material;
+          if (!castMaterials.has(material)) {
+            const copy = material.clone();
+            copy.bumpMap = castTexture;
+            copy.bumpScale = 0.0015;
+            castMaterials.set(material, copy);
           }
-        }
-        const fitFov = (2 * Math.atan(tangent / 0.88) * 180) / Math.PI;
-        camera.fov = Math.max(nominalFov, fitFov);
-        camera.updateProjectionMatrix();
+          return castMaterials.get(material)!;
+        };
+        object.material = Array.isArray(object.material)
+          ? object.material.map((material) =>
+              detail(material as MeshStandardMaterial),
+            )
+          : detail(object.material as MeshStandardMaterial);
       }
-      invalidate();
+    });
+    const initial = new Box3().setFromObject(model);
+    model.position.sub(initial.getCenter(new Vector3()));
+    model.updateMatrixWorld(true);
+    return {
+      model,
+      mixer: new AnimationMixer(model),
+      bounds: new Box3().setFromObject(model).expandByScalar(0.1),
+      castTexture,
+      castMaterials,
     };
-    if (reduced) {
-      state.amount = target;
-      render();
-      return;
-    }
-    render();
-    const tween = gsap.to(state, {
-      amount: target,
-      duration: 1.15,
-      ease: "power3.inOut",
-      onUpdate: render,
-      onComplete: render,
+  }, [scene]);
+
+  useEffect(() => {
+    castTexture.needsUpdate = true;
+    castMaterials.forEach((material) => {
+      material.needsUpdate = true;
     });
     return () => {
-      tween.kill();
+      castTexture.dispose();
+      castMaterials.forEach((material) => material.dispose());
     };
-  }, [
-    expanded,
-    reduced,
-    mobile,
-    parts,
-    framing,
-    camera,
-    invalidate,
-    size.width,
-    size.height,
-  ]);
-  useLayoutEffect(() => {
-    const animated: MeshStandardMaterial[] = [];
-    for (const part of parts) {
-      const selected =
-        expanded && zone && (zone === "all" || part.userData.zone === zone);
-      part.traverse((object) => {
-        if (!(object instanceof Mesh)) return;
-        const materials = Array.isArray(object.material)
-          ? object.material
-          : [object.material];
-        materials.forEach((material) => {
-          const standard = material as MeshStandardMaterial;
-          gsap.killTweensOf(standard);
-          animated.push(standard);
-          gsap.to(standard, {
-            emissiveIntensity: selected ? (zone === "all" ? 0.025 : 0.15) : 0,
-            duration: reduced ? 0 : 0.55,
-            overwrite: true,
-            onUpdate: invalidate,
-          });
-        });
-      });
-    }
+  }, [castTexture, castMaterials]);
+
+  useEffect(() => {
+    const actions = animations.map((clip) => mixer.clipAction(clip).play());
     invalidate();
-    return () => animated.forEach((material) => gsap.killTweensOf(material));
-  }, [expanded, zone, reduced, parts, invalidate]);
-  useEffect(() => disposeModel, [disposeModel]);
-  return (
-    <group ref={assembly}>
-      <primitive object={model} onPointerOver={onHover} />
-    </group>
-  );
+    return () => {
+      actions.forEach((action) => action.stop());
+      mixer.uncacheRoot(model);
+    };
+  }, [animations, mixer, model, invalidate]);
+
+  useLayoutEffect(() => {
+    if (!(camera instanceof PerspectiveCamera)) return;
+    camera.position.set(-6, 4, 10);
+    camera.lookAt(0, 0, 0);
+    camera.updateMatrixWorld(true);
+    const aspect = size.width / Math.max(1, size.height);
+    let tangent = 0;
+    const view = new Vector3();
+    model.updateMatrixWorld(true);
+    const matrix = new Matrix4();
+    model.traverse((object) => {
+      if (!(object instanceof Mesh)) return;
+      matrix.multiplyMatrices(camera.matrixWorldInverse, object.matrixWorld);
+      const points = object.geometry.getAttribute("position");
+      if (!points) return;
+      // Sample the actual surface instead of fitting empty corners around a
+      // diagonal global box. This permits a larger view without cropping.
+      for (let i = 0; i < points.count; i += 4) {
+        view.fromBufferAttribute(points, i).applyMatrix4(matrix);
+        const depth = Math.max(0.1, -view.z);
+        tangent = Math.max(
+          tangent,
+          Math.abs(view.y) / depth,
+          Math.abs(view.x) / depth / aspect,
+        );
+      }
+    });
+    camera.fov = Math.max(
+      8,
+      (2 * Math.atan(tangent / (mobile ? 0.92 : 0.96)) * 180) / Math.PI,
+    );
+    camera.aspect = aspect;
+    camera.updateProjectionMatrix();
+    invalidate();
+  }, [camera, bounds, model, mobile, size.width, size.height, invalidate]);
+
+  useEffect(() => {
+    model.traverse((object) => {
+      if (object instanceof Mesh) {
+        object.castShadow = !mobile;
+        object.receiveShadow = !mobile;
+      }
+    });
+    gl.domElement.dataset.animation = playing && visible ? "running" : "paused";
+    const wake = () => {
+      if (!document.hidden) invalidate();
+    };
+    document.addEventListener("visibilitychange", wake);
+    invalidate();
+    return () => document.removeEventListener("visibilitychange", wake);
+  }, [playing, visible, mobile, model, gl, invalidate]);
+
+  useFrame((_, delta) => {
+    if (!playing || !visible || document.hidden) return;
+    mixer.update(Math.min(delta, 0.05));
+    gl.domElement.dataset.motionTime = mixer.time.toFixed(2);
+    invalidate();
+  });
+
+  return <primitive object={model} />;
 }

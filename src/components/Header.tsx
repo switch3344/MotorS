@@ -20,9 +20,9 @@ export function Header() {
     let frame = 0;
     const update = () => {
       frame = 0;
-      const bottom =
-        document.getElementById("top")?.getBoundingClientRect().bottom ?? 0;
-      setScrolled(bottom <= 80);
+      // Release the attached notch as soon as the page moves, so its corner
+      // cutouts never sit over scrolling footage.
+      setScrolled(window.scrollY > 8);
       if (window.innerWidth >= 1000) setOpen(false);
       if (navigating.current) return;
       const line = (header.current?.getBoundingClientRect().bottom ?? 80) + 32;

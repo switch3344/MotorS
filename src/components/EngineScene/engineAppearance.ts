@@ -31,7 +31,7 @@ const unit = new Vector3(1, 1, 1);
 const fromAuthor = (x: number, y: number, z: number) => new Vector3(x, z, -y);
 
 /** Fine surface structure belongs to the metal, never to the page background. */
-function surfaceTexture(brushed: boolean) {
+export function surfaceTexture(brushed: boolean) {
   const size = 256;
   const pixels = new Uint8Array(size * size * 4);
   let seed = 7151;

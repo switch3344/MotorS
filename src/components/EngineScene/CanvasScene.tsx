@@ -2,7 +2,6 @@ import { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera } from "three";
 import {
-  ContactShadows,
   Environment,
   Lightformer,
   useProgress,
@@ -117,16 +116,6 @@ export default function CanvasScene(props: EngineViewProps) {
               rotation={[0, -Math.PI / 3, 0]}
             />
           </Environment>
-          <ContactShadows
-            position={[0, -3.2, 0]}
-            opacity={0.36}
-            scale={18}
-            blur={3}
-            far={9}
-            resolution={props.mobile ? 256 : 512}
-            frames={Infinity}
-            color="#000000"
-          />
           <ReadySignal onReady={props.onReady} />
         </Suspense>
       </Canvas>

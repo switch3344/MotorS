@@ -1,29 +1,29 @@
 /* v3.2 composition preview. Retained service/footer styles stay in styles.css. */
 html {
   background: #000;
-  overflow-y: auto;
-  scrollbar-gutter: auto;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
   scroll-padding-top: 100px;
 }
 body {
-  --page-gutter: 10px;
+  --page-gutter: 8px;
   background: #000;
   padding: var(--page-gutter);
 }
 .hero-card {
   position: relative;
   isolation: isolate;
-  height: calc(100svh - 20px);
+  height: calc(100svh - 16px);
   min-height: 640px;
   max-height: 100svh;
   overflow: hidden;
   border-radius: 44px 44px 0 0;
-  background: #101113;
+  background: #0a0a0b;
 }
 .header-notch {
   position: fixed;
   z-index: 30;
-  top: 10px;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
   width: clamp(880px, 40vw, 1100px);
@@ -109,65 +109,66 @@ body {
   align-items: center;
   gap: 18px;
 }
+/* v5: shared primary and secondary pill controls. */
 .split-button {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
-  padding: 0 0 0 25px;
-  overflow: hidden;
-  min-height: 62px;
-  color: #f5f5f5;
-  background: #202328;
-  border: 1px solid #ffffff24;
+  height: 56px;
+  min-height: 56px;
+  padding: 0 8px 0 28px;
+  border: 0;
   border-radius: 999px;
-  font-size: 18px;
+  background: #fff;
+  color: #0a0a0a;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.3;
   white-space: nowrap;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s,
-    background 0.2s,
-    border-color 0.2s;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .split-button-arrow {
   display: inline-grid;
   place-items: center;
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 15px 0 0 15px;
-  background: #d52c40;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4a5e, #e5173f);
 }
 .split-button-arrow svg {
-  width: 25px;
-  height: 25px;
-  stroke-width: 1.7;
-  transition: transform 0.25s;
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: transform .2s ease;
 }
 .split-button:hover {
-  background: #2b2f35;
-  border-color: #ffffff40;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px #0003;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(229,23,63,.35);
 }
-.split-button:hover svg {
-  transform: rotate(45deg);
+.split-button:hover .split-button-arrow svg { transform: rotate(45deg); }
+.split-button:active { transform: scale(.98); }
+.split-button:focus-visible, .v12-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 .split-button-small {
+  height: 44px;
   min-height: 44px;
-  padding: 0 0 0 15px;
+  padding: 0 6px 0 16px;
   gap: 10px;
-  font-size: 14px;
 }
-.split-button-small .split-button-arrow {
-  width: 42px;
-  height: 42px;
-  border-radius: 11px 0 0 11px;
+.split-button-small .split-button-arrow { width: 32px; height: 32px; }
+.split-button-secondary {
+  border: 1px solid rgba(255,255,255,.35);
+  background: transparent;
+  color: #fff;
 }
-.split-button-small svg {
-  width: 21px;
-  height: 21px;
+.split-button-secondary:hover {
+  background: rgba(255,255,255,.08);
+  box-shadow: none;
 }
 .notch-menu-toggle {
   display: none;
@@ -237,10 +238,10 @@ body {
 }
 .circular-copy h1 {
   margin-top: 0;
-  font-size: clamp(48px, 7vw, 120px);
-  font-weight: 350;
+  font-size: clamp(48px, 6.5vw, 112px);
+  font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.055em;
   color: #f7f7f6;
   outline-offset: 10px;
 }
@@ -268,7 +269,7 @@ body {
     padding-top: max(170px, 22svh);
   }
   .circular-copy h1 {
-    font-size: clamp(48px, 6.2vw, 100px);
+    font-size: clamp(48px, 5.7vw, 92px);
   }
   .circular-description {
     margin-top: 18px;
@@ -288,14 +289,7 @@ body {
     font-size: 17px;
     margin-top: 14px;
   }
-  .circular-copy > .split-button {
-    margin-top: 18px;
-    min-height: 54px;
-  }
-  .circular-copy > .split-button .split-button-arrow {
-    width: 52px;
-    height: 52px;
-  }
+  .circular-copy > .split-button { margin-top: 18px; }
 }
 @media (max-width: 999px) {
   .header-notch {
@@ -363,7 +357,7 @@ body {
     border-radius: 5px;
   }
   .header-notch .brand > span {
-    font-size: 16px;
+    font-size: 14px;
   }
   .notch-actions {
     gap: 5px;
@@ -374,26 +368,12 @@ body {
   .notch-menu-toggle svg {
     width: 21px;
   }
-  .split-button-small {
-    min-height: 40px;
-    font-size: 13px;
-    gap: 6px;
-    padding: 0 0 0 12px;
-  }
-  .split-button-small .split-button-arrow {
-    width: 38px;
-    height: 38px;
-  }
-  .split-button-small svg {
-    width: 19px;
-    height: 19px;
-  }
   .circular-copy {
     width: calc(100% - 28px);
     padding-top: max(160px, 24svh);
   }
   .circular-copy h1 {
-    font-size: clamp(27px, 8.25vw, 48px);
+    font-size: clamp(26px, 7.5vw, 48px);
     letter-spacing: -0.065em;
     line-height: 1.03;
   }
@@ -412,14 +392,7 @@ body {
   }
   .circular-copy > .split-button {
     margin-top: 24px;
-    padding-left: 18px;
-    min-height: 54px;
-    font-size: 15px;
     gap: 14px;
-  }
-  .circular-copy > .split-button .split-button-arrow {
-    width: 52px;
-    height: 52px;
   }
   .header-detached {
     top: 8px;

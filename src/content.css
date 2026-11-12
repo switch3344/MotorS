@@ -112,25 +112,19 @@
   cursor: zoom-in;
   transform: translate(-50%, -50%)
     translateX(calc(var(--slot) * (var(--photo-width) + 24px)))
-    rotateY(calc(var(--slot) * -18deg)) scale(calc(1 + var(--distance) * 0.045));
-  opacity: calc(1 - var(--distance) * 0.07);
-  transition:
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.45s ease;
+    rotateY(calc(var(--slot) * -12deg)) scale(calc(1 + var(--distance) * 0.025));
+  opacity: 0;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .work-gallery-photo[data-outside="true"] {
-  visibility: hidden;
   pointer-events: none;
-  transition: none;
 }
 .work-gallery-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.45s ease;
-}
-.work-gallery-photo:hover img {
-  transform: scale(1.035);
 }
 .work-gallery-photo:focus-visible {
   outline: 2px solid #ec5467;

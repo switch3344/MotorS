@@ -1,9 +1,11 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import { useInstrumentMotion } from "./useInstrumentMotion";
 import { HeroMedia } from "./HeroMedia";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { SplitButton } from "../SplitButton";
-import { RADIUS, Instrument } from "./Instrument";
+import { RADIUS, Instrument, SHOW_TACHOMETER } from "./Instrument";
+import { HorizonGlow } from "./HorizonGlow";
 import type { GaugeGeometry } from "./Instrument";
 import { TechHeadingRun } from "../TechText/TechHeadingRun";
 
@@ -12,15 +14,17 @@ export function Hero() {
   const copy = useRef<HTMLDivElement>(null);
   const gauge = useRef<HTMLDivElement>(null);
   const [geometry, setGeometry] = useState<GaugeGeometry>({
-    cy: 2527,
+    cy: 3600,
     top: 0,
     mobile: false,
     labelSize: 38,
     bottom: 900,
     scale: 1,
+    horizon: 0.735,
   });
   const geometryRef = useRef(geometry);
   const drawRef = useRef<() => void>(() => {});
+  const motion = useRef({ rpm: 900 });
 
   const reduced = useReducedMotion();
 
@@ -32,20 +36,15 @@ export function Hero() {
       const width = section.clientWidth;
       const height = section.clientHeight;
       const mobile = width < 700;
-      const cy = mobile ? 2427 : 2527;
+      const cy = 3600;
       const scale = width / 1600;
-      // Keep an isotropic 16:9 SVG so all labels fit even in portrait.
-      // The needle may overflow the SVG viewport; the hero card clips it.
       const copyBottom =
         content.getBoundingClientRect().bottom -
         section.getBoundingClientRect().top;
-      const labelSize =
-        (mobile ? 20 : Math.min(56, Math.max(44, width * 0.036))) / scale;
-      const labelOffset = (mobile ? 24 : 38) / scale;
-      const clearance = labelOffset * scale + labelSize * scale * 0.7 + 24;
+      const labelSize = (mobile ? 13 : 24) / scale;
       const apex = Math.max(
-        height * (mobile ? 0.65 : 0.64),
-        copyBottom + clearance,
+        height * 0.735,
+        copyBottom + (mobile ? 105 : 115),
       );
       const top = apex - (cy - RADIUS) * scale;
       const next = {
@@ -55,6 +54,7 @@ export function Hero() {
         labelSize,
         bottom: (height - top) / scale,
         scale,
+        horizon: apex / height,
       };
       geometryRef.current = next;
       setGeometry((previous) =>
@@ -81,7 +81,7 @@ export function Hero() {
     drawRef.current();
   }, [geometry]);
 
-  useInstrumentMotion(hero, gauge, geometryRef, drawRef, reduced);
+  useInstrumentMotion(hero, gauge, geometryRef, drawRef, motion, reduced);
 
   return (
     <section
@@ -89,19 +89,18 @@ export function Hero() {
       id="top"
       ref={hero}
       aria-labelledby="hero-title"
+      style={{ "--horizon": `${geometry.horizon * 100}%` } as CSSProperties}
     >
-      <HeroMedia reduced={reduced} geometry={geometry} />
-      <Instrument ref={gauge} geometry={geometry} />
+      <HorizonGlow reduced={reduced} geometry={geometryRef} motion={motion} />
+      <HeroMedia reduced={reduced} />
+      {SHOW_TACHOMETER && <Instrument ref={gauge} geometry={geometry} />}
       <div className="circular-copy" ref={copy}>
         <h1 id="hero-title" tabIndex={-1}>
           <span>
-            <TechHeadingRun text="Капремонт двигателя." />
+            <TechHeadingRun text="Капитальный ремонт" />
           </span>
           <span>
-            <TechHeadingRun text="Без " />
-            <em>
-              <TechHeadingRun text="подделок." />
-            </em>
+            <TechHeadingRun text="двигателя." />
           </span>
         </h1>
         <p className="circular-description">

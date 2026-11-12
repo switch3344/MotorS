@@ -16,6 +16,7 @@ export function useInstrumentMotion(
   gauge: RefObject<HTMLDivElement | null>,
   geometry: RefObject<GaugeGeometry>,
   draw: RefObject<() => void>,
+  motion: RefObject<{ rpm: number }>,
   reduced: boolean,
 ) {
   useLayoutEffect(() => {
@@ -38,6 +39,7 @@ export function useInstrumentMotion(
     let visible = false,
       previous = -1;
     const render = () => {
+      motion.current.rpm = state.rpm;
       // React can replace the SVG during refresh or a layout update.
       // Never animate a detached needle or a stale copy of the filled arc.
       if (
@@ -57,9 +59,9 @@ export function useInstrumentMotion(
         "transform",
         `rotate(${angle} ${CENTER_X} ${geometry.current.cy})`,
       );
-      body.setAttribute("d", needleShape(geometry.current, angle));
+      body.setAttribute("d", needleShape(geometry.current));
       progress.forEach((path) =>
-        path.setAttribute("d", instrumentArc(-22, angle, geometry.current.cy)),
+        path.setAttribute("d", instrumentArc(angleForRpm(0), angle, geometry.current.cy)),
       );
       if (rpm === previous) return;
       previous = rpm;
@@ -118,7 +120,7 @@ export function useInstrumentMotion(
       // the cursor's horizontal position, clamped to the scale's end marks.
       const start = angleForRpm(0),
         end = angleForRpm(MAX_RPM);
-      const radius = RADIUS * geometry.current.scale - 3;
+      const radius = RADIUS * geometry.current.scale - (geometry.current.mobile ? 10 : 16);
       const offset =
         event.clientX - rect.left - CENTER_X * geometry.current.scale;
       const sine = Math.min(
@@ -173,5 +175,5 @@ export function useInstrumentMotion(
       returning?.kill();
       draw.current = () => {};
     };
-  }, [hero, gauge, geometry, draw, reduced]);
+  }, [hero, gauge, geometry, draw, motion, reduced]);
 }

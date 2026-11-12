@@ -1,0 +1,30 @@
+.horizon-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #0a0a0b;
+}
+.horizon-glow canvas,
+.horizon-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.horizon-glow canvas {
+  opacity: 0;
+}
+.horizon-glow[data-renderer="webgl-float"] canvas {
+  opacity: 1;
+}
+.horizon-fallback {
+  background:
+    radial-gradient(ellipse 65% 0.2% at 50% var(--horizon), #fff4e8 10%, #ffe9d6aa 70%, transparent 100%),
+    radial-gradient(ellipse 80% 3% at 50% var(--horizon), #ff8a00aa, #e5173f66 40%, transparent 100%),
+    radial-gradient(ellipse 70% 22% at 50% var(--horizon), #3a0814, transparent 100%);
+}
+/* The float canvas covers the static fallback; no blend/blur layer on top. */
+.horizon-glow[data-renderer="webgl-float"] .horizon-fallback {
+  visibility: hidden;
+}

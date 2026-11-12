@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { CSSProperties, PointerEvent } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Expand, X } from "lucide-react";
 import { workPhotos } from "../config/content.config";
 import { siteConfig } from "../config/site.config";
 import { TechHeadingRun } from "./TechText/TechHeadingRun";
+import { useReducedMotion } from "../hooks/useReducedMotion";
+import { gsap } from "../lib/scroll";
 
 const count = workPhotos.length;
 const wrap = (index: number) => ((index % count) + count) % count;
@@ -19,10 +21,39 @@ export function WorkCases() {
   const gallery = useRef<HTMLDivElement>(null);
   const pointer = useRef<{ x: number; y: number } | null>(null);
   const suppressClickUntil = useRef(0);
+  const progress = useRef({ value: 0 });
+  const reduced = useReducedMotion();
   const active = wrap(position);
   const current = workPhotos[active];
   const enlarged = opened === null ? null : workPhotos[opened];
   const step = (direction: number) => setPosition((value) => value + direction);
+  useLayoutEffect(() => {
+    const cards = gallery.current?.querySelectorAll<HTMLButtonElement>(".work-gallery-photo");
+    if (!cards) return;
+    const paint = () => {
+      cards.forEach((card, index) => {
+        // Recycle a card only on the invisible back of the ribbon. A single
+        // continuous cursor keeps 08 → 01 identical to every other step.
+        const offset = offsetFrom(index, progress.current.value);
+        const distance = Math.abs(offset);
+        const fade = Math.max(0, Math.min(1, (2.85 - distance) / 0.65));
+        const opacity = (1 - Math.min(distance, 2.2) * 0.045) * fade * fade * (3 - 2 * fade);
+        card.style.setProperty("--slot", String(offset));
+        card.style.setProperty("--distance", String(distance));
+        card.style.opacity = String(opacity);
+        card.style.zIndex = String(10 - Math.round(distance));
+      });
+    };
+    paint();
+    const tween = gsap.to(progress.current, {
+      value: position,
+      duration: reduced ? 0 : 0.85,
+      ease: "power2.inOut",
+      onUpdate: paint,
+      overwrite: true,
+    });
+    return () => { tween.kill(); };
+  }, [position, reduced]);
   const close = () => {
     dialog.current?.close();
     setOpened(null);
@@ -117,9 +148,8 @@ export function WorkCases() {
                 key={photo.file}
                 style={
                   {
-                    "--slot": offset,
-                    "--distance": Math.abs(offset),
-                    zIndex: 5 - Math.abs(offset),
+                    "--slot": offsetFrom(index, 0),
+                    "--distance": Math.abs(offsetFrom(index, 0)),
                   } as CSSProperties
                 }
                 data-outside={hidden}

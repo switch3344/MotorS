@@ -1,9 +1,10 @@
 import { forwardRef } from "react";
 
-export const RADIUS = 1880;
+export const SHOW_TACHOMETER = true;
+export const RADIUS = 3200;
 export const CENTER_X = 800;
 export const MAX_RPM = 8000;
-export const angleForRpm = (rpm: number) => -22 + (rpm / MAX_RPM) * 44;
+export const angleForRpm = (rpm: number) => -13 + (rpm / MAX_RPM) * 26;
 const rad = (angle: number) => (angle * Math.PI) / 180;
 const point = (angle: number, radius: number, cy: number) => ({
   x: CENTER_X + radius * Math.sin(rad(angle)),
@@ -26,13 +27,14 @@ export interface GaugeGeometry {
   labelSize: number;
   bottom: number;
   scale: number;
+  horizon: number;
 }
 
-export function needleShape(geometry: GaugeGeometry, angle: number) {
-  const { cy, bottom, scale } = geometry;
-  const tip = cy - RADIUS + 3 / scale;
-  const tail = cy - (cy - bottom - 24 / scale) / Math.cos(rad(angle));
-  return `M ${CENTER_X - 1 / scale} ${tip} L ${CENTER_X + 1 / scale} ${tip} L ${CENTER_X + 7 / scale} ${tail} L ${CENTER_X - 7 / scale} ${tail} Z`;
+export function needleShape(geometry: GaugeGeometry) {
+  const { cy, scale, mobile } = geometry;
+  const tip = cy - RADIUS + (mobile ? 10 : 16) / scale;
+  const tail = tip + (mobile ? 38 : 62) / scale;
+  return `M ${CENTER_X - 0.65 / scale} ${tip} L ${CENTER_X + 0.65 / scale} ${tip} L ${CENTER_X + 2 / scale} ${tail} L ${CENTER_X - 2 / scale} ${tail} Z`;
 }
 
 export const Instrument = forwardRef<
@@ -40,7 +42,6 @@ export const Instrument = forwardRef<
   { geometry: GaugeGeometry }
 >(function Instrument({ geometry }, ref) {
   const { cy, top, mobile, labelSize, scale } = geometry;
-  const tip = cy - RADIUS + 3 / scale;
   return (
     <div
       className="instrument"
@@ -55,6 +56,7 @@ export const Instrument = forwardRef<
       <svg
         className="instrument-svg"
         viewBox="0 0 1600 900"
+        preserveAspectRatio="xMidYMid slice"
         style={{ top }}
         aria-hidden="true"
       >
@@ -73,38 +75,10 @@ export const Instrument = forwardRef<
             <stop stopColor="#ff2d4e" />
             <stop offset="1" stopColor="#5a0a18" />
           </linearGradient>
-          <filter
-            id="instrument-fill-glow"
-            x="-10%"
-            y="-100%"
-            width="120%"
-            height="300%"
-          >
-            <feGaussianBlur stdDeviation="4" />
-          </filter>
-          <filter
-            id="instrument-tip-glow"
-            x={CENTER_X - 60 / scale}
-            y={tip - 45 / scale}
-            width={120 / scale}
-            height={120 / scale}
-            filterUnits="userSpaceOnUse"
-          >
-            <feGaussianBlur stdDeviation="8" />
-          </filter>
         </defs>
+        <path d={instrumentArc(-18, 18, cy)} className="instrument-track" />
         <path
-          d={instrumentArc(-24, 24, cy, RADIUS + 14 / scale)}
-          className="instrument-outer-ring"
-        />
-        <path d={instrumentArc(-24, 24, cy)} className="instrument-track" />
-        <path
-          d={instrumentArc(-22, angleForRpm(900), cy)}
-          className="instrument-progress instrument-progress-glow"
-          filter="url(#instrument-fill-glow)"
-        />
-        <path
-          d={instrumentArc(-22, angleForRpm(900), cy)}
+          d={instrumentArc(angleForRpm(0), angleForRpm(900), cy)}
           className="instrument-progress"
         />
         {Array.from({ length: 81 }, (_, index) => {
@@ -113,15 +87,15 @@ export const Instrument = forwardRef<
             isMedium = !isMajor && rpm % 500 === 0;
           const length = isMajor
             ? mobile
-              ? 22
-              : 36
+              ? 10
+              : 16
             : isMedium
               ? mobile
-                ? 16
-                : 24
+                ? 6
+                : 10
               : mobile
-                ? 10
-                : 14;
+                ? 4
+                : 5;
           const a = point(angleForRpm(rpm), RADIUS, cy),
             b = point(angleForRpm(rpm), RADIUS - length / scale, cy);
           return (
@@ -132,14 +106,14 @@ export const Instrument = forwardRef<
               x2={b.x}
               y2={b.y}
               className={`instrument-tick${rpm >= 7000 ? " instrument-red" : ""}`}
-              strokeWidth={isMajor ? 4 : isMedium ? 2 : 1.5}
+              strokeWidth={isMajor ? 2 : isMedium ? 1.25 : 0.75}
               vectorEffect="non-scaling-stroke"
             />
           );
         })}
         {Array.from({ length: 9 }, (_, value) => {
           const angle = angleForRpm(value * 1000),
-            p = point(angle, RADIUS + (mobile ? 24 : 38) / scale, cy);
+            p = point(angle, RADIUS + (mobile ? 15 : 23) / scale, cy);
           return (
             <text
               key={value}
@@ -157,19 +131,11 @@ export const Instrument = forwardRef<
         })}
         <g
           className="instrument-needle"
-          transform={`rotate(-22 ${CENTER_X} ${cy})`}
+          transform={`rotate(${angleForRpm(900)} ${CENTER_X} ${cy})`}
         >
-          <ellipse
-            cx={CENTER_X}
-            cy={tip + 10 / scale}
-            rx={5 / scale}
-            ry={12 / scale}
-            className="instrument-tip-halo"
-            filter="url(#instrument-tip-glow)"
-          />
           <path
             className="instrument-needle-body"
-            d={needleShape(geometry, -22)}
+            d={needleShape(geometry)}
           />
         </g>
       </svg>

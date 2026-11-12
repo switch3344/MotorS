@@ -1,14 +1,10 @@
 import mediaManifest from "../../config/media.generated.json";
 import { useEffect, useRef } from "react";
-import { CENTER_X, RADIUS } from "./Instrument";
-import type { GaugeGeometry } from "./Instrument";
 
 export function HeroMedia({
   reduced,
-  geometry,
 }: {
   reduced: boolean;
-  geometry: GaugeGeometry;
 }) {
   const player = useRef<HTMLVideoElement>(null);
   const media: { poster: string; sources: { src: string; type: string }[] } =
@@ -36,13 +32,11 @@ export function HeroMedia({
       video.pause();
     };
   }, [reduced]);
+  if (!poster && !media.sources.length) return null;
   return (
     <div
       className="instrument-media"
       aria-hidden="true"
-      style={{
-        clipPath: `circle(${RADIUS * geometry.scale}px at ${CENTER_X * geometry.scale}px ${geometry.cy * geometry.scale + geometry.top}px)`,
-      }}
     >
       {poster && <img src={poster} alt="" width="1920" height="1080" />}
       {!reduced && media.sources.length > 0 && (

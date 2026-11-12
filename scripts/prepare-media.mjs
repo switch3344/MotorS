@@ -24,7 +24,7 @@ console.log(
   "Hero media: " +
     (sources.length
       ? sources.map((s) => s.src).join(", ")
-      : "solid background") +
+      : "horizon shader fallback") +
     "; " +
     poster,
 );

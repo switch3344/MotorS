@@ -56,23 +56,25 @@
   position: relative;
   flex: none;
   margin-top: 28px;
-  min-height: 48px;
+  min-height: 56px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 22px;
-  padding: 12px 20px;
-  border: 1px solid #ffffff24;
+  padding: 0 28px;
+  border: 1px solid rgba(255,255,255,.35);
   border-radius: 99px;
-  background: #1b1e22d9;
+  background: transparent;
   color: #f3f3f4;
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 500;
   white-space: nowrap;
-  transition: background 0.2s;
+  transition: background .2s, transform .2s;
 }
 .v12-toggle:hover {
-  background: #303238;
+  background: rgba(255,255,255,.08);
 }
+.v12-toggle:active { transform: scale(.98); }
 .v12-services-reveal {
   min-width: 0;
   padding-top: 28px;
@@ -312,7 +314,7 @@
   }
   .v12-toggle {
     margin-top: 24px;
-    min-height: 46px;
+    min-height: 56px;
   }
   .v12-services-reveal {
     width: 100%;

@@ -42,6 +42,7 @@ export function EngineScene({
   const section = useRef<HTMLElement>(null);
   const [near, setNear] = useState(preloading);
   const [visible, setVisible] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [active, setActive] = useState<number | null>(0);
   const [mobile, setMobile] = useState(() => window.innerWidth < 800);
   const reduced = useReducedMotion();
@@ -50,6 +51,15 @@ export function EngineScene({
     if (reduced) setPlaying(false);
   }, [reduced]);
   useEffect(() => {
+    const updateModal = () =>
+      setModalOpen(!!document.querySelector("dialog[open]"));
+    const modalObserver = new MutationObserver(updateModal);
+    modalObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["open"],
+      subtree: true,
+    });
+    updateModal();
     const preload = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -70,6 +80,7 @@ export function EngineScene({
     const update = () => setMobile(query.matches);
     query.addEventListener("change", update);
     return () => {
+      modalObserver.disconnect();
       preload.disconnect();
       observer.disconnect();
       query.removeEventListener("change", update);
@@ -121,7 +132,7 @@ export function EngineScene({
                   <CanvasScene
                     playing={playing}
                     mobile={mobile}
-                    visible={visible}
+                    visible={visible && !modalOpen}
                     warming={preloading}
                     onReady={onReady}
                   />

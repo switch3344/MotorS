@@ -2,33 +2,21 @@
 .hero-video .circular-copy {
   position: absolute; top: clamp(124px, 15svh, 180px); left: 0; right: 0;
   padding-top: 0; width: calc(100% - 64px); z-index: 3;
-  transition: opacity .25s;
 }
 .hero-video .circular-copy h1 {
   font-size: clamp(44px, 4.6vw, 86px); font-weight: 500; line-height: 1.02;
   white-space: nowrap; letter-spacing: -.055em;
 }
-.hero-video:has([data-display="full"]) .circular-copy { opacity: 0; pointer-events: none; }
 .hero-speedometer-video { position: absolute; inset: 0; z-index: 1; background: #000; }
 .hero-video-frame { position: absolute; inset: 0; background: #000; contain: layout paint; cursor: pointer; }
-.hero-native-video {
-  position: absolute; top: 0; bottom: 0; left: 4%; width: 92%; height: 100%;
-  object-fit: cover; object-position: center; opacity: 0; pointer-events: none;
-}
-.hero-native-video.is-active { opacity: 1; }
-.hero-full-video { object-fit: contain; }
-.hero-video-frame::after {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(#000b, #0000 35%, #0000 86%, #0008);
-}
-.hero-speedometer-video[data-display="full"] .hero-video-frame::after { display: none; }
+.hero-native-video { position: absolute; top: 0; bottom: 0; left: 4%; width: 92%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; }
+.hero-video-frame::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(#000b, #0000 35%, #0000 86%, #0008); }
 .hero-video-watch {
   position: absolute; left: 50%; top: 50%; z-index: 2; transform: translate(-50%, -50%);
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   width: max-content; height: 56px; padding: 0 24px; border: 1px solid #ffffff08; border-radius: 999px;
   background: #181919; color: #f1f1f1; font-size: 16px; font-weight: 500; line-height: 1; white-space: nowrap;
-  text-align: center; cursor: pointer; opacity: 0; transition: opacity .2s, background .2s;
-  will-change: transform;
+  text-align: center; cursor: pointer; opacity: 0; transition: opacity .2s, background .2s; will-change: transform;
 }
 .hero-video-watch > svg { flex: none; }
 .hero-video-watch:hover { background: #242626; }
@@ -36,43 +24,38 @@
 .hero-speedometer-video:hover .hero-video-watch,
 .hero-speedometer-video:focus-within .hero-video-watch,
 .hero-speedometer-video[data-state="blocked"] .hero-video-watch,
-.hero-speedometer-video[data-state="paused"] .hero-video-watch,
-.hero-speedometer-video[data-state="buffering"] .hero-video-watch { opacity: 1; }
+.hero-speedometer-video[data-state="paused"] .hero-video-watch { opacity: 1; }
 .hero-video-watch:disabled { cursor: wait; }
-.hero-video-fallback {
-  position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 16px; color: #dadde1; font-size: 15px; background: #08090a;
-}
-.hero-video-exit {
-  display: flex; align-items: center; gap: 9px;
-  height: 40px; padding: 0 14px; border: 1px solid #ffffff40; border-radius: 99px;
-  color: #e6e8eb; background: #090a0bc9; font-size: 12px; cursor: pointer;
-}
-.hero-video-exit:hover { border-color: #ffffff90; background: #191a1ce6; }
-.hero-video-exit kbd { margin-left: 6px; color: #8d949e; font: inherit; font-size: 10px; }
-.hero-video-footer {
-  position: absolute; bottom: 14px; left: 32px; right: 32px; z-index: 4; display: flex;
-  align-items: center; justify-content: space-between; gap: 16px; min-height: 20px; color: #9da3ac; font-size: 10px;
-}
+.hero-video-fallback { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #dadde1; font-size: 15px; background: #08090a; }
+.hero-video-footer { position: absolute; bottom: 14px; left: 32px; right: 32px; z-index: 4; min-height: 20px; color: #9da3ac; font-size: 10px; }
 .hero-video-footer a { display: inline-flex; align-items: center; gap: 7px; }
 .hero-video-footer a:hover { color: #fff; }
-.hero-video-actions { position: absolute; top: 124px; right: 32px; z-index: 4; display: flex; gap: 8px; align-items: center; }
-.hero-video-icon { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid #ffffff40; border-radius: 50%; background: #090a0bc9; color: #e6e8eb; cursor: pointer; }
-.hero-video-icon:hover { border-color: #ffffff90; }
-.hero-video-frame:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
-.hero-speedometer-video:fullscreen { position: fixed; inset: 0; }
-.hero-speedometer-video:fullscreen .hero-video-actions { top: 28px; }
+/* Native top-layer dialog keeps the header, hero corners and page controls out of the film. */
+.hero-cinema { position: fixed; inset: 0; width: 100vw; height: 100svh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; overflow: hidden; overscroll-behavior: contain; background: #000; color: #fff; }
+.hero-cinema::backdrop { background: #000; }
+.cinema-frame { position: absolute; inset: 0; cursor: pointer; outline: none; }
+.cinema-video { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.cinema-pause-mark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); pointer-events: none; color: #fff; }
+.cinema-actions { position: absolute; top: 20px; right: 24px; z-index: 3; display: flex; align-items: center; gap: 8px; opacity: 1; transition: opacity .18s; }
+.cinema-actions button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #eceff2; cursor: pointer; }
+.cinema-actions button:hover { background: #ffffff12; }
+.cinema-actions button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.hero-cinema[data-controls="hidden"] .cinema-actions { opacity: 0; pointer-events: none; }
+.hero-cinema .cinema-actions:focus-within { opacity: 1; pointer-events: auto; }
 @media (max-width: 699px) {
   .hero-video .circular-copy { top: 125px; width: calc(100% - 28px); }
   .hero-video .circular-copy h1 { font-size: clamp(19px, 5.9vw, 36px); }
   .hero-native-video { left: 3%; width: 94%; }
   .hero-video-footer { left: 18px; right: 18px; }
-  .hero-video-actions { top: 106px; right: 18px; }
-  .hero-video-exit kbd { display: none; }
   .hero-video-watch { height: 52px; padding: 0 22px; font-size: 14px; opacity: 1; }
+  .cinema-actions { top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); gap: 4px; }
+  .hero-cinema[data-controls] .cinema-actions { opacity: 1; pointer-events: auto; }
 }
-@media (hover: none) { .hero-video-watch { opacity: 1; pointer-events: auto; } }
+@media (hover: none) {
+  .hero-video-watch { opacity: 1; }
+  .hero-cinema[data-controls] .cinema-actions { opacity: 1; pointer-events: auto; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .hero-video-watch, .hero-video .circular-copy { transition: none; }
+  .hero-video-watch, .cinema-actions { transition: none; }
   .hero-video-watch { will-change: auto; }
 }

@@ -48,9 +48,10 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
     const moveY = gsap.quickTo(button, "y", { duration: 0.45, ease: "power3.out" });
     const move = (event: PointerEvent) => {
       const bounds = surface.getBoundingClientRect();
-      const half = button.offsetWidth / 2 + 20;
-      moveX(Math.max(half, Math.min(bounds.width - half, event.clientX - bounds.left)) - bounds.width / 2);
-      moveY(Math.max(160, Math.min(bounds.height - half, event.clientY - bounds.top)) - bounds.height / 2);
+      const halfWidth = button.offsetWidth / 2 + 20;
+      const halfHeight = button.offsetHeight / 2 + 20;
+      moveX(Math.max(halfWidth, Math.min(bounds.width - halfWidth, event.clientX - bounds.left)) - bounds.width / 2);
+      moveY(Math.max(160, Math.min(bounds.height - halfHeight, event.clientY - bounds.top)) - bounds.height / 2);
     };
     const reset = () => { moveX(0); moveY(0); };
     surface.addEventListener("pointermove", move);
@@ -222,9 +223,8 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
         {!showFull && status !== "unavailable" && (
           <button className="hero-video-watch" ref={watchButton} type="button" onClick={watch}
             disabled={status === "loading" || (watching && status === "buffering")} aria-label="Просмотреть видео со звуком">
-            <Play size={23} fill="currentColor" strokeWidth={1.5} />
-            <span>{watching ? "Запускаем…" : status === "loading" ? "Загрузка…" : <>Просмотреть<br />видео</>}</span>
-            <small>Со звуком</small>
+            <Play size={14} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+            <span>{watching ? "Запускаем…" : status === "loading" ? "Загрузка…" : "Просмотреть видео"}</span>
           </button>
         )}
         {status === "unavailable" && (

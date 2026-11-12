@@ -24,14 +24,15 @@
 .hero-speedometer-video[data-display="full"] .hero-video-frame::after { display: none; }
 .hero-video-watch {
   position: absolute; left: 50%; top: 50%; z-index: 2; transform: translate(-50%, -50%);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px;
-  width: 144px; height: 144px; padding: 16px; border: 1px solid #ffffff80; border-radius: 50%;
-  background: #090a0bbd; color: #fff; font-size: 14px; font-weight: 500; line-height: 1.2;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: max-content; height: 56px; padding: 0 24px; border: 1px solid #ffffff08; border-radius: 999px;
+  background: #181919; color: #f1f1f1; font-size: 16px; font-weight: 500; line-height: 1; white-space: nowrap;
   text-align: center; cursor: pointer; opacity: 0; transition: opacity .2s, background .2s;
   will-change: transform;
 }
-.hero-video-watch small { color: #b9bec4; font-size: 10px; font-weight: 400; }
-.hero-video-watch:hover { background: #141517e6; border-color: #fff; }
+.hero-video-watch > svg { flex: none; }
+.hero-video-watch:hover { background: #242626; }
+.hero-video-watch:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 .hero-speedometer-video:hover .hero-video-watch,
 .hero-speedometer-video:focus-within .hero-video-watch,
 .hero-speedometer-video[data-state="blocked"] .hero-video-watch,
@@ -106,7 +107,7 @@
   .hero-video-exit kbd { display: none; }
   .hero-video-control-row { gap: 7px; }
   .hero-video-volume { width: 50px; }
-  .hero-video-watch { width: 130px; height: 130px; opacity: 1; }
+  .hero-video-watch { height: 52px; padding: 0 22px; font-size: 14px; opacity: 1; }
   .hero-video-controls { opacity: 1; pointer-events: auto; }
 }
 @media (hover: none) { .hero-video-watch, .hero-video-controls { opacity: 1; pointer-events: auto; } }

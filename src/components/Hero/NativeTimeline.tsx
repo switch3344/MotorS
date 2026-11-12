@@ -27,6 +27,7 @@ export function NativeTimeline({ media, onSeek }: {
       range.current!.max = String(duration);
       if (!dragging.current && !debounce.current) range.current!.value = String(video.currentTime);
       const current = dragging.current || debounce.current ? pending.current : video.currentTime;
+      range.current!.style.setProperty("--progress", `${duration > 0 ? current / duration * 100 : 0}%`);
       const text = `${stamp(current)} / ${stamp(duration)}`;
       if (text !== previousLabel) {
         label.current!.textContent = text;
@@ -83,6 +84,7 @@ export function NativeTimeline({ media, onSeek }: {
         onBlur={() => { if (dragging.current || debounce.current) commit(); }}
         onChange={(event) => {
           pending.current = Number(event.currentTarget.value);
+          event.currentTarget.style.setProperty("--progress", `${pending.current / Number(event.currentTarget.max) * 100}%`);
           if (dragging.current) return;
           resume.current = !media.current!.paused;
           window.clearTimeout(debounce.current);

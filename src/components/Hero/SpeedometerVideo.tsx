@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Maximize, Minimize, Pause, Play, RotateCcw, Volume2, VolumeX } from "lucide-react";
+import { ArrowUpRight, Maximize, Minimize, Pause, Play, RotateCcw, Volume2, VolumeX, X } from "lucide-react";
+import { gsap } from "gsap";
 import { NativeTimeline } from "./NativeTimeline";
 import "./speedometer-video.css";
 
 const asset = (file: string) => `${import.meta.env.BASE_URL}video/${file}`;
 const PREVIEW = asset("gtr-preview-v3.mp4");
-const FULL_VIDEO = asset("gtr_final_ready.mp4");
+const FULL_VIDEO = asset("gtr_final_ready_v2.mp4");
 const POSTER = asset("gtr-poster-v1.jpg");
 const SOURCE = "https://www.youtube.com/watch?v=3LI1MHnLwB0";
 export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   const root = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const preview = useRef<HTMLVideoElement>(null);
+  const watchButton = useRef<HTMLButtonElement>(null);
   const [showFull, setShowFull] = useState(false);
   const fullVisible = useRef(false);
   const warmTimer = useRef(0);
@@ -26,10 +28,39 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   const [status, setStatus] = useState("loading");
   const desired = useRef(wanted);
   const mode = useRef(watching);
+  const previousWatching = useRef(false);
   const visible = useRef(false);
   desired.current = wanted;
   mode.current = watching;
   const sync = useRef<() => void>(() => {});
+
+  useEffect(() => {
+    if (previousWatching.current && !watching) watchButton.current?.focus({ preventScroll: true });
+    previousWatching.current = watching;
+  }, [watching]);
+
+  useEffect(() => {
+    const surface = root.current;
+    const button = watchButton.current;
+    if (!surface || !button || showFull || reduced || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    gsap.set(button, { xPercent: -50, yPercent: -50, x: 0, y: 0 });
+    const moveX = gsap.quickTo(button, "x", { duration: 0.45, ease: "power3.out" });
+    const moveY = gsap.quickTo(button, "y", { duration: 0.45, ease: "power3.out" });
+    const move = (event: PointerEvent) => {
+      const bounds = surface.getBoundingClientRect();
+      const half = button.offsetWidth / 2 + 20;
+      moveX(Math.max(half, Math.min(bounds.width - half, event.clientX - bounds.left)) - bounds.width / 2);
+      moveY(Math.max(160, Math.min(bounds.height - half, event.clientY - bounds.top)) - bounds.height / 2);
+    };
+    const reset = () => { moveX(0); moveY(0); };
+    surface.addEventListener("pointermove", move);
+    surface.addEventListener("pointerleave", reset);
+    return () => {
+      surface.removeEventListener("pointermove", move);
+      surface.removeEventListener("pointerleave", reset);
+      gsap.killTweensOf(button);
+    };
+  }, [reduced, showFull]);
 
   useEffect(() => { if (reduced && !mode.current) setWanted(false); }, [reduced]);
   useEffect(() => { sync.current(); }, [wanted]);
@@ -107,6 +138,28 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
     // the warmed full player produces its first playing frame.
     requestPlay(element);
   };
+  const exitWatch = () => {
+    mode.current = false;
+    fullVisible.current = false;
+    fullStarted.current = false;
+    video.current!.pause();
+    video.current!.muted = true;
+    setWatching(false);
+    setShowFull(false);
+    setMuted(true);
+    desired.current = !reduced;
+    setWanted(!reduced);
+    setStatus(reduced ? "paused" : "playing");
+    if (document.fullscreenElement === root.current) void document.exitFullscreen().catch(() => {});
+    if (!reduced && visible.current && !document.hidden) requestPlay(preview.current!);
+  };
+  useEffect(() => {
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && mode.current && !document.fullscreenElement) exitWatch();
+    };
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
+  }, [reduced]);
   const playing = wanted && (status === "playing" || status === "buffering");
   const togglePlayback = () => {
     const element = video.current;
@@ -136,7 +189,11 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
   return (
     <div className="hero-speedometer-video" ref={root} data-state={status}
       data-mode={watching ? "watching" : "preview"} data-display={showFull ? "full" : "preview"} data-muted={muted} >
-      <div className="hero-video-frame">
+      <div className="hero-video-frame" onClick={(event) => {
+        if ((event.target as HTMLElement).closest("button, a")) return;
+        if (showFull) togglePlayback();
+        else if (status !== "loading" && !watching) watch();
+      }}>
         <video className={`hero-native-video hero-preview-video${showFull ? "" : " is-active"}`}
           ref={preview} src={PREVIEW} poster={POSTER} playsInline preload="auto" muted loop
           onCanPlay={() => { if (!mode.current) { setStatus(preview.current!.paused ? "paused" : "playing"); sync.current(); } }}
@@ -146,6 +203,7 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
         <video className={`hero-native-video hero-full-video${showFull ? " is-active" : ""}`}
           ref={video} src={FULL_VIDEO} poster={POSTER} playsInline preload="metadata"
           onPlaying={() => {
+            if (!mode.current) { video.current!.pause(); return; }
             fullVisible.current = true;
             fullStarted.current = true;
             setShowFull(true);
@@ -162,10 +220,11 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
           onVolumeChange={(event) => { if (mode.current) setMuted(event.currentTarget.muted || event.currentTarget.volume === 0); }}
           onEnded={() => { setStatus("ended"); setWanted(false); desired.current = false; }} />
         {!showFull && status !== "unavailable" && (
-          <button className="hero-video-watch" type="button" onClick={watch}
-            disabled={watching || status === "loading"} aria-label="Смотреть разгон со звуком">
-            <span><Play size={22} fill="currentColor" /></span>
-            {watching ? "Запускаем…" : status === "loading" ? "Загрузка видео…" : "Смотреть разгон"}
+          <button className="hero-video-watch" ref={watchButton} type="button" onClick={watch}
+            disabled={status === "loading" || (watching && status === "buffering")} aria-label="Просмотреть видео со звуком">
+            <Play size={23} fill="currentColor" strokeWidth={1.5} />
+            <span>{watching ? "Запускаем…" : status === "loading" ? "Загрузка…" : <>Просмотреть<br />видео</>}</span>
+            <small>Со звуком</small>
           </button>
         )}
         {status === "unavailable" && (
@@ -174,6 +233,11 @@ export function SpeedometerVideo({ reduced }: { reduced: boolean }) {
           </a>
         )}
       </div>
+      {watching && (
+        <button className="hero-video-exit" type="button" onClick={exitWatch} aria-label="Выйти из просмотра видео">
+          <X size={16} /><span>Закрыть видео</span><kbd>Esc</kbd>
+        </button>
+      )}
       {showFull && status !== "unavailable" && (
         <div className="hero-video-controls video-support" role="group" aria-label="Управление видео">
           <NativeTimeline media={video} onSeek={seek} />

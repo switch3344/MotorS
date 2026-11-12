@@ -4,7 +4,7 @@ import math
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'.qa/outro-v6'
+OUT=ROOT/'.qa/outro-v7'
 OUT.mkdir(parents=True,exist_ok=True)
 W,H,FPS,COUNT=1920,1080,30,156
 
@@ -43,29 +43,28 @@ for frame in range(COUNT):
     draw=ImageDraw.Draw(image)
     for text,typeface,y,start,color in [
         ('MotorServiceKRD',brand,250,1.5,(245,246,248)),
-        ('Чтобы ехать уверенно',headline,360,1.85,(245,246,248)),
-        ('Диагностика двигателя',subtitle,490,2.25,(167,174,184)),
-        ('Видео: Авторевю / Nissan GT-R',credit,1010,2.5,(82,88,96)),
+        ('Чтобы ехать уверенно',headline,360,1.68,(245,246,248)),
+        ('Диагностика двигателя',subtitle,490,1.86,(167,174,184)),
+        ('Видео: Авторевю / Nissan GT-R',credit,1010,2.1,(82,88,96)),
     ]:
-        alpha=smooth((t-start)/.35)
+        alpha=smooth((t-start)/.08)
         if alpha<=0:continue
         rgb=tuple(round(v*alpha) for v in color)
         box=draw.textbbox((0,0),text,font=typeface)
         x=(W-(box[2]-box[0]))/2-box[0]
-        rise=8*(1-smooth((t-start)/.4))
-        draw.text((x,y+rise-box[1]),text,font=typeface,fill=rgb)
+        draw.text((x,y-box[1]),text,font=typeface,fill=rgb)
     image.save(OUT/f'frame-{frame:03d}.png',compress_level=2)
     if frame==COUNT-1:image.save(OUT/'preview.png')
 print('Brand outro rendered:',COUNT,'frames')
 
 # Title cards use the site's variable font at a deliberate heavy weight.
 cardfont=font('cyrillic',208,800)
-for name,text,count in [('a','ВСЁ',15),('want','НАЧИНАЕТСЯ',20),('drive','С ДВИГАТЕЛЯ',24)]:
-    folder=ROOT/'.qa/user-montage'/('card-'+name);folder.mkdir(parents=True,exist_ok=True)
+for name,text,count in [('a','ВСЁ',9),('want','НАЧИНАЕТСЯ',12),('drive','С ДВИГАТЕЛЯ',15)]:
+    folder=ROOT/'.qa/user-montage'/('card-v7-'+name);folder.mkdir(parents=True,exist_ok=True)
     for frame in range(count):
         image=Image.new('RGB',(W,H),'black');draw=ImageDraw.Draw(image)
         box=draw.textbbox((0,0),text,font=cardfont)
         x=(W-(box[2]-box[0]))/2-box[0];y=(H-(box[3]-box[1]))/2-box[1]
-        alpha=min(1,frame/1.2);color=tuple([round(255*alpha)]*3)
-        draw.text((x,y+8*(1-min(1,frame/3.6))**3),text,font=cardfont,fill=color)
+        # Hard cut: full contrast on the first frame, with no opacity or position ramp.
+        draw.text((x,y),text,font=cardfont,fill=(255,255,255))
         image.save(folder/f'frame-{frame:03d}.png',compress_level=2)

@@ -6,7 +6,7 @@ import "./speedometer-video.css";
 
 const asset = (file: string) => `${import.meta.env.BASE_URL}video/${file}`;
 const PREVIEW = asset("gtr-preview-v5.mp4");
-const FULL_VIDEO = asset("gtr_final_ready_v6.mp4");
+const FULL_VIDEO = asset("gtr_final_ready_v7.mp4");
 const POSTER = asset("gtr-poster-v2.jpg");
 const SOURCE = "https://www.youtube.com/watch?v=3LI1MHnLwB0";
 

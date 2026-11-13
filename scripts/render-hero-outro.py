@@ -4,7 +4,7 @@ import math
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'.qa/outro-v9'
+OUT=ROOT/'.qa/outro-v10'
 OUT.mkdir(parents=True,exist_ok=True)
 W,H,FPS,COUNT=1920,1080,30,156
 
@@ -68,8 +68,8 @@ print('Brand outro rendered:',COUNT,'frames')
 
 # Title cards use the site's variable font at a deliberate heavy weight.
 cardfont=font('cyrillic',208,800)
-for name,text,count in [('a','ВСЁ',9),('want','НАЧИНАЕТСЯ',12),('drive','С ДВИГАТЕЛЯ',15)]:
-    folder=ROOT/'.qa/user-montage'/('card-v7-'+name);folder.mkdir(parents=True,exist_ok=True)
+for name,text,count in [('a','ВСЁ',15),('want','НАЧИНАЕТСЯ',28),('drive','С ДВИГАТЕЛЯ',26)]:
+    folder=ROOT/'.qa/user-montage'/('card-v10-'+name);folder.mkdir(parents=True,exist_ok=True)
     for frame in range(count):
         image=Image.new('RGB',(W,H),'black');draw=ImageDraw.Draw(image)
         box=draw.textbbox((0,0),text,font=cardfont)

@@ -18,3 +18,6 @@ public/video/gtr-preview-v1.mp4
 public/video/gtr-preview-v2.mp4
 public/video/gtr-playback-v2.mp4
 public/video/gtr-playback-v3.mp4
+
+# Private user voice sources; only the rendered movie is published.
+assets-source/audio/

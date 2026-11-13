@@ -6,7 +6,7 @@ import "./speedometer-video.css";
 
 const asset = (file: string) => `${import.meta.env.BASE_URL}video/${file}`;
 const PREVIEW = asset("gtr-preview-v5.mp4");
-const FULL_VIDEO = asset("gtr_final_ready_v9.mp4");
+const FULL_VIDEO = asset("gtr_final_ready_v10.mp4");
 const POSTER = asset("gtr-poster-v2.jpg");
 const SOURCE = "https://www.youtube.com/watch?v=3LI1MHnLwB0";
 
@@ -151,7 +151,11 @@ export function SpeedometerVideo({
     const full = video.current!,
       clip = preview.current!;
     const reconcile = () => {
-      if (finished.current || !visible.current || document.hidden) {
+      if (
+        finished.current ||
+        document.hidden ||
+        (!mode.current && !visible.current)
+      ) {
         full.pause();
         clip.pause();
         if (mode.current) {
@@ -244,10 +248,13 @@ export function SpeedometerVideo({
   };
   const toggle = () => {
     if (finished.current || completed) return;
-    desired.current = !playing;
-    setWanted(!playing);
-    if (playing) video.current!.pause();
-    else requestPlay(video.current!);
+    const full = video.current!;
+    const shouldPlay = full.paused;
+    desired.current = shouldPlay;
+    setWanted(shouldPlay);
+    setStatus(shouldPlay ? "buffering" : "paused");
+    if (shouldPlay) requestPlay(full);
+    else full.pause();
     revealControls();
   };
   const toggleMute = () => {

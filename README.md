@@ -36,7 +36,7 @@ npm run preview
 
 ## Видео для hero
 
-`public/video/gtr_final_ready_v8.mp4` — монтаж по сценарию пользователя из ролика Авторевю о Nissan GT-R. `gtr-preview-v5.mp4` — беззвучное превью, `gtr-poster-v2.jpg` — poster. Источник указан в финале ролика и в документации. Озвучки нет. Сценарий рендера — `scripts/render-user-montage.py`; подробности и воспроизведение сборки — `docs/HERO-VIDEO.md`.
+`public/video/gtr_final_ready_v9.mp4` — монтаж по сценарию пользователя из ролика Авторевю о Nissan GT-R. `gtr-preview-v5.mp4` — беззвучное превью, `gtr-poster-v2.jpg` — poster. Источник указан в финале ролика и в документации. Озвучки нет. Сценарий рендера — `scripts/render-user-montage.py`; подробности и воспроизведение сборки — `docs/HERO-VIDEO.md`.
 
 ## GitHub Pages
 

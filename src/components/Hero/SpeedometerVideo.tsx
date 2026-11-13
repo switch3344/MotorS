@@ -6,7 +6,7 @@ import "./speedometer-video.css";
 
 const asset = (file: string) => `${import.meta.env.BASE_URL}video/${file}`;
 const PREVIEW = asset("gtr-preview-v5.mp4");
-const FULL_VIDEO = asset("gtr_final_ready_v8.mp4");
+const FULL_VIDEO = asset("gtr_final_ready_v9.mp4");
 const POSTER = asset("gtr-poster-v2.jpg");
 const SOURCE = "https://www.youtube.com/watch?v=3LI1MHnLwB0";
 
@@ -350,6 +350,17 @@ export function SpeedometerVideo({
           aria-label="Разгон Nissan GT-R — MotorServiceKRD"
           data-state={status}
           data-controls={controls || !playing ? "visible" : "hidden"}
+          onClick={(event) => {
+            if (event.target !== event.currentTarget) return;
+            const rect = event.currentTarget.getBoundingClientRect();
+            if (
+              event.clientX < rect.left ||
+              event.clientX > rect.right ||
+              event.clientY < rect.top ||
+              event.clientY > rect.bottom
+            )
+              exit();
+          }}
           onPointerMove={revealControls}
           onCancel={(event) => {
             event.preventDefault();

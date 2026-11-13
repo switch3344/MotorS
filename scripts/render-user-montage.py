@@ -3,7 +3,7 @@ import argparse,shutil,subprocess,sys
 parser=argparse.ArgumentParser(description='Chronological GT-R acceleration with deliberate black title interruptions')
 parser.add_argument('--ffmpeg',default=shutil.which('ffmpeg'))
 parser.add_argument('--input',default='.qa/source-gtr.mp4')
-parser.add_argument('--output',default='public/video/gtr_final_ready_v8.mp4')
+parser.add_argument('--output',default='public/video/gtr_final_ready_v9.mp4')
 parser.add_argument('--font',default='C:/Windows/Fonts/impact.ttf')
 args=parser.parse_args()
 if not args.ffmpeg: parser.error('Pass --ffmpeg /path/to/ffmpeg')
@@ -33,8 +33,8 @@ parts=[
  '[tails]atrim=start=18.1:duration=5.2,asetpts=PTS-STARTPTS,volume=0.28,afade=t=out:st=2.7:d=2.5[tail]',
  '[main_a][tail]acrossfade=d=1.2:c1=tri:c2=tri[outa]'
 ]
-graph=';'.join(parts);(work/'filter-v8.txt').write_text(graph,encoding='utf-8')
-subprocess.run([args.ffmpeg,'-y','-hide_banner','-loglevel','warning','-i',args.input,'-framerate','30','-i','.qa/outro-v7/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-a/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-want/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-drive/frame-%03d.png','-filter_complex',graph,
+graph=';'.join(parts);(work/'filter-v9.txt').write_text(graph,encoding='utf-8')
+subprocess.run([args.ffmpeg,'-y','-hide_banner','-loglevel','warning','-i',args.input,'-framerate','30','-i','.qa/outro-v9/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-a/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-want/frame-%03d.png','-framerate','30','-i','.qa/user-montage/card-v7-drive/frame-%03d.png','-filter_complex',graph,
  '-map','[outv]','-map','[outa]','-t','21.1','-c:v','libx264','-preset','fast','-tune','fastdecode','-crf','18',
  '-g','30','-keyint_min','30','-sc_threshold','0','-bf','0','-refs','1','-maxrate','5000k','-bufsize','10000k',
  '-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-movflags','+faststart',args.output],check=True)

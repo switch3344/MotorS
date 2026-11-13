@@ -1,10 +1,10 @@
 """Render the black brand outro as antialiased motion-graphics frames."""
 from pathlib import Path
 import math
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'.qa/outro-v7'
+OUT=ROOT/'.qa/outro-v9'
 OUT.mkdir(parents=True,exist_ok=True)
 W,H,FPS,COUNT=1920,1080,30,156
 
@@ -35,7 +35,16 @@ for frame in range(COUNT):
         arc=Image.new('RGB',(W*S,300*S),'#000000')
         draw=ImageDraw.Draw(arc)
         path=[(round(x*S),round((y-580)*S)) for x,y in points[:count+1]]
-        draw.line(path,fill=(244,243,238),width=7,joint='curve')
+        # Restrict the glow to the drawn arc: warm core and a narrow red halo.
+        glow=Image.new('RGB',arc.size,'#000000')
+        ImageDraw.Draw(glow).line(path,fill=(120,12,32),width=12,joint='curve')
+        arc.paste(glow.filter(ImageFilter.GaussianBlur(8*S)))
+        inner=Image.new('RGB',arc.size,'#000000')
+        ImageDraw.Draw(inner).line(path,fill=(255,110,84),width=7,joint='curve')
+        from PIL import ImageChops
+        arc=ImageChops.add(arc,inner.filter(ImageFilter.GaussianBlur(3*S)))
+        draw=ImageDraw.Draw(arc)
+        draw.line(path,fill=(255,244,232),width=7,joint='curve')
         tip=smooth(1-(t-2.95)/.3)
         color=tuple(round(a*tip+b*(1-tip)) for a,b in zip((229,23,63),(244,243,238)))
         draw.line(path[max(0,len(path)-12):],fill=color,width=8,joint='curve')

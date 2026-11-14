@@ -1,25 +1,24 @@
 .restored-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  align-items: stretch;
   height: auto;
-  min-height: clamp(600px, 76svh, 760px);
+  min-height: clamp(640px, 80svh, 800px);
   max-height: none;
-  background: var(--surface);
-  padding: 160px 40px 88px;
+  background: var(--surface-hero);
+  padding: 0;
 }
 .restored-hero-copy {
-  width: min(100%, 1320px);
-  text-align: center;
-}
-.restored-hero-location {
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 20px;
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  min-width: 0;
+  width: auto;
+  padding: 136px clamp(32px, 4vw, 80px) 88px;
+  text-align: left;
 }
 .restored-hero h1 {
-  margin-top: 24px;
-  font-size: clamp(52px, 6vw, 96px);
+  font-size: clamp(52px, 5.2vw, 88px);
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.035em;
@@ -33,26 +32,50 @@
   color: var(--accent-light);
 }
 .restored-hero-description {
-  max-width: 620px;
-  margin: 24px auto 0;
+  max-width: 480px;
+  margin: 28px 0 0;
   font-size: 18px;
   line-height: 28px;
   color: var(--text-secondary);
-  text-wrap: pretty;
 }
 .restored-hero-action { margin-top: 32px; }
 .restored-hero-description > span { display: block; }
 .restored-hero-warranty { white-space: nowrap; }
+.restored-hero-photo {
+  position: relative;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: #292d2d;
+}
+.restored-hero-photo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% 50%;
+  filter: saturate(0.45) brightness(0.78);
+}
+@media (max-width: 999px) and (min-width: 700px) {
+  .restored-hero-copy { padding-inline: 32px; }
+  .restored-hero h1 { font-size: clamp(44px, 5.8vw, 56px); }
+  .restored-hero-description { font-size: 16px; line-height: 24px; }
+  .restored-hero .split-button { font-size: 14px; gap: 12px; padding-left: 20px; }
+}
 @media (max-width: 699px) {
   .restored-hero {
-    padding: 132px 24px 64px;
-    min-height: 600px;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
   }
+  .restored-hero-copy { padding: 132px 24px 48px; }
   .restored-hero h1 {
     font-size: clamp(36px, 10.2vw, 60px);
     line-height: 1.08;
   }
   .restored-hero-description {
+    margin-top: 24px;
     max-width: 340px;
     font-size: 16px;
     line-height: 24px;
@@ -62,8 +85,11 @@
     padding-left: 20px;
     font-size: 14px;
   }
+  .restored-hero-photo { height: 240px; min-height: 0; }
+  .restored-hero-photo img { object-position: 50% 54%; }
 }
 @media (max-height: 560px) and (min-width: 700px) {
-  .restored-hero { min-height: 560px; padding-top: 136px; padding-bottom: 64px; }
+  .restored-hero { min-height: 560px; }
+  .restored-hero-copy { padding-block: 136px 64px; }
   .restored-hero h1 { font-size: clamp(44px, 5vw, 68px); }
 }

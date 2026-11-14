@@ -2,7 +2,7 @@
   margin-top: 8px;
   padding: 40px var(--section-inset);
   border-radius: 32px;
-  background: #0a0a0a;
+  background: var(--surface-metrics);
 }
 .metrics-strip dl {
   display: grid;
@@ -82,7 +82,7 @@
 .cases-section {
   padding-inline: 0;
   overflow: hidden;
-  background: #0a0a0a;
+  background: var(--surface-gallery);
 }
 .cases-section > .content-heading {
   margin-inline: var(--section-inset);
@@ -301,6 +301,9 @@
   font-size: 20px;
   line-height: 1.65;
 }
+.original-section {
+  background: var(--surface-warm);
+}
 .original-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -435,11 +438,17 @@
   }
 }
 
-/* Only hero and footer keep an outer card silhouette. */
+/* A continuous black page frame, including every intermediate section. */
+.site-shell > main {
+  display: grid;
+  gap: var(--page-gutter);
+}
 .metrics-strip,
 .v12-section,
 .content-card {
   border-radius: 0;
   margin-top: 0;
-  margin-inline: calc(var(--page-gutter) * -1);
+  margin-inline: 0;
+  min-width: 0;
 }
+.footer { margin-top: var(--page-gutter); }

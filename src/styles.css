@@ -48,7 +48,11 @@
   font-size: 18px;
   background: #0a0a0a;
   color: var(--text-primary);
-  --surface: #080808;
+  --surface: #11161a;
+  --surface-hero: #0c0f11;
+  --surface-warm: #171513;
+  --surface-gallery: #08090a;
+  --surface-metrics: #151312;
   --surface-raised: #171717;
   --text-primary: #efefed;
   --text-secondary: #b5b4b2;

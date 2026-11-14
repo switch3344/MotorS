@@ -30,6 +30,9 @@ export function Hero() {
 
   const content = (
     <>
+      <div className="restored-hero-badge">
+        Гарантия 5 лет <span aria-hidden="true">✦</span>
+      </div>
       <h1 id="hero-title" tabIndex={-1}>
         <span>Двигатель, как с завода.</span>
         <span>
@@ -37,7 +40,7 @@ export function Hero() {
         </span>
       </h1>
       <p className="restored-hero-description">
-        Ремонт и диагностика двигателей в Краснодаре.
+        Капитальный ремонт двигателей в Краснодаре. С гарантией 5 лет.
       </p>
       <div className="restored-hero-action">
         <SplitButton>Записаться на диагностику</SplitButton>

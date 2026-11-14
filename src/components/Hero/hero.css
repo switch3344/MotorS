@@ -1,20 +1,36 @@
 .restored-hero {
   display: grid;
-  align-items: center;
+  align-items: start;
   justify-items: center;
-  background: #101113;
-  padding: clamp(144px, 20svh, 210px) 40px 100px;
+  background: #080808;
+  padding: clamp(148px, 18svh, 196px) 40px 80px;
 }
 .restored-hero-copy {
   width: min(100%, 1320px);
   text-align: center;
 }
 .restored-hero h1 {
+  margin-top: 22px;
   font-size: clamp(48px, 6.5vw, 112px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.055em;
   color: #f7f7f6;
+}
+.restored-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 15px;
+  border: 1px solid #ffffff26;
+  border-radius: 999px;
+  color: #e5e3e3;
+  background: #151313;
+  font-size: 13px;
+  line-height: 18px;
+}
+.restored-hero-badge span {
+  color: #ec5467;
 }
 .restored-hero h1 > span {
   display: block;
@@ -26,18 +42,18 @@
   color: #ec5467;
 }
 .restored-hero-description {
-  margin: 28px auto 0;
-  max-width: 660px;
+  margin: 24px auto 0;
+  max-width: 900px;
   font-size: 20px;
   line-height: 1.5;
   color: #bcbcbf;
 }
 .restored-hero-action {
-  margin-top: 32px;
+  margin-top: 28px;
 }
 @media (max-width: 699px) {
   .restored-hero {
-    padding: 132px 20px 72px;
+    padding: 136px 20px 72px;
     min-height: min(680px, calc(100svh - 16px));
   }
   .restored-hero h1 {

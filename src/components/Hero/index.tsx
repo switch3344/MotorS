@@ -30,6 +30,7 @@ export function Hero() {
 
   const content = (
     <>
+      <p className="restored-hero-location">Краснодар · MotorServiceKRD</p>
       <h1 id="hero-title" tabIndex={-1}>
         <span>Капитальный ремонт</span>{" "}
         <span><em>двигателей</em></span>
@@ -66,16 +67,6 @@ export function Hero() {
           {content}
         </div>
       )}
-      <div className="restored-hero-photo">
-        <img
-          src={`${import.meta.env.BASE_URL}images/works/piston-detail.jpg`}
-          alt="Поршень в блоке двигателя D4EB в мастерской MotorServiceKRD"
-          width="800"
-          height="800"
-          fetchPriority="high"
-          decoding="async"
-        />
-      </div>
     </section>
   );
 }

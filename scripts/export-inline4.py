@@ -4,13 +4,17 @@ The source scene is never saved or overwritten.
 """
 import bpy
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 from mathutils import Matrix, Vector
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/'scripts'))
+from inline4_timing import apply_timing
 source = bpy.data.scenes['ENGINE • Inline 4 / 1998 cc']
 bpy.context.window.scene = source
+timing = apply_timing(source)
 source.frame_set(1)
 bpy.context.view_layer.update()
 depsgraph = bpy.context.evaluated_depsgraph_get()
@@ -19,31 +23,42 @@ animated = {o for o in source.objects if o.animation_data and any(d.data_path in
 print('Motion groups:', len(animated), flush=True)
 
 # Evaluate every driven transform in the original dependency graph before
-# creating the simplified scene. Parent motion is included in world matrices.
+# creating the export scene. Parent motion is included in world matrices.
 poses = {}
-for frame in range(1,242):
-    source.frame_set(frame)
+for frame in range(481):
+    source_frame = 1 + frame/2
+    source.frame_set(int(source_frame), subframe=source_frame % 1)
     depsgraph.update()
     poses[frame] = {o.name:o.evaluated_get(depsgraph).matrix_world.copy() for o in animated}
 source.frame_set(1)
 depsgraph.update()
+assert all(d.driver.is_valid for o in animated for d in o.animation_data.drivers if d.data_path in paths), 'Invalid transform driver'
+valve_travel = {o.name:max(p[o.name].translation.z for p in poses.values())-min(p[o.name].translation.z for p in poses.values())
+    for o in animated if o.name.startswith(('Intake valve ', 'Exhaust valve '))}
+assert len(valve_travel)==16 and min(valve_travel.values())>4.99, 'Valve motion was not evaluated'
+pair_error = max(abs(p['Piston carrier C1'].translation.z-p['Piston carrier C4'].translation.z) for p in poses.values())
+pair_error = max(pair_error, max(abs(p['Piston carrier C2'].translation.z-p['Piston carrier C3'].translation.z) for p in poses.values()))
+assert pair_error<0.0001, 'Piston pairs are out of phase'
 
 export = bpy.data.scenes.new('MotorService Inline4 Working')
-export.render.fps = 30
+export.render.fps = 60
 export.frame_start = 0
-export.frame_end = 240
+export.frame_end = 480
 root = bpy.data.objects.new('Inline4_Engine',None)
 export.collection.objects.link(root)
 root.scale = (0.005,)*3
 root['source'] = 'User supplied Engine_Inline4_Detailed.blend'
 root['cycle_seconds'] = 8.0
+root['sampling_fps'] = 60
+root['valve_lift_mm'] = timing['lift_mm']
+root['valve_duration_degrees'] = timing['duration_crank_degrees']
 pivots = {}
 for original in sorted(animated,key=lambda o:o.name):
     pivot = bpy.data.objects.new(original.name,None)
     export.collection.objects.link(pivot)
     pivot.parent = root
     pivot.rotation_mode = 'QUATERNION'
-    pivot.matrix_local = poses[1][original.name]
+    pivot.matrix_local = poses[0][original.name]
     pivots[original.name] = pivot
 
 # Keep the original detailed link geometry, instanced at runtime along its source path.
@@ -78,7 +93,7 @@ for obj in list(source.objects):
     export.collection.objects.link(clone)
     if ancestor:
         clone.parent = pivots[key]
-        clone.matrix_local = poses[1][key].inverted_safe() @ evaluated.matrix_world
+        clone.matrix_local = poses[0][key].inverted_safe() @ evaluated.matrix_world
     else:
         clone.parent = root
         clone.matrix_local = evaluated.matrix_world
@@ -99,17 +114,17 @@ for key, objects in batches.items():
     merged = bpy.context.view_layer.objects.active
     merged.name = 'Geometry • '+key
 
-for frame in range(1,242):
+for frame in range(481):
     for name,pivot in pivots.items():
         loc,rot,scale = poses[frame][name].decompose()
         # Quaternions q and -q encode the same pose; keep adjacent keys on
         # the same hemisphere so interpolation never takes a full turn.
-        if frame>1 and rot.dot(pivot.rotation_quaternion)<0:
+        if frame>0 and rot.dot(pivot.rotation_quaternion)<0:
             rot.negate()
         pivot.location=loc; pivot.rotation_quaternion=rot; pivot.scale=scale
-        pivot.keyframe_insert('location',frame=frame-1)
-        pivot.keyframe_insert('rotation_quaternion',frame=frame-1)
-        pivot.keyframe_insert('scale',frame=frame-1)
+        pivot.keyframe_insert('location',frame=frame)
+        pivot.keyframe_insert('rotation_quaternion',frame=frame)
+        pivot.keyframe_insert('scale',frame=frame)
 export.frame_set(0)
 for pivot in pivots.values():
     action=pivot.animation_data.action
@@ -123,7 +138,7 @@ for pivot in pivots.values():
                             for point in curve.keyframe_points:
                                 point.interpolation='LINEAR'
 
-output=ROOT/'public/models/inline4-working-v2.glb'
+output=ROOT/'public/models/inline4-working-v3.glb'
 bpy.ops.export_scene.gltf(filepath=str(output),export_format='GLB',use_active_scene=True,
     export_animations=True,export_animation_mode='SCENE',export_anim_scene_split_object=False,
     export_force_sampling=True,export_frame_range=True,export_frame_step=1,
@@ -132,8 +147,9 @@ bpy.ops.export_scene.gltf(filepath=str(output),export_format='GLB',use_active_sc
     export_draco_position_quantization=18,export_draco_normal_quantization=12)
 report={'source_visible_objects':count,'rigid_batches':len(batches),'moving_groups':len(pivots),
     'export_objects':len(export.objects),'vertices':sum(len(o.data.vertices) for o in export.objects if o.type=='MESH'),
-    'bytes':output.stat().st_size,'cycle_seconds':8,
-    'pose_examples':{name:{str(f):list(poses[f][name].translation) for f in [1,31,61,121,241]} for name in list(pivots)[:12]}}
+    'bytes':output.stat().st_size,'cycle_seconds':8,'sampling_fps':60,'valve_timing':timing,
+    'piston_pair_error_mm':pair_error,'valve_travel_mm':valve_travel,
+    'pose_examples':{name:{str(f):list(poses[f][name].translation) for f in [0,60,120,240,480]} for name in list(pivots)[:12]}}
 (ROOT/'.qa/inline4-bake-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=True),flush=True)
 

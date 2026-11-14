@@ -1,11 +1,7 @@
 import { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera } from "three";
-import {
-  Environment,
-  Lightformer,
-  useProgress,
-} from "@react-three/drei";
+import { Environment, Lightformer, useProgress } from "@react-three/drei";
 import { EngineModel } from "./EngineModel";
 export interface EngineViewProps {
   playing: boolean;
@@ -47,7 +43,7 @@ export default function CanvasScene(props: EngineViewProps) {
     <>
       <Canvas
         camera={camera}
-        dpr={[1, props.mobile ? 1.5 : 2]}
+        dpr={[1.5, props.mobile ? 2 : 2.5]}
         shadows={!props.mobile}
         frameloop={props.visible || props.warming ? "demand" : "never"}
         gl={{
@@ -56,14 +52,14 @@ export default function CanvasScene(props: EngineViewProps) {
           powerPreference: "high-performance",
         }}
         onCreated={({ gl }) => {
-          gl.toneMappingExposure = 0.95;
+          gl.toneMappingExposure = 0.9;
         }}
         aria-label="Работа рядного четырёхцилиндрового двигателя в разрезе: поршни, коленвал, клапаны и привод ГРМ."
       >
         <ambientLight intensity={0.4} />
         <directionalLight
           position={[4, 7, 6]}
-          intensity={2.4}
+          intensity={2.1}
           color="#f0f4ff"
           castShadow={!props.mobile}
           shadow-mapSize-width={4096}
@@ -89,7 +85,7 @@ export default function CanvasScene(props: EngineViewProps) {
         />
         <Suspense fallback={null}>
           <EngineModel {...props} />
-          <Environment resolution={512} frames={1}>
+          <Environment resolution={1024} frames={1}>
             <Lightformer
               form="rect"
               intensity={5}

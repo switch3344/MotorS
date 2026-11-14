@@ -14,7 +14,7 @@ import type { EngineViewProps } from "./CanvasScene";
 import { surfaceTexture } from "./engineAppearance";
 import { timingChain } from "./timingChain";
 
-const MODEL = `${import.meta.env.BASE_URL}models/inline4-working-v2.glb`;
+const MODEL = `${import.meta.env.BASE_URL}models/inline4-working-v3.glb`;
 const DECODER = `${import.meta.env.BASE_URL}draco/`;
 
 export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
@@ -33,15 +33,23 @@ export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
           object.castShadow = !mobile;
           object.receiveShadow = !mobile;
           const detail = (material: MeshStandardMaterial) => {
-            if (
-              !material.name.toLowerCase().includes("casting") ||
-              !object.geometry.getAttribute("uv")
-            )
-              return material;
+            const name = material.name.toLowerCase();
+            const casting = name.includes("casting");
+            const machined = name.includes("machined");
+            const ground = name === "ground steel";
+            if (!casting && !machined && !ground) return material;
             if (!castMaterials.has(material)) {
               const copy = material.clone();
-              copy.bumpMap = castTexture;
-              copy.bumpScale = 0.0015;
+              if (casting && object.geometry.getAttribute("uv")) {
+                copy.bumpMap = castTexture;
+                copy.bumpScale = 0.0015;
+              }
+              // Broader, quieter highlights keep piston rings and stems legible.
+              if (machined) {
+                copy.roughness = 0.4;
+                copy.color.multiplyScalar(0.88);
+              }
+              if (ground) copy.roughness = 0.34;
               castMaterials.set(material, copy);
             }
             return castMaterials.get(material)!;
@@ -90,7 +98,7 @@ export function EngineModel({ playing, visible, mobile }: EngineViewProps) {
 
   useLayoutEffect(() => {
     if (!(camera instanceof PerspectiveCamera)) return;
-    camera.position.set(-6, 4, 10);
+    camera.position.set(-5, 3.2, 11.8);
     camera.lookAt(0, 0, 0);
     camera.updateMatrixWorld(true);
     const aspect = size.width / Math.max(1, size.height);

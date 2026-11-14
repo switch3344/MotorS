@@ -30,7 +30,7 @@ export function Footer() {
           </a>
           <div className="footer-center-links">
             <a href={siteConfig.telegram} target="_blank" rel="noreferrer">
-              Записаться <ArrowUpRight size={18} />
+              Записаться <ArrowUpRight size={18} strokeWidth={1.5} />
             </a>
             <span>—</span>
             <a href="#services">Услуги</a>
@@ -43,7 +43,7 @@ export function Footer() {
               rel="noreferrer"
               aria-label="MotorServiceKRD в Telegram"
             >
-              <Send size={22} />
+              <Send size={18} strokeWidth={1.5} />
             </a>
             <a
               className="circle-button"
@@ -52,7 +52,7 @@ export function Footer() {
               rel="noreferrer"
               aria-label="Адрес на карте"
             >
-              <MapPin size={22} />
+              <MapPin size={18} strokeWidth={1.5} />
             </a>
           </div>
           <a
@@ -62,7 +62,7 @@ export function Footer() {
             rel="noreferrer"
           >
             {siteConfig.address}
-            <ArrowUpRight size={16} />
+            <ArrowUpRight size={18} strokeWidth={1.5} />
           </a>
           <p className="footer-phone">{siteConfig.phone}</p>
           <div className="footer-legal">

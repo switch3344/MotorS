@@ -47,8 +47,8 @@ export function WorkCases() {
     paint();
     const tween = gsap.to(progress.current, {
       value: position,
-      duration: reduced ? 0 : 0.85,
-      ease: "power2.inOut",
+      duration: reduced ? 0 : 0.5,
+      ease: "power3.out",
       onUpdate: paint,
       overwrite: true,
     });
@@ -96,12 +96,12 @@ export function WorkCases() {
           <h2 id="works-heading">
             <TechHeadingRun text="Внутри " />
             <em>
-              <TechHeadingRun text="мастерской." />
+              <TechHeadingRun text="мастерской" />
             </em>
           </h2>
         </div>
         <a href={siteConfig.telegram} target="_blank" rel="noreferrer">
-          Канал сервиса <ArrowUpRight size={18} />
+          Канал сервиса <ArrowUpRight size={18} strokeWidth={1.5} />
         </a>
       </div>
       <div
@@ -174,7 +174,7 @@ export function WorkCases() {
                   draggable={false}
                 />
                 <span className="work-gallery-expand" aria-hidden="true">
-                  <Expand size={18} />
+                  <Expand size={18} strokeWidth={1.5} />
                 </span>
               </button>
             );
@@ -195,7 +195,7 @@ export function WorkCases() {
             onClick={() => step(-1)}
             aria-label="Предыдущее фото"
           >
-            <ArrowLeft size={17} />
+            <ArrowLeft size={18} strokeWidth={1.5} />
           </button>
           <span className="work-gallery-count">
             <span>{String(active + 1).padStart(2, "0")}</span> /{" "}
@@ -206,7 +206,7 @@ export function WorkCases() {
             onClick={() => step(1)}
             aria-label="Следующее фото"
           >
-            <ArrowRight size={17} />
+            <ArrowRight size={18} strokeWidth={1.5} />
           </button>
         </div>
       </div>
@@ -242,7 +242,7 @@ export function WorkCases() {
                 aria-label="Закрыть фото"
                 autoFocus
               >
-                <X size={22} />
+                <X size={18} strokeWidth={1.5} />
               </button>
             </div>
             <div className="work-lightbox-media">
@@ -258,7 +258,7 @@ export function WorkCases() {
                 onClick={() => nextPhoto(-1)}
                 aria-label="Предыдущее фото"
               >
-                <ArrowLeft size={20} />
+                <ArrowLeft size={18} strokeWidth={1.5} />
               </button>
               <button
                 className="work-lightbox-next"
@@ -266,7 +266,7 @@ export function WorkCases() {
                 onClick={() => nextPhoto(1)}
                 aria-label="Следующее фото"
               >
-                <ArrowRight size={20} />
+                <ArrowRight size={18} strokeWidth={1.5} />
               </button>
             </div>
             <div className="work-lightbox-bottom">
@@ -275,7 +275,7 @@ export function WorkCases() {
                 {String(count).padStart(2, "0")}
               </span>
               <a href={enlarged.source} target="_blank" rel="noreferrer">
-                Фото из канала сервиса <ArrowUpRight size={16} />
+                Фото из канала сервиса <ArrowUpRight size={18} strokeWidth={1.5} />
               </a>
             </div>
           </>

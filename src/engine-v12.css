@@ -1,8 +1,8 @@
 .v12-section {
-  margin-top: 10px;
+  margin-top: 8px;
   border-radius: 44px;
-  background: #080808;
-  padding: 76px 4.5% 52px;
+  background: var(--surface);
+  padding: 76px var(--section-inset) 52px;
   overflow: hidden;
 }
 .v12-heading {
@@ -14,12 +14,12 @@
 .v12-heading h2 {
   font-size: clamp(42px, 4.6vw, 76px);
   line-height: 1.04;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   font-weight: 400;
 }
 .v12-heading h2 em {
   font-family: Georgia, serif;
-  color: #ec5467;
+  color: var(--accent-light);
   font-weight: 400;
 }
 .v12-stage {
@@ -47,7 +47,7 @@
 .v12-loader {
   position: absolute;
   inset: 48% 0 auto;
-  color: #aeb1b7;
+  color: var(--text-secondary);
   text-align: center;
   font-size: 15px;
   pointer-events: none;
@@ -60,12 +60,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 24px;
   padding: 0 28px;
   border: 1px solid rgba(255,255,255,.35);
   border-radius: 99px;
   background: transparent;
-  color: #f3f3f4;
+  color: var(--text-primary);
   font-size: 17px;
   font-weight: 500;
   white-space: nowrap;
@@ -81,11 +81,11 @@
 }
 .v12-services-title {
   font-size: 14px;
-  color: #a8abb1;
-  margin-bottom: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
 }
 .v12-service {
-  border-top: 1px solid #ffffff1c;
+  border-top: 1px solid var(--line);
 }
 .v12-service h3 {
   font-size: inherit;
@@ -93,18 +93,18 @@
 .v12-service h3 > button {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
   width: 100%;
   text-align: left;
-  min-height: 65px;
+  min-height: 64px;
   padding: 16px 0;
   border: 0;
   background: transparent;
-  color: #c3c6cb;
+  color: var(--text-secondary);
   font-size: 20px;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
   font-weight: 400;
-  transition: color 0.2s ease;
+  transition: color 0.2s var(--ease-out);
 }
 .v12-service-icon {
   position: relative;
@@ -112,7 +112,7 @@
   height: 18px;
   margin-left: auto;
   flex-shrink: 0;
-  color: #9da3aa;
+  color: var(--text-muted);
 }
 .v12-service-icon::before,
 .v12-service-icon::after {
@@ -124,7 +124,7 @@
 }
 .v12-service-icon::after {
   transform: rotate(90deg);
-  transition: transform 0.32s ease;
+  transition: transform 0.32s var(--ease-out);
 }
 .v12-service-active h3 > button {
   color: #fff;
@@ -139,7 +139,7 @@
   visibility: hidden;
   transition:
     grid-template-rows 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.24s ease,
+    opacity 0.24s var(--ease-out),
     visibility 0s 0.36s;
 }
 .v12-service-active .v12-service-panel {
@@ -153,7 +153,7 @@
   overflow: hidden;
 }
 .v12-service-detail {
-  padding: 0 0 22px;
+  padding: 0 0 24px;
   transform: translateY(-6px);
   transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -163,27 +163,27 @@
 .v12-service-detail > p {
   font-size: 18px;
   line-height: 1.65;
-  color: #b7bec8;
+  color: var(--text-secondary);
 }
 .v12-service-detail > ul {
   list-style: none;
-  margin: 15px 0 18px;
+  margin: 16px 0 16px;
   padding: 0;
   font-size: 16px;
   line-height: 1.8;
-  color: #c3c8d0;
+  color: var(--text-secondary);
 }
 .v12-service-detail li::before {
   content: "—";
-  color: #e24a60;
-  margin-right: 9px;
+  color: var(--text-muted);
+  margin-right: 8px;
 }
 .v12-service-detail > a {
   display: inline-flex;
   align-items: center;
-  gap: 25px;
+  gap: 24px;
   font-size: 15px;
-  color: #f07588;
+  color: var(--accent-light);
   min-height: 40px;
 }
 .v12-service-detail > a:hover {
@@ -192,9 +192,9 @@
 .v12-service-note {
   font-size: 13px;
   line-height: 1.7;
-  color: #969ea9;
+  color: var(--text-muted);
   padding-top: 20px;
-  border-top: 1px solid #ffffff1c;
+  border-top: 1px solid var(--line);
 }
 .v12-fallback {
   position: absolute;
@@ -210,14 +210,14 @@
   object-fit: contain;
 }
 .v12-fallback > p {
-  color: #a8afb8;
+  color: var(--text-muted);
   font-size: 14px;
 }
 .work-process {
-  margin-top: 10px;
+  margin-top: 8px;
   border-radius: 44px;
-  padding: 64px 4.5%;
-  background: #080808;
+  padding: 64px var(--section-inset);
+  background: var(--surface);
 }
 .work-process h2 {
   font-size: clamp(32px, 3vw, 48px);
@@ -233,12 +233,12 @@
   margin: 36px 0 0;
 }
 .work-process li {
-  border-top: 1px solid #ffffff24;
+  border-top: 1px solid var(--line);
   padding-top: 20px;
 }
 .work-process li > span {
   font: 14px var(--font-mono);
-  color: #ed667b;
+  color: var(--accent-light);
 }
 .work-process h3 {
   font-size: 21px;
@@ -248,7 +248,7 @@
 .work-process li p {
   font-size: 16px;
   line-height: 1.65;
-  color: #aeb5bf;
+  color: var(--text-secondary);
   margin-top: 12px;
 }
 .warranty-band {
@@ -258,20 +258,20 @@
   gap: 40px;
   padding-top: 48px;
   margin-top: 48px;
-  border-top: 1px solid #ffffff24;
+  border-top: 1px solid var(--line);
 }
 .warranty-band h2 {
   font-size: clamp(32px, 4vw, 60px);
 }
 .warranty-band h2 em {
   font-family: Georgia, serif;
-  color: #ec5467;
+  color: var(--accent-light);
   font-weight: 400;
 }
 .warranty-band > p {
   max-width: 440px;
   font-size: 17px;
-  color: #b7bec8;
+  color: var(--text-secondary);
   line-height: 1.65;
 }
 @media (max-width: 1150px) and (min-width: 800px) {
@@ -284,13 +284,13 @@
   }
   .v12-service h3 > button {
     font-size: 18px;
-    gap: 10px;
+    gap: 8px;
   }
 }
 @media (max-width: 799px) {
   .v12-section {
     border-radius: 28px;
-    padding: 48px 22px 30px;
+    padding: 48px 24px 32px;
     margin-top: 8px;
   }
   .v12-heading {
@@ -322,7 +322,7 @@
   }
   .v12-service h3 > button {
     font-size: 19px;
-    gap: 13px;
+    gap: 12px;
     min-height: 64px;
   }
   .v12-service-detail > p {
@@ -334,7 +334,7 @@
   .work-process {
     margin-top: 8px;
     border-radius: 28px;
-    padding: 40px 22px;
+    padding: 40px 24px;
   }
   .work-process ol {
     grid-template-columns: 1fr;

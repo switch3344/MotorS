@@ -96,11 +96,11 @@ export function EngineScene({
     >
       <div className="v12-heading">
         <div>
-          <h2 id="services-heading" aria-label="Диагностика и капремонт.">
+          <h2 id="services-heading" aria-label="Диагностика и капремонт">
             <TechHeadingRun text="Диагностика" />
             <br />и{" "}
             <em>
-              <TechHeadingRun text="капремонт." />
+              <TechHeadingRun text="капремонт" />
             </em>
           </h2>
         </div>
@@ -183,7 +183,7 @@ export function EngineScene({
                           target="_blank"
                           rel="noreferrer"
                         >
-                          Обсудить ремонт <ArrowDownRight size={18} />
+                          Обсудить ремонт <ArrowDownRight size={18} strokeWidth={1.5} />
                         </a>
                       </div>
                     </div>

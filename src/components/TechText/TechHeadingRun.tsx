@@ -66,8 +66,8 @@ export function TechHeadingRun({ text }: { text: string }) {
             guides={false}
             selection
             draggable={false}
-            clickKick
-            bounce={0.2}
+            clickKick={false}
+            bounce={0}
             sweep={false}
             intro="none"
           />

@@ -1,90 +1,69 @@
 .restored-hero {
-  display: grid;
-  align-items: start;
-  justify-items: center;
-  background: #080808;
-  padding: clamp(148px, 18svh, 196px) 40px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: clamp(600px, 76svh, 760px);
+  max-height: none;
+  background: var(--surface);
+  padding: 160px 40px 88px;
 }
 .restored-hero-copy {
   width: min(100%, 1320px);
   text-align: center;
 }
+.restored-hero-location {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
 .restored-hero h1 {
-  margin-top: 22px;
-  font-size: clamp(48px, 6.5vw, 112px);
+  margin-top: 24px;
+  font-size: clamp(52px, 6vw, 96px);
   font-weight: 400;
   line-height: 1.04;
-  letter-spacing: -0.055em;
-  color: #f7f7f6;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
 }
-.restored-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 15px;
-  border: 1px solid #ffffff26;
-  border-radius: 999px;
-  color: #e5e3e3;
-  background: #151313;
-  font-size: 13px;
-  line-height: 18px;
-}
-.restored-hero-badge span {
-  color: #ec5467;
-}
-.restored-hero h1 > span {
-  display: block;
-}
+.restored-hero h1 > span { display: block; }
 .restored-hero h1 em {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  letter-spacing: -0.065em;
-  color: #ec5467;
+  letter-spacing: -0.04em;
+  color: var(--accent-light);
 }
 .restored-hero-description {
+  max-width: 620px;
   margin: 24px auto 0;
-  max-width: 900px;
-  font-size: 20px;
-  line-height: 1.5;
-  color: #bcbcbf;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-secondary);
+  text-wrap: pretty;
 }
-.restored-hero-action {
-  margin-top: 28px;
-}
+.restored-hero-action { margin-top: 32px; }
+.restored-hero-description > span { display: block; }
+.restored-hero-warranty { white-space: nowrap; }
 @media (max-width: 699px) {
   .restored-hero {
-    padding: 136px 20px 72px;
-    min-height: min(680px, calc(100svh - 16px));
+    padding: 132px 24px 64px;
+    min-height: 600px;
   }
   .restored-hero h1 {
-    font-size: clamp(36px, 9.2vw, 60px);
-    line-height: 1.12;
+    font-size: clamp(36px, 10.2vw, 60px);
+    line-height: 1.08;
   }
   .restored-hero-description {
-    max-width: 310px;
-    font-size: 17px;
-    margin-top: 24px;
-  }
-  .restored-hero-action {
-    margin-top: 28px;
+    max-width: 340px;
+    font-size: 16px;
+    line-height: 24px;
   }
   .restored-hero .split-button {
-    height: 56px;
-    min-height: 56px;
     gap: 12px;
-    padding-left: 18px;
+    padding-left: 20px;
     font-size: 14px;
   }
 }
 @media (max-height: 560px) and (min-width: 700px) {
-  .restored-hero {
-    height: auto;
-    max-height: none;
-    min-height: 560px;
-    padding-top: 136px;
-    padding-bottom: 60px;
-  }
-  .restored-hero h1 {
-    font-size: clamp(40px, 5vw, 68px);
-  }
+  .restored-hero { min-height: 560px; padding-top: 136px; padding-bottom: 64px; }
+  .restored-hero h1 { font-size: clamp(44px, 5vw, 68px); }
 }

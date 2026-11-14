@@ -42,14 +42,23 @@
   --font-mono: "JetBrains Mono", monospace;
 }
 :root {
+  /* Polish based on unslop by Damir Sokolovsky (@heydamir), CC BY 4.0.
+     Direction, attribution and retained user choices: docs/unslop-2026-11-14.md. */
   font-family: var(--font-sans);
   font-size: 18px;
   background: #0a0a0a;
-  color: #f5f5f5;
-  --accent: #c62132;
-  --accent-light: #ee7b88;
-  --muted: #b0adb2;
-  --line: #ffffff19;
+  color: var(--text-primary);
+  --surface: #080808;
+  --surface-raised: #171717;
+  --text-primary: #efefed;
+  --text-secondary: #b5b4b2;
+  --text-muted: #92918f;
+  --accent: #b51d35;
+  --accent-light: #ec5467;
+  --muted: var(--text-muted);
+  --line: #efefed19;
+  --section-inset: clamp(24px, 4.5vw, 80px);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -166,14 +175,14 @@ svg {
 }
 .icon-button,
 .circle-button {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ffffff30;
+  border: 1px solid var(--line);
   border-radius: 50%;
-  background: #ffffff03;
+  background: var(--surface-raised);
 }
 .icon-button:hover,
 .circle-button:hover {
@@ -693,13 +702,13 @@ svg {
   position: relative;
   background: #0a0a0a;
   clip-path: url(#footer-cutout);
-  padding: 80px 0 30px;
+  padding: 80px 0 32px;
 }
 .footer-wordmark {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 26px;
+  gap: 24px;
   width: 100%;
 }
 .footer-wordmark > img {
@@ -720,7 +729,7 @@ svg {
 .footer-wordmark small {
   font-size: clamp(16px, 1.7vw, 26px);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
   margin: 8px 0 0 12px;
 }
 .footer-center-links {
@@ -728,7 +737,7 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  margin-top: 30px;
+  margin-top: 32px;
   font-size: 16px;
 }
 .footer-center-links a {
@@ -738,13 +747,13 @@ svg {
   min-height: 44px;
 }
 .footer-center-links > span {
-  color: #8e7e8c;
+  color: var(--text-muted);
 }
 .footer-socials {
   display: flex;
   justify-content: center;
-  gap: 13px;
-  margin-top: 18px;
+  gap: 12px;
+  margin-top: 20px;
 }
 .footer-address {
   display: flex;
@@ -752,7 +761,7 @@ svg {
   justify-content: center;
   gap: 10px;
   font-size: 16px;
-  color: #bdb0bf;
+  color: var(--text-secondary);
   margin-top: 24px;
   line-height: 1.6;
 }
@@ -763,7 +772,7 @@ svg {
   gap: 35px;
   margin-top: 32px;
   padding-top: 24px;
-  color: #a69aa9;
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 1.7;
 }
@@ -1049,7 +1058,7 @@ svg {
   }
   .hero-actions .button {
     padding: 15px 18px;
-    gap: 13px;
+    gap: 12px;
     font-size: 16px;
   }
   .hero-actions .text-link {
@@ -1159,11 +1168,11 @@ svg {
     margin-top: 8px;
   }
   .footer-surface {
-    padding-top: 62px;
+    padding-top: 64px;
     padding-bottom: 24px;
   }
   .footer-wordmark {
-    gap: 13px;
+    gap: 12px;
   }
   .footer-wordmark > img {
     width: 64px;
@@ -1180,7 +1189,7 @@ svg {
   .footer-center-links {
     gap: 20px;
     font-size: 16px;
-    margin-top: 26px;
+    margin-top: 24px;
   }
   .footer-socials {
     margin-top: 16px;
@@ -1190,14 +1199,14 @@ svg {
     align-items: flex-start;
     text-align: center;
     gap: 6px;
-    margin-top: 22px;
+    margin-top: 24px;
   }
   .footer-address svg {
     margin-top: 3px;
   }
   .footer-legal {
-    margin-top: 25px;
-    padding-top: 22px;
+    margin-top: 24px;
+    padding-top: 24px;
     gap: 14px;
     font-size: 14px;
   }

@@ -11,7 +11,7 @@ export function OriginalParts() {
       <h2 id="original-heading">
         <TechHeadingRun text="Оригинал " />
         <em>
-          <TechHeadingRun text="или ничего." />
+          <TechHeadingRun text="или ничего" />
         </em>
       </h2>
       <p className="original-lead">

@@ -30,17 +30,14 @@ export function Hero() {
 
   const content = (
     <>
-      <div className="restored-hero-badge">
-        Гарантия 5 лет <span aria-hidden="true">✦</span>
-      </div>
+      <p className="restored-hero-location">Краснодар · MotorServiceKRD</p>
       <h1 id="hero-title" tabIndex={-1}>
-        <span>Двигатель, как с завода.</span>
-        <span>
-          На 5 лет <em>вперёд.</em>
-        </span>
+        <span>Капитальный ремонт</span>{" "}
+        <span><em>двигателей</em></span>
       </h1>
       <p className="restored-hero-description">
-        Капитальный ремонт двигателей в Краснодаре. С гарантией 5 лет.
+        <span>Оригинальные запчасти</span>
+        <span>Гарантия — <span className="restored-hero-warranty">5 лет или 250 000 км</span></span>
       </p>
       <div className="restored-hero-action">
         <SplitButton>Записаться на диагностику</SplitButton>
@@ -58,10 +55,10 @@ export function Hero() {
         <FadeContent
           className="restored-hero-copy"
           trigger="mount"
-          effect="focus"
-          duration={0.9}
-          stagger={0.12}
-          ease="power2.out"
+          effect="fade"
+          duration={0.4}
+          stagger={0.05}
+          ease="power3.out"
         >
           {content}
         </FadeContent>
